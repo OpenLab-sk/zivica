@@ -1,0 +1,3 @@
+[submodule "plugins/wezeo/initstorage"]
+	path = plugins/wezeo/initstorage
+	url = https://gitlab.com/wezeo/ocms-plugins/initstorage.git
