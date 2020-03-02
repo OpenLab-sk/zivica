@@ -11,6 +11,9 @@ class CreateEventsTable extends Migration
         Schema::create('zivica_carpooling_events', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->string('name');
+            $table->dateTime('starts_at');
+            $table->dateTime('ends_at');
             $table->timestamps();
         });
     }

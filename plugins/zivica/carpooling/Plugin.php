@@ -85,7 +85,7 @@ class Plugin extends PluginBase
             'carpooling' => [
                 'label'       => 'Carpooling',
                 'url'         => Backend::url('zivica/carpooling/events'),
-                'icon'        => 'icon-leaf',
+                'icon'        => 'icon-car',
                 'permissions' => ['zivica.carpooling.*'],
                 'order'       => 500,
             ],
