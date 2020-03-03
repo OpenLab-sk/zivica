@@ -1,3 +1,5 @@
 1.0.1:
     - First version of Carpooling
     - create_events_table.php
+    - create_drivers_table.php
+    - create_passengers_table.php
