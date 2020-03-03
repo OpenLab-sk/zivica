@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Driver
+
+# Model Form Field configuration
+form: $/zivica/carpooling/models/driver/fields.yaml
+
+# Model Class name
+modelClass: Zivica\Carpooling\Models\Driver
+
+# Default redirect location
+defaultRedirect: zivica/carpooling/drivers
+
+# Create page
+create:
+    title: Create Driver
+    redirect: zivica/carpooling/drivers/update/:id
+    redirectClose: zivica/carpooling/drivers
+
+# Update page
+update:
+    title: Edit Driver
+    redirect: zivica/carpooling/drivers
+    redirectClose: zivica/carpooling/drivers
+
+# Preview page
+preview:
+    title: Preview Driver

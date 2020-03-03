@@ -88,6 +88,23 @@ class Plugin extends PluginBase
                 'icon'        => 'icon-car',
                 'permissions' => ['zivica.carpooling.*'],
                 'order'       => 500,
+                'sideMenu'  => [
+                    'events' => [
+                        'label' => 'Events',
+                        'icon'  => 'icon-calendar',
+                        'url'   => Backend::url('zivica/carpooling/events')
+                    ],
+                    'drivers' => [
+                        'label' => 'Drivers',
+                        'icon'  => 'icon-wheelchair-alt',
+                        'url'   => Backend::url('zivica/carpooling/drivers')
+                    ],
+                    'passengers' => [
+                        'label' => 'Passengers',
+                        'icon'  => 'icon-wheelchair',
+                        'url'   => Backend::url('zivica/carpooling/passengers')
+                    ]
+                ]
             ],
         ];
     }

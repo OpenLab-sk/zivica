@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Passenger
+
+# Model Form Field configuration
+form: $/zivica/carpooling/models/passenger/fields.yaml
+
+# Model Class name
+modelClass: Zivica\Carpooling\Models\Passenger
+
+# Default redirect location
+defaultRedirect: zivica/carpooling/passengers
+
+# Create page
+create:
+    title: Create Passenger
+    redirect: zivica/carpooling/passengers/update/:id
+    redirectClose: zivica/carpooling/passengers
+
+# Update page
+update:
+    title: Edit Passenger
+    redirect: zivica/carpooling/passengers
+    redirectClose: zivica/carpooling/passengers
+
+# Preview page
+preview:
+    title: Preview Passenger
