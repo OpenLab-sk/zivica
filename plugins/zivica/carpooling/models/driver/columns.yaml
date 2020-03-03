@@ -6,3 +6,15 @@ columns:
     id:
         label: ID
         searchable: true
+    name:
+        label: Meno
+    email:
+        label: E-mail
+    leaves_from:
+        label: Miesto odchodu
+    leaves_at:
+        label: Čas odchodu
+    cities:
+        label: Cez aké mestá
+    seats:
+        label: Počet voľných miest

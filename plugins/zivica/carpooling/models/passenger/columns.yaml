@@ -6,3 +6,11 @@ columns:
     id:
         label: ID
         searchable: true
+    email:
+        label: E-mail
+    phone:
+        label: Tel. číslo
+    city:
+        label: Odkiaľ som
+    note:
+        label: Poznámka

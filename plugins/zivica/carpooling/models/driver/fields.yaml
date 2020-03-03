@@ -3,6 +3,22 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    name:
+        label: Meno
+        type: text
+    email:
+        label: E-mail
+        type: email
+    leaves_from:
+        label: Miesto odchodu
+        type: text
+    leaves_at:
+        label: Čas odchodu
+        type: datepicker
+        mode: datetime
+    cities:
+        label: Cez aké mestá
+        type: text
+    seats:
+        label: Počet voľných miest
+        type: number

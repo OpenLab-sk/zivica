@@ -14,9 +14,9 @@ class CreateDriversTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('leaves_from');
-            // $table->dateTime('leaves_at');
-            // $table->enum('cities');
-            // $table->integer('seats');
+            $table->dateTime('leaves_at');
+            $table->enum('cities', []);
+            $table->integer('seats');
             $table->timestamps();
         });
     }
