@@ -69,8 +69,12 @@ class Driver extends Model
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = [];
-    public $belongsTo = [];
+    public $hasMany = [
+        'passangers' => 'Zivica\Carpooling\Models\Passenger'
+    ];
+    public $belongsTo = [
+        'event' => 'Zivica\Carpooling\Models\Event'
+    ];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];

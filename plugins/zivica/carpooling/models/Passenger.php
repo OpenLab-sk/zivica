@@ -62,7 +62,9 @@ class Passenger extends Model
      */
     public $hasOne = [];
     public $hasMany = [];
-    public $belongsTo = [];
+    public $belongsTo = [
+        'driver' => 'Zivica\Carpooling\Models\Driver'
+    ];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];

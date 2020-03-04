@@ -61,7 +61,9 @@ class Event extends Model
      * @var array Relations
      */
     public $hasOne = [];
-    public $hasMany = [];
+    public $hasMany = [
+        'drivers' => 'Zivica\Carpooling\Models\Driver'
+    ];
     public $belongsTo = [];
     public $belongsToMany = [];
     public $morphTo = [];
