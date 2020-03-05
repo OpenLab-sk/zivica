@@ -5,9 +5,23 @@ is_hidden = 0
 
 [events]
 ==
-<div class="header-container">
+{% set allEvents = events.getAllEvents() %}
+<div class="header-container header-container-homepage">
     <h1>Šetrite benzín,<br>štrite životné prostredie</h1>
 </div>
 <div class="cards-list">
-    {% component 'events' %}
+    {% for event in allEvents %}
+    <div class="single-card" data-event-id="{{ event.id }}">
+        <div class="number-container">
+            <h2>5</h2>
+            <h5>vodičov</h5>
+        </div>
+        <div class="details">
+            <h3>{{ event.name }}</h3>
+            <h6>Rusovska cesta</h6>
+            <h5>{{ event.date }}</h5>
+            <h5>{{ event.time }}</h5>
+        </div>
+    </div>
+    {% endfor %}
 </div>

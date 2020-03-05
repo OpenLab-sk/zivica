@@ -22,13 +22,13 @@ h2 {
 }
 
 h3 {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 400;
     margin: 5px 0 0 0;
 }
 
 h4 {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 300;
     margin: 10px 0 0 0;
 }
@@ -36,24 +36,42 @@ h4 {
 h5 {
     font-size: 15px;
     font-weight: 300;
+    margin: 10px 0 0 0;
 }
 
 h6 {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 100;
     margin: 5px 0 0 0;
 }
 
 .header-container {
-    height: 333px;
+    min-height: 333px;
+    background: rgb(195, 198, 78);
+    background: linear-gradient(144deg, rgba(195, 198, 78, 1) 0%, rgba(22, 160, 133, 1) 100%);
+    padding: 20px 15px;
+}
+
+.header-container-homepage {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(195, 198, 78);
-    background: linear-gradient(144deg, rgba(195, 198, 78, 1) 0%, rgba(22, 160, 133, 1) 100%);
 
     h1 {
         color: #ffffff;
+    }
+}
+
+
+.header-container-event {
+    color: #ffffff;
+
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+        font-size: 24px;
+        font-weight: 100;
     }
 }
 

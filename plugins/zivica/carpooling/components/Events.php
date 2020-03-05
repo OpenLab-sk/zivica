@@ -44,6 +44,7 @@ class Events extends ComponentBase
             // return \Response::make('Page not found', 404);
         }
 
+        $event                          = self::_enrichDateTime($event);
         $event->attributes['drivers']   = $event->drivers;
 
         return $event;
