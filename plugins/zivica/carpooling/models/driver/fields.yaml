@@ -3,6 +3,9 @@
 # ===================================
 
 fields:
+    event_id:
+        label: evenid
+        type: number
     name:
         label: Meno
         type: text

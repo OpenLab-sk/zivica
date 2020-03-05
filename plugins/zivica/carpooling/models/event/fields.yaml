@@ -14,4 +14,8 @@ fields:
         label: Dátum a čas konca
         type: datepicker
         mode: datetime
+    # drivers:
+    #     label: Vodici
+    #     nameFrom: name
+    #     type: relation
 

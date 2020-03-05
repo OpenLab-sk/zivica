@@ -73,7 +73,10 @@ class Driver extends Model
         'passangers' => 'Zivica\Carpooling\Models\Passenger'
     ];
     public $belongsTo = [
-        'event' => 'Zivica\Carpooling\Models\Event'
+        'event' => [
+            'Zivica\Carpooling\Models\Event',
+            'key' => 'event_id'
+        ]
     ];
     public $belongsToMany = [];
     public $morphTo = [];

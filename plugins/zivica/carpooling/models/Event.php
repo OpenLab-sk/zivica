@@ -1,6 +1,7 @@
 <?php namespace Zivica\Carpooling\Models;
 
 use Model;
+use Ramsey\Uuid\Uuid;
 
 /**
  * Event Model
@@ -8,6 +9,13 @@ use Model;
 class Event extends Model
 {
     use \October\Rain\Database\Traits\Validation;
+
+    // public $incrementing = false;
+
+    // public function beforeCreate()
+    // {
+    //     $this->id = Uuid::uuid4()->toString();
+    // }
 
     /**
      * @var string The database table used by the model.
@@ -52,6 +60,12 @@ class Event extends Model
     /**
      * @var array Attributes to be cast to Argon (Carbon) instances
      */
+
+    function afterFetch()
+    {
+        $this->drivers;
+    }
+
     protected $dates = [
         'created_at',
         'updated_at'
@@ -62,7 +76,9 @@ class Event extends Model
      */
     public $hasOne = [];
     public $hasMany = [
-        'drivers' => 'Zivica\Carpooling\Models\Driver'
+        'drivers' => [
+            'Zivica\Carpooling\Models\Driver'
+        ]
     ];
     public $belongsTo = [];
     public $belongsToMany = [];
