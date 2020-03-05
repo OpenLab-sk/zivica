@@ -14,10 +14,31 @@ class Events extends ComponentBase
     }
     function getAllEvents()
     {
-       return Event::all();
+        $events = Event::all();
+
+        foreach ($events as $key => $event) {
+            $events[$key] = self::_enrichDateTime($event);
+        }
+
+       return $events;
     }
     public function defineProperties()
     {
         return [];
+    }
+
+    static function _enrichDateTime($event) {
+        $dateTime = explode(' ', $event['starts_at']);
+
+        if (count($dateTime) !== 2) {
+            $event['date'] = 'Error';
+            $event['time'] = 'Error';
+        } 
+        else {
+            $event['date'] = str_replace('-', '.', $dateTime[0]);
+            $event['time'] = $dateTime[1];
+        }
+
+        return $event;
     }
 }
