@@ -12,6 +12,7 @@ class Events extends ComponentBase
             'description' => 'No description provided yet...'
         ];
     }
+
     function getAllEvents()
     {
         $events = Event::all();
@@ -22,6 +23,7 @@ class Events extends ComponentBase
 
        return $events;
     }
+
     public function defineProperties()
     {
         return [];
