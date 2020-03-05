@@ -6,25 +6,36 @@ is_hidden = 0
 [events]
 ==
 {% set event = events.getEvent() %}
+{% set drivers = event.drivers %}
 
 <div class="header-container header-container-event">
-    <h3>{{ event.name }}</h3>
-    <h5>Location fill!</h5>
-    <h4>{{ event.date }}</h4>
-    <h4>{{ event.time }}</h4>
+    <!-- <div class="arrow-back"></div> -->
+    <div class="text-wrapper">
+        <h3>{{ event.name }}</h3>
+        <h5>{{ event.location }}</h5>
+        <h4>{{ event.date }}</h4>
+        <h4>{{ event.time }}</h4>
+        <a href="" class="button button-primary">Prihlásiť sa ako vodič</a>
+    </div>
 </div>
 <div class="cards-list">
-    {% for event in allEvents %}
-    <div class="single-card" data-event-id="{{ event.id }}">
-        <div class="number-container">
-            <h2>5</h2>
-            <h5>vodičov</h5>
-        </div>
+    {% for driver in drivers %}
+    <div class="single-card driver-card" data-driver-id="{{ driver.id }}" data-aos="fade-up" data-aos-offset="-1000">
+        <!-- <div class="number-container">
+            <h2>{{ driver.seats }}</h2>
+            {% if driver.seats == 1 %}
+            <h5>voľné miesto</h5>
+            {% elseif driver.seats <= 4 %}
+            <h5>voľné miesta</h5>
+            {% else %}
+            <h5>voľných miest</h5>
+            {% endif %}
+        </div> -->
         <div class="details">
-            <h3>{{ event.name }}</h3>
-            <h6>Rusovska cesta</h6>
-            <h4>{{ event.date }}</h4>
-            <h4>{{ event.time }}</h4>
+            <h4>{{ driver.name }}</h4>
+            <h5>{{ driver.leaves_from }}</h5>
+            <h5>{{ driver.leaves_at }}</h5>
+            <h5>{{ driver.cities }}</h5>
         </div>
     </div>
     {% endfor %}

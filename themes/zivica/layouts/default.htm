@@ -13,11 +13,12 @@ description = "Default layout"
     <meta name="generator" content="Živica">
     <link rel="icon" type="image/png" href="{{ ''|theme }}">
     <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     {% styles %}
+
 </head>
 
 <body>
-
     <!-- Header -->
     <header id="layout-header">
         {% partial 'site/header' %}
@@ -37,9 +38,14 @@ description = "Default layout"
     <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
     <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
     <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
+
     {% framework extras %}
     {% scripts %}
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
 
+    </script>
 </body>
 
 </html>

@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap');
+@import 'custom-components';
+@import 'html-components';
+@import 'icons';
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -9,47 +12,37 @@ body {
     background-color: #F5F5F5;
 }
 
-h1 {
-    text-align: center;
-    font-size: 30px;
-    font-weight: 100;
-    margin: 0;
-}
+.loading-screen {
+    height: 100vh;
+    width: 100vw;
+    background: rgb(195, 198, 78);
+    background: linear-gradient(144deg, rgba(195, 198, 78, 1) 0%, rgba(22, 160, 133, 1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-h2 {
-    font-size: 33px;
-    font-weight: 700;
-}
+    img {
+        height: 50px;
+        width: 50px;
+        -webkit-animation: spin 1s infinite linear;
+    }
 
-h3 {
-    font-size: 22px;
-    font-weight: 400;
-    margin: 5px 0 0 0;
-}
+    @-webkit-keyframes spin {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
 
-h4 {
-    font-size: 16px;
-    font-weight: 300;
-    margin: 10px 0 0 0;
-}
-
-h5 {
-    font-size: 15px;
-    font-weight: 300;
-    margin: 10px 0 0 0;
-}
-
-h6 {
-    font-size: 13px;
-    font-weight: 100;
-    margin: 5px 0 0 0;
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
 }
 
 .header-container {
-    min-height: 333px;
+    min-height: 250px;
     background: rgb(195, 198, 78);
     background: linear-gradient(144deg, rgba(195, 198, 78, 1) 0%, rgba(22, 160, 133, 1) 100%);
-    padding: 20px 15px;
+    padding: 20px 30px 60px 30px;
 }
 
 .header-container-homepage {
@@ -62,16 +55,14 @@ h6 {
     }
 }
 
-
 .header-container-event {
     color: #ffffff;
-
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    padding: 20px 30px 100px 30px;
 
-    h3 {
-        font-size: 24px;
-        font-weight: 100;
+    .text-wrapper {
+        width: 100%;
     }
 }
 
@@ -102,6 +93,8 @@ h6 {
             justify-content: center;
             background: rgb(244, 208, 63);
             background: linear-gradient(159deg, rgba(244, 208, 63, 1) 0%, rgba(22, 160, 133, 1) 100%);
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
 
             h2,
             h5 {
@@ -109,10 +102,28 @@ h6 {
                 margin: 0;
                 color: #ffffff;
             }
-        }
 
-        .details {
-            margin-left: 15px;
+            .details {
+                h3 {
+                    color: #3b3b3b;
+                }
+            }
+        }
+    }
+}
+
+.single-card.event-card {
+    .details {
+        margin-left: 25px;
+    }
+}
+
+.single-card.driver-card {
+    .details {
+        margin-left: 10px;
+
+        h4 {
+            margin-bottom: 10px;
         }
     }
 }

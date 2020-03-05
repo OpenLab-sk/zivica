@@ -25,7 +25,7 @@ class Events extends ComponentBase
         $events = Event::all();
 
         foreach ($events as $key => $event) {
-            $events[$key] = self::_enrichDateTime($event);
+            $events[$key] = self::_enrich_Date_Time_Drivers($event);
         }
 
        return $events;
@@ -44,13 +44,13 @@ class Events extends ComponentBase
             // return \Response::make('Page not found', 404);
         }
 
-        $event                          = self::_enrichDateTime($event);
+        $event                          = self::_enrich_Date_Time_Drivers($event);
         $event->attributes['drivers']   = $event->drivers;
 
         return $event;
     }
 
-    static function _enrichDateTime($event) {
+    static function _enrich_Date_Time_Drivers($event) {
         $dateTime = explode(' ', $event['starts_at']);
 
         if (count($dateTime) !== 2) {
@@ -61,6 +61,8 @@ class Events extends ComponentBase
             $event['date'] = str_replace('-', '.', $dateTime[0]);
             $event['time'] = $dateTime[1];
         }
+
+        $event['number_of_drivers'] = count($event->drivers);
 
         return $event;
     }

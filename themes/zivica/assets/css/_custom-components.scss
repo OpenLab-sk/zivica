@@ -1,0 +1,22 @@
+.button {
+    display: block;
+    font-size: 14px;
+    border-radius: 25px;
+    padding: 15px 15px;
+    font-weight: 300;
+    margin: 30px auto auto auto;
+    width: 90%;
+    transition-duration: 300ms;
+}
+
+.button-primary {
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button-primary:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
