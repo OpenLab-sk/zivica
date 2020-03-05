@@ -61,11 +61,6 @@ class Event extends Model
      * @var array Attributes to be cast to Argon (Carbon) instances
      */
 
-    function afterFetch()
-    {
-        $this->attributes['drivers'] = $this->drivers;
-    }
-
     protected $dates = [
         'created_at',
         'updated_at'

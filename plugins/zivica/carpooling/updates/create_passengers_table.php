@@ -11,6 +11,7 @@ class CreatePassengersTable extends Migration
         Schema::create('zivica_carpooling_passengers', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
+            $table->string('driver_id');
             $table->string('email');
             $table->string('phone');
             $table->string('city');

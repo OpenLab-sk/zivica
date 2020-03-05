@@ -60,6 +60,7 @@ class Driver extends Model
     /**
      * @var array Attributes to be cast to Argon (Carbon) instances
      */
+
     protected $dates = [
         'created_at',
         'updated_at'
@@ -70,7 +71,7 @@ class Driver extends Model
      */
     public $hasOne = [];
     public $hasMany = [
-        'passangers' => 'Zivica\Carpooling\Models\Passenger'
+        'passengers' => 'Zivica\Carpooling\Models\Passenger'
     ];
     public $belongsTo = [
         'event' => [
