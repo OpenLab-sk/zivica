@@ -39,4 +39,44 @@ is_hidden = 0
         </div>
     </div>
     {% endfor %}
+    {% for driver in drivers %}
+    <div class="single-card driver-card" data-driver-id="{{ driver.id }}" data-aos="fade-up" data-aos-offset="-1000">
+        <!-- <div class="number-container">
+            <h2>{{ driver.seats }}</h2>
+            {% if driver.seats == 1 %}
+            <h5>voľné miesto</h5>
+            {% elseif driver.seats <= 4 %}
+            <h5>voľné miesta</h5>
+            {% else %}
+            <h5>voľných miest</h5>
+            {% endif %}
+        </div> -->
+        <div class="details">
+            <h4>{{ driver.name }}</h4>
+            <h5>{{ driver.leaves_from }}</h5>
+            <h5>{{ driver.leaves_at }}</h5>
+            <h5>{{ driver.cities }}</h5>
+        </div>
+    </div>
+    {% endfor %}
+    {% for driver in drivers %}
+    <div class="single-card driver-card" data-driver-id="{{ driver.id }}" data-aos="fade-up" data-aos-offset="-1000">
+        <!-- <div class="number-container">
+            <h2>{{ driver.seats }}</h2>
+            {% if driver.seats == 1 %}
+            <h5>voľné miesto</h5>
+            {% elseif driver.seats <= 4 %}
+            <h5>voľné miesta</h5>
+            {% else %}
+            <h5>voľných miest</h5>
+            {% endif %}
+        </div> -->
+        <div class="details">
+            <h4>{{ driver.name }}</h4>
+            <h5>{{ driver.leaves_from }}</h5>
+            <h5>{{ driver.leaves_at }}</h5>
+            <h5>{{ driver.cities }}</h5>
+        </div>
+    </div>
+    {% endfor %}
 </div>
