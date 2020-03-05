@@ -14,6 +14,7 @@ class CreateEventsTable extends Migration
             $table->string('name');
             $table->dateTime('starts_at');
             $table->dateTime('ends_at');
+            $table->string('location')->default('Halova 16, Bratislava');
             $table->timestamps();
         });
     }

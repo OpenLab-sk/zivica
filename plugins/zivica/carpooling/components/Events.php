@@ -16,9 +16,6 @@ class Events extends ComponentBase
 
     function getAllEvents()
     {
-<<<<<<< HEAD
-        return Event::all();
-=======
         $events = Event::all();
 
         foreach ($events as $key => $event) {
@@ -26,7 +23,6 @@ class Events extends ComponentBase
         }
 
        return $events;
->>>>>>> edbcf4ea67f0a0b32da899e97caa909ea13fdf7d
     }
 
     function getEvent($eventID = 1)
@@ -47,7 +43,7 @@ class Events extends ComponentBase
         if (count($dateTime) !== 2) {
             $event['date'] = 'Error';
             $event['time'] = 'Error';
-        } 
+        }
         else {
             $event['date'] = str_replace('-', '.', $dateTime[0]);
             $event['time'] = $dateTime[1];
