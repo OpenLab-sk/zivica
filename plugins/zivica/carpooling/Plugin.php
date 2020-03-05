@@ -50,10 +50,8 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
-
         return [
-            'Zivica\Carpooling\Components\MyComponent' => 'myComponent',
+            'Zivica\Carpooling\Components\Events' => 'events',
         ];
     }
 

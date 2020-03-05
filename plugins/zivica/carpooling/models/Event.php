@@ -63,7 +63,7 @@ class Event extends Model
 
     function afterFetch()
     {
-        $this->drivers;
+        $this->attributes['drivers'] = $this->drivers;
     }
 
     protected $dates = [
