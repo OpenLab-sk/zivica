@@ -3,6 +3,7 @@
 use Cms\Classes\ComponentBase;
 use Zivica\Carpooling\Models\Event;
 use Zivica\Carpooling\Models\Driver;
+use Redirect;
 
 class Events extends ComponentBase
 {
@@ -34,6 +35,15 @@ class Events extends ComponentBase
     {
         $eventId                        = $this->page->param('id');
         $event                          = Event::where('id', $eventId)->first();
+
+        if ($event == null) {
+            header('Location: '. env('APP_URL') . '/404');
+            die();
+
+            // Use this, but its not working -_-
+            // return \Response::make('Page not found', 404);
+        }
+
         $event->attributes['drivers']   = $event->drivers;
 
         return $event;
