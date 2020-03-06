@@ -10,11 +10,9 @@ class Driver extends Model
 {
     use \October\Rain\Database\Traits\Validation;
 
-    public $incrementing = false;
-
     public function beforeCreate()
     {
-        $this->id = Uuid::uuid4()->toString();
+        $this->uuid = Uuid::uuid4()->toString();
     }
 
     /**

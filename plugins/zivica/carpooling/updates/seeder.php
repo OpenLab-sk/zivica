@@ -67,7 +67,7 @@ class SeedWebsitesTable extends Seeder
             'ends_at'    => '2020-03-03 00:00:00'
         ]);
         Driver::create([
-            'event_id'  =>  '1',
+            'event_id'  =>  '3',
             'name'      =>  'Marek',
             'email'     =>  'email@email.com',
             'leaves_from'   =>  'Galanta',
@@ -76,7 +76,7 @@ class SeedWebsitesTable extends Seeder
             'seats'         =>  '3'
         ]);
         Driver::create([
-            'event_id'  =>  '1',
+            'event_id'  =>  '3',
             'name'      =>  'Matej',
             'email'     =>  'email@email.com',
             'leaves_from'   =>  'Velky Biel',
@@ -85,7 +85,7 @@ class SeedWebsitesTable extends Seeder
             'seats'         =>  '3'
         ]);
         Driver::create([
-            'event_id'  =>  '2',
+            'event_id'  =>  '3',
             'name'      =>  'Jozo',
             'email'     =>  'email@email.com',
             'leaves_from'   =>  'Galanta',
@@ -94,7 +94,7 @@ class SeedWebsitesTable extends Seeder
             'seats'         =>  '3'
         ]);
         Driver::create([
-            'event_id'  =>  '2',
+            'event_id'  =>  '3',
             'name'      =>  'Fero',
             'email'     =>  'email@email.com',
             'leaves_from'   =>  'Velky Biel',
@@ -114,7 +114,7 @@ class SeedWebsitesTable extends Seeder
             'ends_at'    => '2020-03-03 00:00:00'
         ]);
         Driver::create([
-            'event_id'  =>  '1',
+            'event_id'  =>  '4',
             'name'      =>  'Marek',
             'email'     =>  'email@email.com',
             'leaves_from'   =>  'Galanta',
@@ -123,7 +123,7 @@ class SeedWebsitesTable extends Seeder
             'seats'         =>  '3'
         ]);
         Driver::create([
-            'event_id'  =>  '1',
+            'event_id'  =>  '4',
             'name'      =>  'Matej',
             'email'     =>  'email@email.com',
             'leaves_from'   =>  'Velky Biel',
@@ -132,7 +132,7 @@ class SeedWebsitesTable extends Seeder
             'seats'         =>  '3'
         ]);
         Driver::create([
-            'event_id'  =>  '2',
+            'event_id'  =>  '4',
             'name'      =>  'Jozo',
             'email'     =>  'email@email.com',
             'leaves_from'   =>  'Galanta',
@@ -141,7 +141,7 @@ class SeedWebsitesTable extends Seeder
             'seats'         =>  '3'
         ]);
         Driver::create([
-            'event_id'  =>  '2',
+            'event_id'  =>  '4',
             'name'      =>  'Fero',
             'email'     =>  'email@email.com',
             'leaves_from'   =>  'Velky Biel',
@@ -161,7 +161,7 @@ class SeedWebsitesTable extends Seeder
             'ends_at'    => '2020-03-03 00:00:00'
         ]);
         Driver::create([
-            'event_id'  =>  '1',
+            'event_id'  =>  '5',
             'name'      =>  'Marek',
             'email'     =>  'email@email.com',
             'leaves_from'   =>  'Galanta',
@@ -170,7 +170,7 @@ class SeedWebsitesTable extends Seeder
             'seats'         =>  '3'
         ]);
         Driver::create([
-            'event_id'  =>  '1',
+            'event_id'  =>  '7',
             'name'      =>  'Matej',
             'email'     =>  'email@email.com',
             'leaves_from'   =>  'Velky Biel',
@@ -179,7 +179,7 @@ class SeedWebsitesTable extends Seeder
             'seats'         =>  '3'
         ]);
         Driver::create([
-            'event_id'  =>  '2',
+            'event_id'  =>  '7',
             'name'      =>  'Jozo',
             'email'     =>  'email@email.com',
             'leaves_from'   =>  'Galanta',
@@ -188,7 +188,7 @@ class SeedWebsitesTable extends Seeder
             'seats'         =>  '3'
         ]);
         Driver::create([
-            'event_id'  =>  '2',
+            'event_id'  =>  '6',
             'name'      =>  'Fero',
             'email'     =>  'email@email.com',
             'leaves_from'   =>  'Velky Biel',

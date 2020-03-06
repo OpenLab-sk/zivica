@@ -10,7 +10,8 @@ class CreateDriversTable extends Migration
     {
         Schema::create('zivica_carpooling_drivers', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->uuid('id')->primary();
+            $table->increments('id');
+            $table->uuid('uuid');
             $table->integer('event_id');
             $table->string('name');
             $table->string('email');
