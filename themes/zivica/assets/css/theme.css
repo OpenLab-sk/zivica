@@ -22,11 +22,33 @@
   cursor: pointer;
 }
 
+.button-secondary {
+  background: #16a085;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button-secondary:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.zivica-container {
+  width: 90%;
+  max-width: 1140px;
+  margin: auto;
+}
+
 h1 {
   text-align: center;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 100;
   margin: 0;
+}
+
+h1 b {
+  font-weight: 400;
 }
 
 h2 {
@@ -53,13 +75,16 @@ h5 {
 }
 
 h6 {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 100;
   margin: 2px 0 10px 0;
 }
 
 * {
   font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
 }
 
 body {
@@ -132,23 +157,19 @@ body {
 }
 
 .cards-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   margin-top: -50px;
 }
 
 .cards-list .single-card {
   background-color: #ffffff;
   box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
-  padding: 15px 15px;
+  padding: 10px;
   margin-bottom: 20px;
-  width: 87%;
-  height: 105px;
+  height: 125px;
   display: flex;
   justify-content: start;
   border-radius: 4px;
+  z-index: 100;
 }
 
 .cards-list .single-card .number-container {
@@ -185,4 +206,51 @@ body {
 
 .single-card.driver-card .details h4 {
   margin-bottom: 10px;
+}
+
+.sign-in-as-driver-wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 900;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.sign-in-as-driver {
+  background-color: #ffffff;
+  z-index: 1000;
+  position: fixed;
+  top: 200vh;
+  height: auto;
+  min-height: 100%;
+  width: 90vw;
+  left: 5vw;
+  box-shadow: 0 0 10px rgba(183, 183, 183, 0.5);
+  border-radius: 4px;
+  padding: 50px 25px 120px 25px;
+}
+
+form {
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+form label {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+form input {
+  display: block;
+  border-radius: 4px;
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  font-size: 14px;
+  font-weight: 300;
+  padding: 8px 10px;
+  width: 100%;
+  margin: 6px 0 15px 0;
 }

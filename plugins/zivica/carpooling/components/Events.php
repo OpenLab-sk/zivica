@@ -33,7 +33,7 @@ class Events extends ComponentBase
 
     function getEvent()
     {
-        $eventId                        = $this->page->param('id');
+        $eventId                        = $this->page->param('event_id');
         $event                          = Event::where('id', $eventId)->first();
 
         if ($event == null) {
@@ -48,6 +48,10 @@ class Events extends ComponentBase
         $event->attributes['drivers']   = $event->drivers;
 
         return $event;
+    }
+
+    function getEventId() {
+        return $this->page->param('event_id');
     }
 
     static function _enrich_Date_Time_Drivers($event) {

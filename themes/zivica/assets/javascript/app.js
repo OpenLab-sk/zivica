@@ -3,7 +3,8 @@ $(() => {
 
 
     var initialHeaderContainerHeight = $('.header-container').height(),
-        scrolled = false;
+        scrolled = false,
+        addDriverVisible = false;
 
     $('.single-card.event-card').click(function () {
         window.location.href = window.location.href + 'event/' + $(this).attr('data-event-id');
@@ -12,6 +13,27 @@ $(() => {
     $('.navbar #back').click(function () {
         window.location.href = 'http://localhost:8000/zivica';
     })
+
+    $('#newDriverButton').click(function (e) {
+        e.preventDefault();
+        $('.sign-in-as-driver-wrapper').fadeIn();
+        $('.sign-in-as-driver').animate({
+            top: '10vh'
+        });
+        addDriverVisible = true;
+    })
+
+    $('div.sign-in-as-driver-wrapper').click(function (e) {
+        if (e.target == e.currentTarget) {
+            $('.sign-in-as-driver-wrapper').fadeOut();
+            $('.sign-in-as-driver').animate({
+                top: '200vh'
+            });
+
+            addDriverVisible = false;
+        }
+    })
+
 
     $(window).scroll(function () {
         $('.text-wrapper').css('opacity', 1 - (window.pageYOffset / 100));
