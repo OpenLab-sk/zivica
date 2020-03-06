@@ -1,11 +1,16 @@
 $(() => {
     $('.loading-screen').fadeOut();
 
+
     var initialHeaderContainerHeight = $('.header-container').height(),
         scrolled = false;
 
     $('.single-card.event-card').click(function () {
         window.location.href = window.location.href + 'event/' + $(this).attr('data-event-id');
+    })
+
+    $('.navbar #back').click(function () {
+        window.location.href = 'http://localhost:8000/zivica';
     })
 
     $(window).scroll(function () {
