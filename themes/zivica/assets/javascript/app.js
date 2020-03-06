@@ -18,7 +18,7 @@ $(() => {
         e.preventDefault();
         $('.sign-in-as-driver-wrapper').fadeIn();
         $('.sign-in-as-driver').animate({
-            bottom: '-10px'
+            top: '10vh'
         });
         addDriverVisible = true;
     })
@@ -27,7 +27,7 @@ $(() => {
         if (e.target == e.currentTarget) {
             $('.sign-in-as-driver-wrapper').fadeOut();
             $('.sign-in-as-driver').animate({
-                bottom: '-150vh'
+                top: '200vh'
             });
 
             addDriverVisible = false;
