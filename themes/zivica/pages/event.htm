@@ -1,10 +1,11 @@
 title = "event"
-url = "/event/:id"
+url = "/event/:event_id"
 layout = "default"
 is_hidden = 0
 
 [events]
 ==
+{% set eventId = events.getEventId() %}
 {% set event = events.getEvent() %}
 {% set drivers = event.drivers %}
 
@@ -15,10 +16,11 @@ is_hidden = 0
         <h5>{{ event.location }}</h5>
         <h4>{{ event.date }}</h4>
         <h4>{{ event.time }}</h4>
-        <a href="" class="button button-primary">Prihlásiť sa ako vodič</a>
+        <a id="newDriverButton" class="button button-primary">Prihlásiť sa ako vodič</a>
     </div>
 </div>
-<div class="cards-list">
+
+<div class="cards-list zivica-container">
     {% for driver in drivers %}
     <div class="single-card driver-card" data-driver-id="{{ driver.id }}" data-aos="fade-up" data-aos-offset="-1000">
         <!-- <div class="number-container">
@@ -39,4 +41,39 @@ is_hidden = 0
         </div>
     </div>
     {% endfor %}
+</div>
+
+<div class="sign-in-as-driver-wrapper">
+    <div class="sign-in-as-driver">
+        <div class="form-wrapper">
+            <form action="http://localhost:8000/zivica/api/add-driver" method="post" id="add-as-driver-form">
+                <input type="number" name="event_id" value="{{ eventId }}" style="display: none;">
+
+                <label for="name">Meno (zobrazí sa v ponuke)</label>
+                <input type="text" name="name">
+
+                <label for="email">Email</label>
+                <input type="email" name="email">
+
+                <label for="where_from">Odkiaľ vyrážate</label>
+                <input type="text" name="leaves_from">
+
+                <label for="where_from">Kedy vyrážate</label>
+                <input type="text" name="leaves_at">
+
+                <label for="cities">Cez aké mestá prechádzaťe</label>
+                <input type="text" name="cities">
+
+                <label for="seats">Počeť voľných miest</label>
+                <input type="text" name="seats">
+
+                <label for="gdrp">Súhlasím so všeobecnými podmienkami</label>
+                <input type="checkbox" name="gdpr">
+
+                <!-- <h3>Captcha</h3> -->
+                <a class="button button-secondary"
+                    onclick="document.getElementById('add-as-driver-form').submit()">Potvrdiť</a>
+            </form>
+        </div>
+    </div>
 </div>

@@ -1,5 +1,40 @@
 title = "Prihlásiť sa ako vodič"
-url = "/prihlasit-sa-ako-vodic"
+url = "/event/:event_id/prihlasit-sa-ako-vodic"
 layout = "default"
 is_hidden = 0
+
+[events]
 ==
+{% set eventId = events.getEventId() %}
+
+<div class="zivica-form-container">
+    <div class="zivica-container">
+        <h1>Prihlásiť sa ako<br><b>vodič<b></h1>
+        <form action="/api/add-driver" method="post" id="add-as-driver-form">
+            <input type="number" name="event_id" value="{{ eventId }}" style="display: none;">
+
+            <label for="name">Meno (zobrazí sa v ponuke)</label>
+            <input type="text" name="name">
+
+            <label for="email">Email</label>
+            <input type="email" name="email">
+
+            <label for="where_from">Odkiaľ vyrážate</label>
+            <input type="text" name="where_from">
+
+            <label for="cities">Cez aké mestá prechádzaťe</label>
+            <input type="text" name="cities">
+
+            <label for="seats">Počeť voľných miest</label>
+            <input type="text" name="seats">
+
+            <label for="gdrp">Súhlasím so všeobecnými podmienkami</label>
+            <input type="checkbox" name="gdpr">
+
+            <!-- <h3>Captcha</h3> -->
+            <a class="button button-primary"
+                onclick="document.getElementById('add-as-driver-form').submit()">Potvrdiť</a>
+        </form>
+    </div>
+
+</div>
