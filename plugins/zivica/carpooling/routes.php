@@ -4,14 +4,19 @@
     use Zivica\Carpooling\Models\Passenger;
 
     Route::post('/api/add-driver', function () {
-        $eventData = \Input::all();
+        $driverData = \Input::all();
 
-        $event = new Event;
-        $event->name = $eventData['name'];
-        $event->starts_at = $eventData['starts_at'];
-        $event->ends_at = $eventData['ends_at'];
+        $driver = new Driver;
+        // $driver->event_id = nejakym sposobom ziskat eventID na frontende;
+        $driver->starts_at = $driverData['starts_at'];
+        $driver->name = $driverData['name'];
+        $driver->email = $driverData['email'];
+        $driver->leaves_from = $driverData['leaves_from'];
+        $driver->leaves_at = $driverData['leaves_at'];
+        $driver->cities = $driverData['cities'];
+        $driver->seats = $driverData['seats'];
 
-        $event->save();
+        $driver->save();
     });
     Route::post('/api/add-passenger', function () {
         $passengerData = \Input::all();
