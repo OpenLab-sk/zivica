@@ -1,6 +1,7 @@
 <?php namespace Zivica\Carpooling\Models;
 
 use Model;
+use Mail;
 use Ramsey\Uuid\Uuid;
 
 /**
@@ -13,6 +14,10 @@ class Driver extends Model
     public function beforeCreate()
     {
         $this->uuid = Uuid::uuid4()->toString();
+    }
+    public function afterCreate()
+    {
+        Mail::rawTo('marekguspan4@gmail.com', 'uspesne odoslany mail');
     }
 
     /**

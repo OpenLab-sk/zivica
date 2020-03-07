@@ -20,6 +20,7 @@
 
         return true;
     });
+
     Route::post('/api/add-passenger', function () {
         $passengerData = \Input::all();
 
@@ -32,4 +33,27 @@
 
         $passenger->save();
     });
+
+    Route::patch('/api/update-driver/{uuid}', function ($uuid) {
+
+        $data = \Input::all();
+
+        $driver = Driver::where('uuid', $uuid)->first();
+        $driver->event_id = $data['event_id'];
+        $driver->name = $data['name'];
+        $driver->email = $data['email'];
+        $driver->leaves_from = $data['leaves_from'];
+        $driver->leaves_at = $data['leaves_at'];
+        $driver->cities = $data['cities'];
+        $driver->seats = $data['seats'];
+
+        $driver->save();
+    });
+
+    Route::delete('/api/delete-driver/{uuid}', function ($uuid) {
+
+        $driver = Driver::where('uuid', $uuid)->first();
+        $driver->delete();
+    });
+
 ?>
