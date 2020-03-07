@@ -17,7 +17,7 @@ class Driver extends Model
     }
     public function afterCreate()
     {
-        Mail::rawTo('marekguspan4@gmail.com', 'uspesne odoslany mail');
+        // Mail::rawTo('marekguspan4@gmail.com', 'uspesne odoslany mail');
     }
 
     /**
