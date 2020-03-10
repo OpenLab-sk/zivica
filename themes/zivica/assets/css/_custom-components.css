@@ -9,27 +9,31 @@
   transition-duration: 300ms;
 }
 
+.button-lg {
+  width: 100%;
+}
+
 .button-primary {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: white;
+  color: #000000 !important;
   text-align: center;
   text-decoration: none;
 }
 
 .button-primary:hover {
-  opacity: 0.8;
+  background-color: rgba(255, 255, 255, 0.8);
   cursor: pointer;
 }
 
 .button-secondary {
-  background: #16a085;
-  color: #ffffff;
+  background: #7cac24;
+  color: #ffffff !important;
   text-align: center;
   text-decoration: none;
 }
 
 .button-secondary:hover {
-  opacity: 0.8;
+  background: #648a1e;
   cursor: pointer;
 }
 

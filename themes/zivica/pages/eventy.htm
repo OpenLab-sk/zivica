@@ -17,7 +17,7 @@ is_hidden = 0
 </div>
 <div class="cards-list zivica-container">
     {% for event in allEvents %}
-    <div class="single-card event-card" data-event-id="{{ event.id }}" data-aos="fade-up" data-aos-offset="-1000">
+    <div class="single-card event-card" data-event-id="{{ event.id }}">
         <div class="number-container">
             <h2>{{ event.number_of_drivers }}</h2>
             {% if driver.seats == 0 %}

@@ -1,4 +1,4 @@
-title = "event"
+title = "Event"
 url = "/event/:event_id"
 layout = "default"
 is_hidden = 0
@@ -9,71 +9,82 @@ is_hidden = 0
 {% set event = events.getEvent() %}
 {% set drivers = event.drivers %}
 
-<div class="header-container header-container-event">
-    <!-- <div class="arrow-back"></div> -->
-    <div class="text-wrapper">
-        <h3>{{ event.name }}</h3>
-        <h5>{{ event.location }}</h5>
-        <h4>{{ event.date }}</h4>
-        <h4>{{ event.time }}</h4>
-        <a id="newDriverButton" class="button button-primary">Prihlásiť sa ako vodič</a>
-    </div>
-</div>
-
-<div class="cards-list zivica-container">
-    {% for driver in drivers %}
-    <div class="single-card driver-card" data-driver-id="{{ driver.id }}" data-aos="fade-up" data-aos-offset="-1000">
-        <!-- <div class="number-container">
-            <h2>{{ driver.seats }}</h2>
-            {% if driver.seats == 1 %}
-            <h5>voľné miesto</h5>
-            {% elseif driver.seats <= 4 %}
-            <h5>voľné miesta</h5>
-            {% else %}
-            <h5>voľných miest</h5>
-            {% endif %}
-        </div> -->
-        <div class="details">
-            <h4>{{ driver.name }}</h4>
-            <h5>{{ driver.leaves_from }}</h5>
-            <h5>{{ driver.leaves_at }}</h5>
-            <h5>{{ driver.cities }}</h5>
+<div class="event-wrapper">
+    <div class="header-container header-container-event">
+        <div class="text-wrapper">
+            <h3>{{ event.name }}</h3>
+            <h5>{{ event.location }}</h5>
+            <h4>{{ event.date }}</h4>
+            <h4>{{ event.time }}</h4>
+            <a id="new-driver" class="button button-primary">Prihlásiť sa ako vodič</a>
         </div>
     </div>
-    {% endfor %}
+
+    <div class="cards-list zivica-container">
+        {% for driver in drivers %}
+        <div class="single-card driver-card" data-driver-id="{{ driver.id }}" data-aos="fade-up"
+            data-aos-offset="-1000">
+            <!-- <div class="number-container">
+                <h2>{{ driver.seats }}</h2>
+                {% if driver.seats == 1 %}
+                <h5>voľné miesto</h5>
+                {% elseif driver.seats <= 4 %}
+                <h5>voľné miesta</h5>
+                {% else %}
+                <h5>voľných miest</h5>
+                {% endif %}
+            </div> -->
+            <div class="details">
+                <h4>{{ driver.name }}</h4>
+                <h5>{{ driver.leaves_from }}</h5>
+                <h5>{{ driver.leaves_at }}</h5>
+                <h5>{{ driver.cities }}</h5>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 
-<div class="sign-in-as-driver-wrapper">
-    <div class="sign-in-as-driver">
-        <div class="form-wrapper">
-            <form action="http://localhost:8000/zivica/api/add-driver" method="post" id="add-as-driver-form">
-                <input type="number" name="event_id" value="{{ eventId }}" style="display: none;">
+<div class="container-fluid form-wrapper">
+    <div class="container">
+        <form method="post" data-url="zivica/api/add-driver">
+            <input type="number" name="event_id" value="{{ eventId }}" style="display: none;">
 
-                <label for="name">Meno (zobrazí sa v ponuke)</label>
-                <input type="text" name="name">
+            <div class="input-wrapper">
+                <img src="{{ '/assets/images/icons/person-black.png'|theme }}" alt="icon">
+                <input type="text" name="name" placeholder="Meno (zobrazí sa v ponuke)">
+            </div>
+            <div class="input-wrapper">
+                <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
+                <input type="email" name="email" placeholder="Email">
+            </div>
+            <div class="input-wrapper">
+                <img src="{{ '/assets/images/icons/rocket-black.png'|theme }}" alt="icon">
+                <input type="text" name="leaves_from" placeholder="Odkiaľ vyrážate">
+            </div>
+            <div class="input-wrapper">
+                <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon">
+                <input type="text" name="leaves_at" placeholder="Kedy vyrážate">
+            </div>
+            <div class="input-wrapper">
+                <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
+                <input type="text" name="cities" placeholder="Cez aké mestá prechádzaťe">
+            </div>
+            <div class="input-wrapper">
+                <img src="{{ '/assets/images/icons/two-people-black.png'|theme }}" alt="icon">
+                <input type="text" name="seats" placeholder="Počeť voľných miest">
+            </div>
 
-                <label for="email">Email</label>
-                <input type="email" name="email">
-
-                <label for="where_from">Odkiaľ vyrážate</label>
-                <input type="text" name="leaves_from">
-
-                <label for="where_from">Kedy vyrážate</label>
-                <input type="text" name="leaves_at">
-
-                <label for="cities">Cez aké mestá prechádzaťe</label>
-                <input type="text" name="cities">
-
-                <label for="seats">Počeť voľných miest</label>
-                <input type="text" name="seats">
-
+            <div class="checkbox-wrapper">
+                <input type="checkbox" name="gdpr" placeholder="" required>
                 <label for="gdrp">Súhlasím so všeobecnými podmienkami</label>
-                <input type="checkbox" name="gdpr">
+            </div>
 
-                <!-- <h3>Captcha</h3> -->
-                <a class="button button-secondary"
-                    onclick="document.getElementById('add-as-driver-form').submit()">Potvrdiť</a>
-            </form>
+            <!-- <h3>Captcha</h3> -->
+            <a id="submit-form" class="button button-lg button-secondary">Potvrdiť</a>
+        </form>
+        <div class="form-saved">
+            <h2>Uložené</h2>
         </div>
     </div>
 </div>

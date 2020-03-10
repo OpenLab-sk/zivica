@@ -4,7 +4,6 @@
     use Zivica\Carpooling\Models\Passenger;
 
     Route::post('/api/add-driver', function () {
-
         $data = \Input::all();
 
         $driver = new Driver;
@@ -17,8 +16,6 @@
         $driver->seats = $data['seats'];
 
         $driver->save();
-
-        return true;
     });
 
     Route::post('/api/add-passenger', function () {

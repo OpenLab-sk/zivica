@@ -1,65 +1,75 @@
 $(() => {
     $('.loading-screen').fadeOut();
-
-
-    var initialHeaderContainerHeight = $('.header-container').height(),
-        scrolled = false,
-        addDriverVisible = false;
+    var addDriverVisible = false;
 
     $('.single-card.event-card').click(function () {
         window.location.href = window.location.href + 'event/' + $(this).attr('data-event-id');
     })
 
-    $('.navbar #back').click(function () {
-        window.location.href = 'http://localhost:8000/zivica';
-    })
-
-    $('#newDriverButton').click(function (e) {
+    $('#new-driver').click(function (e) {
         e.preventDefault();
-        $('.sign-in-as-driver-wrapper').fadeIn();
-        $('.sign-in-as-driver').animate({
-            top: '10vh'
-        });
+        showForm('.event-wrapper');
         addDriverVisible = true;
     })
 
-    $('div.sign-in-as-driver-wrapper').click(function (e) {
-        if (e.target == e.currentTarget) {
-            $('.sign-in-as-driver-wrapper').fadeOut();
-            $('.sign-in-as-driver').animate({
-                top: '200vh'
-            });
-
+    $('.back').click(function (e) {
+        if (addDriverVisible == true) {
+            e.preventDefault();
+            hideForm('.event-wrapper');
             addDriverVisible = false;
+        } else {
+            window.location.href = 'http://localhost:8000/zivica';
         }
+    });
+
+    $('.form-saved').click(function () {
+        hideForm('.event-wrapper');
+    });
+
+    $('#submit-form').click(function () {
+        $('form').submit();
     })
 
+    $('form').submit(function (e) {
+        e.preventDefault();
 
-    $(window).scroll(function () {
-        $('.text-wrapper').css('opacity', 1 - (window.pageYOffset / 100));
+        url = $(this).attr('data-url');
+        formData = $(this).serialize();
 
-        if ($('.header-container').height() - window.pageYOffset <= 100) {
-            if (scrolled == false) {
-                $('.header-container').append(`
-                    <div class="scrolled-header-container header-container"></div>
-                `)
+        console.log(url);
 
-                $('.scrolled-header-container').css({
-                    height: initialHeaderContainerHeight,
-                    width: '100vw',
-                    position: 'fixed',
-                    left: '0',
-                    top: -(initialHeaderContainerHeight - 100)
-
-                });
+        $.ajax({
+            url: url,
+            type: 'post',
+            data: formData,
+            success: function (data) {
+                $('form').hide();
+                $('.form-saved').fadeIn();
             }
-
-            scrolled = true;
-        } else {
-            if (scrolled == true) {
-                $('.scrolled-header-container.header-container').remove()
-                scrolled = false;
-            }
-        }
+        });
     })
 })
+
+function showForm(defaultElement) {
+    $('.form-wrapper').show().animate({
+        left: '0'
+    }, 150, function () {
+        $(defaultElement).hide();
+    });
+
+    $('.back.arrow-back-white').hide();
+    $('.back.arrow-back-black').fadeIn();
+}
+
+function hideForm(defaultElement) {
+    $(defaultElement).show();
+    $('.form-wrapper').animate({
+        left: '100vw'
+    }, 150, function () {
+        $(this).hide();
+        $('.back.arrow-back-black').hide();
+        $('.back.arrow-back-white').fadeIn();
+        $('form').show();
+        $('.form-saved').hide();
+    });
+}
