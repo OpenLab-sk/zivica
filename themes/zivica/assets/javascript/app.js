@@ -45,6 +45,10 @@ $(() => {
             success: function (data) {
                 $('form').hide();
                 $('.form-saved').fadeIn();
+
+                setTimeout(function () {
+                    hideForm('.event-wrapper');
+                }, 1500)
             }
         });
     })

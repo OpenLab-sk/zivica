@@ -168,6 +168,10 @@ body {
   padding: 75px 30px 100px 30px;
 }
 
+.header-container-event .button {
+  margin-top: 60px;
+}
+
 .header-container-event .text-wrapper {
   width: 100%;
 }
@@ -181,7 +185,7 @@ body {
   box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
   padding: 10px;
   margin-bottom: 20px;
-  height: 125px;
+  min-height: 125px;
   display: flex;
   justify-content: start;
   border-radius: 4px;
