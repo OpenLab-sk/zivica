@@ -36,8 +36,6 @@ $(() => {
         url = $(this).attr('data-url');
         formData = $(this).serialize();
 
-        console.log(url);
-
         $.ajax({
             url: url,
             type: 'post',
@@ -62,7 +60,7 @@ function showForm(defaultElement) {
     });
 
     $('.back.arrow-back-white').hide();
-    $('.back.arrow-back-black').fadeIn();
+    $('.back.arrow-back-black').fadeIn(100);
 }
 
 function hideForm(defaultElement) {
@@ -72,7 +70,7 @@ function hideForm(defaultElement) {
     }, 150, function () {
         $(this).hide();
         $('.back.arrow-back-black').hide();
-        $('.back.arrow-back-white').fadeIn();
+        $('.back.arrow-back-white').fadeIn(100);
         $('form').show();
         $('.form-saved').hide();
     });
