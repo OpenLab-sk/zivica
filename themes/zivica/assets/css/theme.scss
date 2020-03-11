@@ -87,8 +87,20 @@ body {
     align-items: center;
     padding: 75px 30px 100px 30px;
 
+    h3 {
+        margin-bottom: 0px;
+    }
+
+    h4 {
+        margin-top: 7px;
+    }
+
+    h5 {
+        margin-top: 0px;
+    }
+
     .button {
-        margin-top: 60px;
+        margin-top: 50px;
     }
 
     .text-wrapper {
@@ -154,8 +166,17 @@ body {
     }
 }
 
+.static-form-wrapper {
+    background-color: #ffffff;
+    height: 100vh;
+    padding-top: 80px;
 
-.form-wrapper {
+    form {
+        margin-top: 25px;
+    }
+}
+
+.slided-form-wrapper {
     position: absolute;
     top: 0;
     z-index: 100;
@@ -238,5 +259,22 @@ form {
 
     .button {
         margin-top: 60px;
+    }
+}
+
+.driver-profile-wrapper {
+    background-color: #ffffff;
+    height: 100vh;
+    padding-top: 80px;
+
+    .passengers-list-wrapper {
+        margin-top: 20px;
+
+        .passenger-list-item {
+            padding: 15px;
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
+            margin: 15px 0;
+        }
     }
 }

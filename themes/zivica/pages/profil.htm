@@ -1,0 +1,38 @@
+title = "profil"
+url = "/profil/:driver_uuid"
+layout = "default"
+is_hidden = 0
+[driverDetails]
+==
+{% set driver = driverDetails.getDriver() %}
+{% set driversUuid = getDriversUuid %}
+<div class="container-fluid navbar-wrapper">
+    <div class="container">
+        <a href="{{ 'eventy'|page }}">
+            <img class="back arrow-back-black" src="{{ '/assets/images/icons/back-black.png' |theme}}" alt="Back">
+        </a>
+    </div>
+</div>
+<div class="container-fluid driver-profile-wrapper">
+    <div class="container">
+        <h3>Vitaj {{ driver.name }}!</h3>
+        <!-- Doplnit zmazat inzerat -->
+        <a href="{{ 'profil'|page }}/upravit-ponuku" class="button button-tertiary">Upraviť
+            inzeráť</a>
+
+        <div class="passengers-list-wrapper">
+            <h4>Zoznam záujemcov</h4>
+            {% for passenger in driver.passengers %}
+            <div class="passenger-list-item">
+                <h5>Email: {{ passenger.email }}</h5>
+                <h5>Telefónne číslo: {{ passenger.phone }}</h5>
+                <h5>Lokalita: {{ passenger.city }}</h5>
+                <h5>Poznámka: {{ passenger.note }}</h5>
+            </div>
+            {% endfor %}
+        </div>
+
+
+
+    </div>
+</div>

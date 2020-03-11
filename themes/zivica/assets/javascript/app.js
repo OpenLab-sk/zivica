@@ -34,6 +34,7 @@ $(() => {
         e.preventDefault();
 
         url = $(this).attr('data-url');
+
         formData = $(this).serialize();
 
         $.ajax({
@@ -41,23 +42,30 @@ $(() => {
             type: 'post',
             data: formData,
             success: function (data) {
-                $('form').hide();
-                $('.form-saved').fadeIn();
+                // $('form').hide();
+                // $('.form-saved').fadeIn();
+                // $('.form-saved h2').text('Uložené');
 
-                setTimeout(function () {
-                    hideForm('.event-wrapper');
-                }, 1500)
+                // setTimeout(function () {
+                //     hideForm('.event-wrapper');
+                // }, 1500)
+            },
+            error: function () {
+                // $('form').hide();
+                // $('.form-saved').fadeIn();
+                // $('.form-saved h2').text('Chyba');
             }
         });
     })
 })
 
 function showForm(defaultElement) {
-    $('.form-wrapper').show().animate({
-        left: '0'
-    }, 150, function () {
-        $(defaultElement).hide();
-    });
+    $('.slided-form-wrapper').show().animate({
+            left: '0'
+        }, 150,
+        function () {
+            $(defaultElement).hide();
+        });
 
     $('.back.arrow-back-white').hide();
     $('.back.arrow-back-black').fadeIn(100);
@@ -65,7 +73,7 @@ function showForm(defaultElement) {
 
 function hideForm(defaultElement) {
     $(defaultElement).show();
-    $('.form-wrapper').animate({
+    $('.slided-form-wrapper').animate({
         left: '100vw'
     }, 150, function () {
         $(this).hide();

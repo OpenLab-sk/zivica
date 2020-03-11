@@ -19,7 +19,7 @@ class Events extends Controller
     public function __construct()
     {
         parent::__construct();
-
+        $this->addCss('/plugins/zivica/carpooling/controllers/assets/css/style.css');
         BackendMenu::setContext('Zivica.Carpooling', 'carpooling', 'events');
     }
 }

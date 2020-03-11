@@ -37,6 +37,16 @@
   cursor: pointer;
 }
 
+.button-tertiary {
+  width: 100%;
+  background: transparent;
+  color: #000000 !important;
+  border: 2px solid #80b125;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+}
+
 .zivica-container {
   width: 90%;
   max-width: 1140px;

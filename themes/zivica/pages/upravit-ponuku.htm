@@ -1,0 +1,53 @@
+title = "Upraviť ponuku"
+url = "/profil/:driver_uuid/upravit-ponuku"
+layout = "default"
+is_hidden = 0
+[driverDetails]
+==
+{% set driver = driverDetails.getDriver() %}
+<div class="container-fluid navbar-wrapper">
+    <div class="container">
+        <a href="{{ 'profil'|page }}">
+            <img class="back arrow-back-black" src="{{ '/assets/images/icons/back-black.png' |theme}}" alt="Back">
+        </a>
+    </div>
+</div>
+<div class="container-fluid static-form-wrapper">
+    <div class="container">
+        <h3>Upraviť ponuku</h3>
+        <form method="post" data-url="/zivica/api/update-driver">
+            <input type="number" name="event_id" value="{{ driver.event_id }}" style="display: none;">
+
+            <div class="input-wrapper">
+                <img src="{{ '/assets/images/icons/person-black.png'|theme }}" alt="icon">
+                <input type="text" name="name" placeholder="Meno (zobrazí sa v ponuke)" value="{{ driver.name }}">
+            </div>
+            <div class="input-wrapper">
+                <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
+                <input type="email" name="email" placeholder="Email" value="{{ driver.event_id }}">
+            </div>
+            <div class="input-wrapper">
+                <img src="{{ '/assets/images/icons/rocket-black.png'|theme }}" alt="icon">
+                <input type="text" name="leaves_from" placeholder="Odkiaľ vyrážate" value="{{ driver.leaves_from }}">
+            </div>
+            <div class="input-wrapper">
+                <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon">
+                <input type="text" name="leaves_at" placeholder="Kedy vyrážate" value="{{ driver.leaves_at }}">
+            </div>
+            <div class="input-wrapper">
+                <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
+                <input type="text" name="cities" placeholder="Cez aké mestá prechádzaťe" value="{{ driver.cities }}">
+            </div>
+            <div class="input-wrapper">
+                <img src="{{ '/assets/images/icons/two-people-black.png'|theme }}" alt="icon">
+                <input type="text" name="seats" placeholder="Počeť voľných miest" value="{{ driver.seats }}">
+            </div>
+
+            <!-- <h3>Captcha</h3> -->
+            <a id="submit-form" class="button button-lg button-secondary">Potvrdiť</a>
+        </form>
+        <div class="form-saved">
+            <h2></h2>
+        </div>
+    </div>
+</div>

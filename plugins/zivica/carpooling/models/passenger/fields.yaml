@@ -4,8 +4,8 @@
 
 fields:
     driver_id:
-        label: ID vodica
-        type: text
+        label: Vodic
+        type: dropdown
     email:
         label: E-mail
         type: email

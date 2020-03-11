@@ -74,7 +74,11 @@ class Driver extends Model
      */
     public $hasOne = [];
     public $hasMany = [
-        'passengers' => 'Zivica\Carpooling\Models\Passenger'
+        'passengers' => [
+            'Zivica\Carpooling\Models\Passenger',
+            'key'    => 'driver_id',
+            'otherKey' => 'uuid'
+        ]
     ];
     public $belongsTo = [
         'event' => [

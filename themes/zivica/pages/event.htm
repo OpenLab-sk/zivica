@@ -8,7 +8,15 @@ is_hidden = 0
 {% set eventId = events.getEventId() %}
 {% set event = events.getEvent() %}
 {% set drivers = event.drivers %}
-
+<div class="container-fluid navbar-wrapper">
+    <div class="container">
+        <a href="{{ 'eventy'|page }}">
+            <img class="back arrow-back-white" src="{{ '/assets/images/icons/back-white.png' |theme}}" alt="Back">
+        </a>
+        <img class="back arrow-back-black" src="{{ '/assets/images/icons/back-black.png' |theme}}" alt="Back"
+            style="display: none;">
+    </div>
+</div>
 <div class="event-wrapper">
     <div class="header-container header-container-event">
         <div class="text-wrapper">
@@ -36,9 +44,9 @@ is_hidden = 0
     </div>
 </div>
 
-<div class="container-fluid form-wrapper">
+<div class="container-fluid slided-form-wrapper">
     <div class="container">
-        <form method="post" data-url="zivica/api/add-driver">
+        <form method="post" data-url="/zivica/api/add-driver">
             <input type="number" name="event_id" value="{{ eventId }}" style="display: none;">
 
             <div class="input-wrapper">
@@ -75,7 +83,7 @@ is_hidden = 0
             <a id="submit-form" class="button button-lg button-secondary">Potvrdiť</a>
         </form>
         <div class="form-saved">
-            <h2>Uložené</h2>
+            <h2></h2>
         </div>
     </div>
 </div>

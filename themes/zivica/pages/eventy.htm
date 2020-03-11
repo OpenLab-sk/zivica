@@ -6,6 +6,13 @@ is_hidden = 0
 [events]
 ==
 {% set allEvents = events.getAllEvents() %}
+<div class="container-fluid navbar-wrapper">
+    <div class="container">
+        <a href="https://zivica.sk">
+            <img class="back arrow-back-white" src="{{ '/assets/images/icons/back-white.png' |theme}}" alt="Back">
+        </a>
+    </div>
+</div>
 <div class="loading-screen">
     <img src="{{ '/assets/images/loading-indicator.png' |theme }}" alt="Loading">
 </div>

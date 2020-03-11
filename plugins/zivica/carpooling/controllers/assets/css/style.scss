@@ -1,0 +1,16 @@
+.bg-p {
+    background-color: rgb(124, 190, 17);
+}
+
+.layout-row {
+    background-color: rgb(255, 255, 255);
+}
+
+table.table.data tbody td {
+    padding: 20px 10px;
+}
+
+table.table.data tbody tr:nth-child(even) td,
+table.table.data tbody tr:nth-child(even) th {
+    background-color: rgba(124, 190, 17, 0.2);
+}
