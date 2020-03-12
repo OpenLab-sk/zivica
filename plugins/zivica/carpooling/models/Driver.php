@@ -16,7 +16,6 @@ class Driver extends Model
         'updated_at'
     ];
 
-<<<<<<< HEAD
     function getEventIdOptions() {
         $events        = Event::all();
         $dropdownValues = [null => ''];
@@ -29,13 +28,11 @@ class Driver extends Model
     }
 
     public $hasOne = [];
-=======
     public function beforeCreate()
     {
         $this->uuid = Uuid::uuid4()->toString();
     }
 
->>>>>>> 8175979bdaf48fffc9ea8591b9d63f860ff8d5b8
     public $hasMany = [
         'passengers' => [
             'Zivica\Carpooling\Models\Passenger',
