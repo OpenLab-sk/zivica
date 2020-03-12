@@ -25,8 +25,11 @@ class DriverDetails extends ComponentBase
     function getDriver() {
         $uuid       = $this->page->param('driver_uuid');
         $driver     = Driver::all()->where('uuid', $uuid)->first();
-        // $driver['passengers'] = $driver->passengers;
 
         return $driver;
+    }
+
+    function getDriverId() {
+        return $this->page->param('driver_id');
     }
 }

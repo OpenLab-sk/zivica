@@ -26,11 +26,11 @@
         $passengerData = \Input::all();
 
         $passenger = new Passenger;
-        // $passenger->driver_id = nejakym sposobom ziskat driverID na frontende;
-        $passenger->email = $passengerData['email'];
-        $passenger->phone = $passengerData['phone'];
-        $passenger->phone = $passengerData['city'];
-        $passenger->phone = $passengerData['note'];
+        $passenger->driver_id   = $passengerData['driver_id'];
+        $passenger->email       = $passengerData['email'];
+        $passenger->phone       = $passengerData['phone'];
+        $passenger->city        = $passengerData['city'];
+        $passenger->note        = $passengerData['note'];
 
         $passenger->save();
     });
