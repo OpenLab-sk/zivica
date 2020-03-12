@@ -15,13 +15,39 @@ is_hidden = 0
 </div>
 <div class="container-fluid driver-profile-wrapper">
     <div class="container">
-        <h3>Vitaj {{ driver.name }}!</h3>
+        <div class="driver-list-wrapper">
+            <h3>Vitaj {{ driver.name }}!</h3>
+            <driver class="list-item">
+                <img src="{{ '/assets/images/icons/person-black.png'|theme }}" alt="icon">
+                <h4>{{ driver.event.name }}</h4>
+            </driver>
+            <driver class="list-item">
+                <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
+                <h4>{{ driver.email }}</h4>
+            </driver>
+            <driver class="list-item">
+                <img src="{{ '/assets/images/icons/rocket-black.png'|theme }}" alt="icon">
+                <h4>{{ driver.leaves_from }}</h4>
+            </driver>
+            <driver class="list-item">
+                <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon">
+                <h4>{{ driver.leaves_at }}</h4>
+            </driver>
+            <driver class="list-item">
+                <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
+                <h4>{{ driver.cities }}</h4>
+            </driver>
+            <driver class="list-item">
+                <img src="{{ '/assets/images/icons/two-people-black.png'|theme }}" alt="icon">
+                <h4>{{ driver.seats }}</h4>
+            </driver>
+        </div>
         <!-- Doplnit zmazat inzerat -->
         <a href="{{ 'profil'|page }}/upravit-ponuku" class="button button-tertiary">Upraviť
             inzeráť</a>
 
         <div class="passengers-list-wrapper">
-            <h4>Zoznam záujemcov</h4>
+            <h3>Zoznam záujemcov</h3>
             {% for passenger in driver.passengers %}
             <div class="passenger-list-item">
                 <h5>Email: {{ passenger.email }}</h5>

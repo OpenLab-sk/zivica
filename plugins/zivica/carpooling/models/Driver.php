@@ -77,7 +77,7 @@ class Driver extends Model
         'passengers' => [
             'Zivica\Carpooling\Models\Passenger',
             'key'    => 'driver_id',
-            'otherKey' => 'uuid'
+            'otherKey' => 'id'
         ]
     ];
     public $belongsTo = [
