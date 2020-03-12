@@ -27,7 +27,6 @@ class Driver extends Model
         return $dropdownValues;
     }
 
-    public $hasOne = [];
     public function beforeCreate()
     {
         $this->uuid = Uuid::uuid4()->toString();
