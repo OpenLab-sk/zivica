@@ -10,7 +10,6 @@ class Passenger extends Model
     public $table = 'zivica_carpooling_passengers';
     public $rules = [];
 
-    
     protected $dates = [
         'created_at',
         'updated_at'
