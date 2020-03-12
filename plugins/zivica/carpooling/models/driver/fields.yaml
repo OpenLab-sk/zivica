@@ -4,8 +4,8 @@
 
 fields:
     event_id:
-        label: evenid
-        type: number
+        label: Event
+        type: dropdown
     name:
         label: Meno
         type: text

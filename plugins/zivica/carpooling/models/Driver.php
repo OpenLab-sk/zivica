@@ -69,9 +69,17 @@ class Driver extends Model
         'updated_at'
     ];
 
-    /**
-     * @var array Relations
-     */
+    function getEventIdOptions() {
+        $events        = Event::all();
+        $dropdownValues = [null => ''];
+
+        foreach ($events as $event) {
+            $dropdownValues[$event->id] = $event->name . ' - ' . $event->starts_at;
+        }
+
+        return $dropdownValues;
+    }
+
     public $hasOne = [];
     public $hasMany = [
         'passengers' => [
