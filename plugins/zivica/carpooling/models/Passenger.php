@@ -21,7 +21,7 @@ class Passenger extends Model
         $dropdownValues = [null => ''];
 
         foreach ($drivers as $driver) {
-            $dropdownValues[$driver->uuid] = $driver->name . ' - ' . $driver->email;
+            $dropdownValues[$driver->id] = $driver->name . ' - ' . $driver->email;
         } 
 
         return $dropdownValues;

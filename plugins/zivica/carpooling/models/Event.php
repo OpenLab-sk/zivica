@@ -3,9 +3,6 @@
 use Model;
 use Ramsey\Uuid\Uuid;
 
-/**
- * Event Model
- */
 class Event extends Model
 {
     use \October\Rain\Database\Traits\Validation;
@@ -13,24 +10,23 @@ class Event extends Model
     public $table = 'zivica_carpooling_events';
     public $rules = [];
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8175979bdaf48fffc9ea8591b9d63f860ff8d5b8
     protected $dates = [
         'created_at',
         'updated_at'
     ];
 
+<<<<<<< HEAD
     public $hasOne = [];
+=======
+>>>>>>> 8175979bdaf48fffc9ea8591b9d63f860ff8d5b8
     public $hasMany = [
         'drivers' => [
             'Zivica\Carpooling\Models\Driver'
         ]
     ];
-    public $belongsTo = [];
-    public $belongsToMany = [];
-    public $morphTo = [];
-    public $morphOne = [];
-    public $morphMany = [];
-    public $attachOne = [];
-    public $attachMany = [];
 }
