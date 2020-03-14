@@ -9,25 +9,8 @@ h1 b {
   font-weight: 400;
 }
 
-h2 {
-  font-size: 25px;
-  font-weight: 700;
-  margin: 0;
-}
-
-h3 {
-  font-size: 25px;
-  font-weight: 300;
-}
-
 h4 {
   font-size: 18px;
-  font-weight: 300;
-  margin: 5px 0 0 0;
-}
-
-h5 {
-  font-size: 15px;
   font-weight: 300;
   margin: 5px 0 0 0;
 }

@@ -26,14 +26,14 @@
 }
 
 .button-secondary {
-  background: #7cac24;
+  background: #67C430;
   color: #ffffff !important;
   text-align: center;
   text-decoration: none;
 }
 
 .button-secondary:hover {
-  background: #648a1e;
+  background: #5caf2b;
   cursor: pointer;
 }
 

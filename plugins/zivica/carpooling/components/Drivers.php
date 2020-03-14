@@ -2,13 +2,14 @@
 
 use Cms\Classes\ComponentBase;
 use Zivica\Carpooling\Models\Driver;
+use Zivica\Carpooling\Models\Event;
 
-class DriverDetails extends ComponentBase
+class Drivers extends ComponentBase
 {
     public function componentDetails()
     {
         return [
-            'name'        => 'DriverDetails Component',
+            'name'        => 'Driver Component',
             'description' => 'No description provided yet...'
         ];
     }
@@ -18,8 +19,16 @@ class DriverDetails extends ComponentBase
         return [];
     }
 
-    function getDriversUuid() {
-        return $this->page->param('driver_uuid');
+    function getDrivers() {
+        $eventId    = $this->page->param('event_id');
+        $event      = Event::all()->where('id', $eventId)->first();
+        $drivers    = $event->drivers->reverse();
+
+        foreach ($drivers as $driver) {
+            $driver->uuid = 'hidden';
+        }
+
+        return $drivers;
     }
 
     function getDriver() {
@@ -27,6 +36,10 @@ class DriverDetails extends ComponentBase
         $driver     = Driver::all()->where('uuid', $uuid)->first();
 
         return $driver;
+    }
+
+    function getDriversUuid() {
+        return $this->page->param('driver_uuid');
     }
 
     function getDriverId() {

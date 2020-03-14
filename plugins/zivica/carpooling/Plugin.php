@@ -19,7 +19,7 @@ class Plugin extends PluginBase
     {
         return [
             'Zivica\Carpooling\Components\Events'       => 'events',
-            'Zivica\Carpooling\Components\DriverDetails'   => 'driverDetails',
+            'Zivica\Carpooling\Components\Drivers'      => 'drivers',
         ];
     }
     
