@@ -17,14 +17,14 @@ is_hidden = 0
     <img src="{{ '/assets/images/loading-indicator.png' |theme }}" alt="Loading">
 </div>
 
-<div class="header-container header-container-homepage">
+<div class="container header-container events">
     <div class="text-wrapper">
         <h1>Šetrite benzín,<br>šetrite životné prostredie</h1>
     </div>
 </div>
-<div class="cards-list zivica-container">
+<div class="container cards-list">
     {% for event in allEvents %}
-    <div class="single-card event-card" data-event-id="{{ event.id }}">
+    <div class="card--with-square" data-event-id="{{ event.id }}">
         <div class="number-container">
             <h2>{{ event.number_of_drivers }}</h2>
             {% if driver.seats == 0 %}
@@ -40,7 +40,7 @@ is_hidden = 0
         <div class="details">
             <h4>{{ event.name }}</h4>
             <h6>{{ event.location }}</h6>
-            <h5 class="ic ic-calendar">{{ event.date }}</h5>
+            <h5>{{ event.date }}</h5>
             <h5>{{ event.time }}</h5>
         </div>
     </div>

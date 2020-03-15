@@ -2,7 +2,7 @@ $(() => {
     $('.loading-screen').fadeOut();
     var addDriverVisible = false;
 
-    $('.single-card.event-card').click(function () {
+    $('.card--with-square').click(function () {
         window.location.href = window.location.href + 'event/' + $(this).attr('data-event-id');
     })
 
@@ -33,13 +33,13 @@ $(() => {
     $('form').submit(function (e) {
         e.preventDefault();
 
-        url = $(this).attr('data-url');
-
-        formData = $(this).serialize();
+        var url = $(this).attr('data-url'),
+            method = $(this).attr('method'),
+            formData = $(this).serialize();
 
         $.ajax({
             url: url,
-            type: 'post',
+            type: method,
             data: formData,
             success: function (data) {
                 // $('form').hide();

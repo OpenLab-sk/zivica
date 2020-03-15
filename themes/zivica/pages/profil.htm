@@ -2,63 +2,109 @@ title = "profil"
 url = "/profil/:driver_uuid"
 layout = "default"
 is_hidden = 0
-[driverDetails]
+[drivers]
 ==
-{% set driver = driverDetails.getDriver() %}
+{% set driver = drivers.getDriver() %}
 {% set driversUuid = getDriversUuid %}
 <div class="container-fluid navbar-wrapper">
     <div class="container">
         <a href="{{ 'eventy'|page }}">
-            <img class="back arrow-back-black" src="{{ '/assets/images/icons/back-black.png' |theme}}" alt="Back">
+            <img class="back arrow-back-black" src="{{ '/assets/images/icons/back-white.png' |theme}}" alt="Back">
         </a>
     </div>
 </div>
-<div class="container-fluid driver-profile-wrapper">
-    <div class="container">
-        <div class="driver-list-wrapper">
-            <h3>Vitaj {{ driver.name }}!</h3>
-            <driver class="list-item">
-                <img src="{{ '/assets/images/icons/person-black.png'|theme }}" alt="icon">
-                <h4>{{ driver.event.name }}</h4>
-            </driver>
-            <driver class="list-item">
-                <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
-                <h4>{{ driver.email }}</h4>
-            </driver>
-            <driver class="list-item">
-                <img src="{{ '/assets/images/icons/rocket-black.png'|theme }}" alt="icon">
-                <h4>{{ driver.leaves_from }}</h4>
-            </driver>
-            <driver class="list-item">
-                <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon">
-                <h4>{{ driver.leaves_at }}</h4>
-            </driver>
-            <driver class="list-item">
-                <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
-                <h4>{{ driver.cities }}</h4>
-            </driver>
-            <driver class="list-item">
-                <img src="{{ '/assets/images/icons/two-people-black.png'|theme }}" alt="icon">
-                <h4>{{ driver.seats }}</h4>
-            </driver>
+
+<div class="event-wrapper">
+    <div class="container header-container profile">
+        <h2>Vitaj {{ driver.name }}</h2>
+        <div class="line-wrapper">
+            <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
+            <h4>{{ driver.email }}</h4>
         </div>
-        <!-- Doplnit zmazat inzerat -->
-        <a href="{{ 'profil'|page }}/upravit-ponuku" class="button button-tertiary">Upraviť
+        <div class="line-wrapper">
+            <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
+            <h4>{{ driver.leaves_from }}</h4>
+        </div>
+        <div class="line-wrapper">
+            <img src="{{ '/assets/images/icons/clock-white.png'|theme }}" alt="icon">
+            <h4>{{ driver.leaves_at }}</h4>
+        </div>
+        <div class="line-wrapper">
+            <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
+            <h4>{{ driver.cities }}</h4>
+        </div>
+        <div class="line-wrapper">
+            <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
+            <h4>{{ driver.seats }}</h4>
+        </div>
+        <a href="{{ 'profil'|page }}/upravit-ponuku" class="button button-primary">Upraviť
             inzeráť</a>
+    </div>
+</div>
 
-        <div class="passengers-list-wrapper">
-            <h3>Zoznam záujemcov</h3>
-            {% for passenger in driver.passengers %}
-            <div class="passenger-list-item">
-                <h5>Email: {{ passenger.email }}</h5>
-                <h5>Telefónne číslo: {{ passenger.phone }}</h5>
-                <h5>Lokalita: {{ passenger.city }}</h5>
-                <h5>Poznámka: {{ passenger.note }}</h5>
+<!-- <div class="container header-container">
+
+
+    <a href="{{ 'profil'|page }}/upravit-ponuku" class="button button-secondary">Upraviť
+        inzeráť</a>
+</div> -->
+<!-- <div class="content-wrapper">
+    <div class="container">
+        <h2>Vitaj {{ driver.name }}</h2>
+        <driver class="line-wrapper">
+            <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
+            <h4>{{ driver.email }}</h4>
+        </driver>
+        <driver class="line-wrapper">
+            <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
+            <h4>{{ driver.leaves_from }}</h4>
+        </driver>
+        <driver class="line-wrapper">
+            <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon">
+            <h4>{{ driver.leaves_at }}</h4>
+        </driver>
+        <driver class="line-wrapper">
+            <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
+            <h4>{{ driver.cities }}</h4>
+        </driver>
+        <driver class="line-wrapper">
+            <img src="{{ '/assets/images/icons/two-people-black.png'|theme }}" alt="icon">
+            <h4>{{ driver.seats }}</h4>
+        </driver>
+        <a href="{{ 'profil'|page }}/upravit-ponuku" class="button button-secondary">Upraviť
+            inzeráť</a>
+    </div>
+</div> -->
+<div class="container">
+    <div class="passengers-list-wrapper">
+        <h2>Zoznam záujemcov</h2>
+        {% for passenger in driver.passengers %}
+        <div class="card--with-footer" data-driver-id="{{ driver.id }}">
+            <div class="info">
+                <h3>{{ driver.name }}</h3>
+                <div class="line-wrapper">
+                    <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon" class="location-icon">
+                    <h5>Email: {{ passenger.email }}</h5>
+                </div>
+                <div class="line-wrapper">
+                    <img src="{{ '/assets/images/icons/rocket-black.png'|theme }}" alt="icon">
+                    <h5>Telefónne číslo: {{ passenger.phone }}</h5>
+                </div>
+                <div class="line-wrapper">
+                    <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
+                    <h5>Lokalita: {{ passenger.city }}</h5>
+                </div>
+                <div class="line-wrapper">
+                    <img src="{{ '/assets/images/icons/rocket-black.png'|theme }}" alt="icon">
+                    <h5>Poznámka: {{ passenger.note }}</h5>
+                </div>
             </div>
-            {% endfor %}
+            <div class="footer">
+                <a href="{{ 'event'|page }}/kontaktovat-vodica/{{ driver.id }}">
+                    <img src="{{ '/assets/images/icons/check-white.png'|theme }}" alt="icon">
+                </a>
+            </div>
         </div>
-
-
-
+        {% endfor %}
     </div>
 </div>

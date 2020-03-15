@@ -2,9 +2,9 @@ title = "Upraviť ponuku"
 url = "/profil/:driver_uuid/upravit-ponuku"
 layout = "default"
 is_hidden = 0
-[driverDetails]
+[drivers]
 ==
-{% set driver = driverDetails.getDriver() %}
+{% set driver = drivers.getDriver() %}
 <div class="container-fluid navbar-wrapper">
     <div class="container">
         <a href="{{ 'profil'|page }}">
@@ -12,10 +12,10 @@ is_hidden = 0
         </a>
     </div>
 </div>
-<div class="container-fluid static-form-wrapper">
-    <div class="container">
+<div class="content-wrapper">
+    <div class="container static-form-wrapper">
         <h3>Upraviť ponuku</h3>
-        <form method="post" data-url="/zivica/api/update-driver">
+        <form method="patch" data-url="/zivica/api/update-driver/{{ driver.uuid }}">
             <input type="number" name="event_id" value="{{ driver.event_id }}" style="display: none;">
 
             <div class="input-wrapper">
