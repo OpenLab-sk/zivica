@@ -16,6 +16,7 @@ class CreatePassengersTable extends Migration
             $table->string('phone');
             $table->string('city');
             $table->string('note')->nullable();
+            $table->boolean('isSolved')->default(false);
             $table->timestamps();
         });
     }

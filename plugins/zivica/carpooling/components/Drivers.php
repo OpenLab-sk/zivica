@@ -3,6 +3,7 @@
 use Cms\Classes\ComponentBase;
 use Zivica\Carpooling\Models\Driver;
 use Zivica\Carpooling\Models\Event;
+use Zivica\Carpooling\Models\Passenger;
 
 class Drivers extends ComponentBase
 {
@@ -22,7 +23,7 @@ class Drivers extends ComponentBase
     function getDrivers() {
         $eventId    = $this->page->param('event_id');
         $event      = Event::all()->where('id', $eventId)->first();
-        $drivers    = $event->drivers->reverse();
+        $drivers    = $event->drivers->where('seats', '>', 0)->reverse();
 
         foreach ($drivers as $driver) {
             $driver->uuid = 'hidden';
@@ -45,4 +46,15 @@ class Drivers extends ComponentBase
     function getDriverId() {
         return $this->page->param('driver_id');
     }
+
+    // public function onSetToSolved($passengerId, $driverId) {
+    //     $passenger = Passenger::where('id', $passengerId)->first();
+    //     $driver = Driver::where('id', $driverId);
+
+    //     $passenger->isSolved = true;
+    //     $driver->seats -= 1;
+
+    //     $passenger->save();
+    //     $driver->save();
+    // }
 }
