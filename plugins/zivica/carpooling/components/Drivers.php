@@ -49,7 +49,7 @@ class Drivers extends ComponentBase
 
     // public function onSetToSolved($passengerId, $driverId) {
     //     $passenger = Passenger::where('id', $passengerId)->first();
-    //     $driver = Driver::where('id', $driverId);
+    //     $driver = Driver::where('id', $driverId)->first();
 
     //     $passenger->isSolved = true;
     //     $driver->seats -= 1;
