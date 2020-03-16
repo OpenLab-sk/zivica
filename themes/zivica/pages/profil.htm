@@ -4,7 +4,6 @@ layout = "default"
 is_hidden = 0
 [drivers]
 ==
-use Zivica\Carpooling\Components\Drivers;
 {% set driver = drivers.getDriver() %}
 {% set driversUuid = getDriversUuid %}
 <div class="container-fluid navbar-wrapper">
@@ -42,40 +41,6 @@ use Zivica\Carpooling\Components\Drivers;
             inzeráť</a>
     </div>
 </div>
-
-<!-- <div class="container header-container">
-
-
-    <a href="{{ 'profil'|page }}/upravit-ponuku" class="button button-secondary">Upraviť
-        inzeráť</a>
-</div> -->
-<!-- <div class="content-wrapper">
-    <div class="container">
-        <h2>Vitaj {{ driver.name }}</h2>
-        <driver class="line-wrapper">
-            <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
-            <h4>{{ driver.email }}</h4>
-        </driver>
-        <driver class="line-wrapper">
-            <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
-            <h4>{{ driver.leaves_from }}</h4>
-        </driver>
-        <driver class="line-wrapper">
-            <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon">
-            <h4>{{ driver.leaves_at }}</h4>
-        </driver>
-        <driver class="line-wrapper">
-            <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
-            <h4>{{ driver.cities }}</h4>
-        </driver>
-        <driver class="line-wrapper">
-            <img src="{{ '/assets/images/icons/two-people-black.png'|theme }}" alt="icon">
-            <h4>{{ driver.seats }}</h4>
-        </driver>
-        <a href="{{ 'profil'|page }}/upravit-ponuku" class="button button-secondary">Upraviť
-            inzeráť</a>
-    </div>
-</div> -->
 <div class="container">
     <div class="passengers-list-wrapper">
         <h2>Zoznam záujemcov</h2>
@@ -101,9 +66,9 @@ use Zivica\Carpooling\Components\Drivers;
                 </div>
             </div>
             <div class="footer">
-                <a href="{{ 'eventy'|page }}/api/set-solved/passenger/{{ passenger.id }}/driver/{{ driver.id }}">
-                    <img src="{{ '/assets/images/icons/check-white.png'|theme }}" alt="icon">
-                </a>
+                <img class="mark-as-solved"
+                    data-url="/zivica/api/set-solved/passenger/{{ passenger.id }}/driver/{{ driver.id }}"
+                    src="{{ '/assets/images/icons/check-white.png'|theme }}" alt="icon">
             </div>
         </div>
         {% endfor %}

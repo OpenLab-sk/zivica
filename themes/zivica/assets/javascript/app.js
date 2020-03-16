@@ -22,6 +22,18 @@ $(() => {
         }
     });
 
+    $('.mark-as-solved').click(function () {
+        url = $(this).attr('data-url');
+
+        $.ajax({
+            url: url,
+            type: 'post',
+            data: null,
+            success: function (data) {},
+            error: function () {}
+        });
+    });
+
     $('.form-saved').click(function () {
         hideForm('.event-wrapper');
     });
