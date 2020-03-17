@@ -1,25 +1,23 @@
 $(() => {
     $('.loading-screen').fadeOut();
-    var addDriverVisible = false;
 
-    $('.card--with-square').click(function () {
-        window.location.href = window.location.href + 'event/' + $(this).attr('data-event-id');
+    // Forms -----------------------------------
+    $('input').keydown(function () {
+        $(this).removeClass('invalid');
     })
 
     $('#new-driver').click(function (e) {
         e.preventDefault();
-        showForm('.event-wrapper');
-        addDriverVisible = true;
+        showForm('.main-content-wrapper');
     })
 
-    $('.back').click(function (e) {
-        if (addDriverVisible == true) {
-            e.preventDefault();
-            hideForm('.event-wrapper');
-            addDriverVisible = false;
-        } else {
-            window.location.href = 'http://localhost:8000/zivica';
-        }
+    $('#back--form-hide').click(function (e) {
+        e.preventDefault();
+        hideForm('.main-content-wrapper');
+    })
+
+    $('.card--with-footer .footer').click(function () {
+        $('.main-content-wrapper').fadeOut(100);
     });
 
     $('.mark-as-solved').click(function () {
@@ -34,44 +32,73 @@ $(() => {
         });
     });
 
-    $('.form-saved').click(function () {
-        hideForm('.event-wrapper');
-    });
-
     $('#submit-form').click(function () {
-        $('form').submit();
-    })
 
-    $('form').submit(function (e) {
-        e.preventDefault();
+        $('form input').each(function () {
+            if ($(this).attr('type') == 'checkbox') {
 
-        var url = $(this).attr('data-url'),
-            method = $(this).attr('method'),
-            formData = $(this).serialize();
+
+                // FIX Checkbox
+
+
+
+            } else if ($(this).attr('data-validation') == 'required' && $(this).val() == '') {
+                $(this).addClass('invalid');
+            }
+        })
+
+        if ($('.invalid').length) {
+            return;
+        }
+
+        var url = $('form').attr('data-url'),
+            method = $('form').attr('method'),
+            formData = $('form').serialize();
+
+        console.log(url);
+        console.log(method);
+        console.log(formData);
 
         $.ajax({
             url: url,
             type: method,
             data: formData,
             success: function (data) {
-                // $('form').hide();
-                // $('.form-saved').fadeIn();
-                // $('.form-saved h2').text('Uložené');
-
-                // setTimeout(function () {
-                //     hideForm('.event-wrapper');
-                // }, 1500)
+                formOnSuccess();
             },
             error: function () {
-                // $('form').hide();
-                // $('.form-saved').fadeIn();
-                // $('.form-saved h2').text('Chyba');
+                formOnError();
             }
         });
     })
 })
 
+function formOnSuccess() {
+    $('.form--hide-on-success').fadeOut(150, function () {
+        $('.form--show-on-submit').fadeIn(100)
+        setTimeout(function () {
+            $('.form--show-on-submit').fadeOut(300, function () {
+                $('.back').click();
+            })
+        }, 1000);
+    });
+}
+
+function formOnError() {
+    $('.form--hide-on-success').fadeOut(150, function () {
+        $('.form--show-on-submit h2').text('Chyba')
+        $('.form--show-on-submit').fadeIn(100)
+        setTimeout(function () {
+            $('.form--show-on-submit').fadeOut(300, function () {
+                $('.back').click();
+            })
+        }, 2000);
+    });
+}
+
+
 function showForm(defaultElement) {
+    $('.form--hide-on-success').show();
     $('.slided-form-wrapper').show().animate({
             left: '0'
         }, 150,
@@ -94,4 +121,6 @@ function hideForm(defaultElement) {
         $('form').show();
         $('.form-saved').hide();
     });
+
+    $('input').val('');
 }

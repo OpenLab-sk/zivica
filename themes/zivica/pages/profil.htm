@@ -45,30 +45,29 @@ is_hidden = 0
     <div class="passengers-list-wrapper">
         <h2>Zoznam záujemcov</h2>
         {% for passenger in driver.passengers %}
-        <div class="card--with-footer" data-driver-id="{{ driver.id }}">
+        <div class="card--with-footer solved" data-driver-id="{{ driver.id }}">
             <div class="info">
                 <h3>{{ driver.name }}</h3>
                 <div class="line-wrapper">
                     <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon" class="location-icon">
-                    <h5>Email: {{ passenger.email }}</h5>
+                    <h5>{{ passenger.email }}</h5>
                 </div>
                 <div class="line-wrapper">
                     <img src="{{ '/assets/images/icons/rocket-black.png'|theme }}" alt="icon">
-                    <h5>Telefónne číslo: {{ passenger.phone }}</h5>
+                    <h5>{{ passenger.phone }}</h5>
                 </div>
                 <div class="line-wrapper">
                     <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
-                    <h5>Lokalita: {{ passenger.city }}</h5>
+                    <h5>{{ passenger.city }}</h5>
                 </div>
                 <div class="line-wrapper">
                     <img src="{{ '/assets/images/icons/rocket-black.png'|theme }}" alt="icon">
-                    <h5>Poznámka: {{ passenger.note }}</h5>
+                    <h5>{{ passenger.note }}</h5>
                 </div>
             </div>
-            <div class="footer">
-                <img class="mark-as-solved"
-                    data-url="/zivica/api/set-solved/passenger/{{ passenger.id }}/driver/{{ driver.id }}"
-                    src="{{ '/assets/images/icons/check-white.png'|theme }}" alt="icon">
+            <div class="footer mark-as-solved"
+                data-url="/api/set-solved/passenger/{{ passenger.id }}/driver/{{ driver.id }}">
+                <img src="{{ '/assets/images/icons/check-white.png'|theme }}" alt="icon">
             </div>
         </div>
         {% endfor %}

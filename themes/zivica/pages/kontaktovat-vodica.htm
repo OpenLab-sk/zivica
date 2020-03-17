@@ -4,7 +4,7 @@ layout = "default"
 is_hidden = 0
 [drivers]
 ==
-{% set driverId = driverDetails.getDriverId() %}
+{% set driverId = drivers.getDriverId() %}
 <div class="container-fluid navbar-wrapper">
     <div class="container">
         <a href="{{ 'event'|page }}">
@@ -12,37 +12,42 @@ is_hidden = 0
         </a>
     </div>
 </div>
-<div class="static-form-wrapper content-wrapper">
-    <div class="container">
-        <h3>Kontaktovať vodiča</h3>
-        <form method="post" data-url="/zivica/api/add-passenger">
-            <input type="number" name="driver_id" value="{{ driverId }}" style="display: none;">
+<div class="container">
+    <div class="static-form-wrapper content-wrapper">
+        <div class="form--hide-on-success">
+            <h3>Kontaktovať vodiča</h3>
+            <form method="post" data-url="/api/add-passenger">
+                <input type="number" name="driver_id" value="{{ driverId }}" style="display: none;">
 
-            <div class="input-wrapper">
-                <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
-                <input type="email" name="email" placeholder="Email" value="{{ driver.event_id }}">
-            </div>
-            <div class="input-wrapper">
-                <img src="{{ '/assets/images/icons/rocket-black.png'|theme }}" alt="icon">
-                <input type="text" name="phone" placeholder="Telefónne číslo">
-            </div>
-            <div class="input-wrapper">
-                <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
-                <input type="text" name="city" placeholder="Odkiaľ ste">
-            </div>
-            <div class="input-wrapper">
-                <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
-                <input type="text" name="note" placeholder="Poznámka">
-            </div>
-            <div class="checkbox-wrapper">
-                <input type="checkbox" name="gdpr" placeholder="" required>
-                <label for="gdrp">Súhlasím so všeobecnými podmienkami</label>
-            </div>
+                <div class="input-wrapper">
+                    <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
+                    <input type="email" name="email" placeholder="Email" value="{{ driver.event_id }}"
+                        data-validation="required">
+                </div>
+                <div class="input-wrapper">
+                    <img src="{{ '/assets/images/icons/rocket-black.png'|theme }}" alt="icon">
+                    <input type="text" name="phone" placeholder="Telefónne číslo" data-validation="required">
+                </div>
+                <div class="input-wrapper">
+                    <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
+                    <input type="text" name="city" placeholder="Odkiaľ ste" data-validation="required">
+                </div>
+                <div class="input-wrapper">
+                    <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
+                    <input type="text" name="note" placeholder="Poznámka">
+                </div>
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" name="gdpr" placeholder="" data-validation="required">
+                    <label for="gdrp">Súhlasím so všeobecnými podmienkami</label>
+                </div>
 
-            <a id="submit-form" class="button button-lg button-secondary">Potvrdiť</a>
-        </form>
-        <div class="form-saved">
-            <h2></h2>
+                <a id="submit-form" class="button button-lg button-secondary">Potvrdiť</a>
+            </form>
+        </div>
+        <div class="form--show-on-submit">
+            <div class="wrapper">
+                <h2>Odoslané</h2>
+            </div>
         </div>
     </div>
 </div>
