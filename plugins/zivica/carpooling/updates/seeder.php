@@ -196,5 +196,12 @@ class SeedWebsitesTable extends Seeder
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
+        Passenger::create([
+            'driver_id'     =>  '1',
+            'email'         =>  'email@email.sk',
+            'phone'         =>  '90928098098',
+            'city'          =>  'Velky Biel'
+        ]);
+
     }
 }
