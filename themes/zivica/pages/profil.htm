@@ -53,6 +53,9 @@ is_hidden = 0
 <div class="container">
     <div class="passengers-list-wrapper">
         <h2>Zoznam záujemcov</h2>
+        {% if driver.passengers == [] %}
+        <h1>Chyba</h1>
+        {% endif %}
         {% for passenger in driver.passengers %}
         <div class="card--with-footer solved" data-driver-id="{{ driver.id }}">
             <div class="info">

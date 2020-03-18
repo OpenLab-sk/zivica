@@ -150,10 +150,10 @@ function hideForm(defaultElement) {
     $(defaultElement).show();
     $('.slided-form-wrapper').animate({
         left: '100vw'
-    }, 150, function () {
+    }, 100, function () {
         $(this).hide();
         $('.back.arrow-back-black').hide();
-        $('.back.arrow-back-white').fadeIn(100);
+        $('.back.arrow-back-white').fadeIn(80);
         $('form').show();
         $('.form-saved').hide();
     });
