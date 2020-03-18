@@ -29,7 +29,7 @@ class Drivers extends ComponentBase
             $driver->uuid = 'hidden';
         }
 
-        return $drivers;
+        return $drivers->toArray();
     }
 
     function getDriver() {

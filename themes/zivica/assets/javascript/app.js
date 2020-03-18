@@ -20,6 +20,43 @@ $(() => {
         $('.main-content-wrapper').fadeOut(100);
     });
 
+    $('input#time').keydown(function (e) {
+        console.log(e.keyCode);
+
+        allowedKeys = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 16, 186, 32, 8];
+        value = $(this).val();
+
+        if (!allowedKeys.includes(e.keyCode)) {
+            e.preventDefault();
+        };
+
+        if (e.keyCode == 8) {
+            return;
+        }
+
+        if (value.length > 4 && e.keyCode !== 8) {
+            e.preventDefault();
+            return;
+        }
+
+        if (e.keyCode == 32 || e.keyCode == 186) {
+            e.preventDefault();
+            console.log(value + value.length)
+            if (value.length == 1) {
+                $(this).val('0' + value + ':');
+
+            } else if (value.length == 2) {
+                $(this).val(value + ':');
+            }
+
+            return;
+        }
+
+        if (value.length == 2) {
+            $(this).val(value + ':');
+        }
+    })
+
     $('.mark-as-solved').click(function () {
         url = $(this).attr('data-url');
 
@@ -33,7 +70,6 @@ $(() => {
     });
 
     $('#submit-form').click(function () {
-
         $('form input').each(function () {
             if ($(this).attr('type') == 'checkbox') {
 
@@ -123,4 +159,5 @@ function hideForm(defaultElement) {
     });
 
     $('input').val('');
+    location.reload();
 }

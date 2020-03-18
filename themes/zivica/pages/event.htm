@@ -21,24 +21,34 @@ is_hidden = 0
     </div>
 </div>
 <div class="main-content-wrapper">
-    <div class="container header-container event">
-        <h2>{{ event.name }}</h2>
-        <div class="line-wrapper">
-            <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon" class="location-icon">
-            <h5>{{ event.location }}</h5>
+    <div class="header-container event">
+        <div class="container">
+            <h2>{{ event.name }}</h2>
+            <div class="line-wrapper">
+                <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon" class="location-icon">
+                <h5>{{ event.location }}</h5>
+            </div>
+            <div class="line-wrapper">
+                <img src="{{ '/assets/images/icons/calendar-white.png'|theme }}" alt="icon" class="location-icon">
+                <h5>{{ event.date }}</h5>
+            </div>
+            <div class="line-wrapper">
+                <img src="{{ '/assets/images/icons/clock-white.png'|theme }}" alt="icon" class="location-icon">
+                <h5>{{ event.time }}</h5>
+            </div>
+            <a id="new-driver" class="button button-primary">Prihlásiť sa ako vodič</a>
         </div>
-        <div class="line-wrapper">
-            <img src="{{ '/assets/images/icons/calendar-white.png'|theme }}" alt="icon" class="location-icon">
-            <h5>{{ event.date }}</h5>
-        </div>
-        <div class="line-wrapper">
-            <img src="{{ '/assets/images/icons/clock-white.png'|theme }}" alt="icon" class="location-icon">
-            <h5>{{ event.time }}</h5>
-        </div>
-        <a id="new-driver" class="button button-primary">Prihlásiť sa ako vodič</a>
+
     </div>
 
     <div class="cards-list container">
+        {% if drivers == [] %}
+        <div class="card--with-footer" data-driver-id="{{ driver.id }}">
+            <div class="info">
+                <h3>Zatiaľ sa neprihlásil žiaden vodič</h3>
+            </div>
+        </div>
+        {% else %}
         {% for driver in drivers %}
         <div class="card--with-footer" data-driver-id="{{ driver.id }}">
             <div class="info">
@@ -67,6 +77,7 @@ is_hidden = 0
             </a>
         </div>
         {% endfor %}
+        {% endif %}
     </div>
 </div>
 
@@ -91,7 +102,7 @@ is_hidden = 0
                 </div>
                 <div class="input-wrapper">
                     <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon">
-                    <input type="text" name="leaves_at" placeholder="Kedy vyrážate" data-validation="required">
+                    <input type="text" id="time" name="leaves_at" placeholder="Čas odchodu" data-validation="required">
                 </div>
                 <div class="input-wrapper">
                     <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">

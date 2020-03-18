@@ -1,4 +1,4 @@
-title = "profil"
+title = "Profil"
 url = "/profil/:driver_uuid"
 layout = "default"
 is_hidden = 0
@@ -6,6 +6,7 @@ is_hidden = 0
 ==
 {% set driver = drivers.getDriver() %}
 {% set driversUuid = getDriversUuid %}
+
 <div class="container-fluid navbar-wrapper">
     <div class="container">
         <a href="{{ 'eventy'|page }}">
@@ -14,6 +15,14 @@ is_hidden = 0
     </div>
 </div>
 
+{% if driver == [] %}
+<div class="event-wrapper">
+    <div class="container header-container profile" style="height: 100vh;">
+        <h2>Chyba!</h2>
+        <h4>Profil sa nenachádza v našej databáze</h4>
+    </div>
+</div>
+{% else %}
 <div class="event-wrapper">
     <div class="container header-container profile">
         <h2>Vitaj {{ driver.name }}</h2>
@@ -47,7 +56,7 @@ is_hidden = 0
         {% for passenger in driver.passengers %}
         <div class="card--with-footer solved" data-driver-id="{{ driver.id }}">
             <div class="info">
-                <h3>{{ driver.name }}</h3>
+                <!-- <h3>{{ driver.name }}</h3> -->
                 <div class="line-wrapper">
                     <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon" class="location-icon">
                     <h5>{{ passenger.email }}</h5>
@@ -73,3 +82,4 @@ is_hidden = 0
         {% endfor %}
     </div>
 </div>
+{% endif %}
