@@ -15,13 +15,21 @@ class Passenger extends Model
         'updated_at'
     ];
 
+    function afterCreate() {
+        $passenger = $this->toArray();
+        $driverEmail = Driver::where('id', $passenger['driver_id'])->pluck('email')->first();
+        Mail::sendTo($driverEmail, 'zivica::passenger.created.driver', $passenger);
+
+        Mail::sendTo($passenger['email'], 'zivica::passenger.created.passenger', $passenger);
+    }
+
     function getDriverIdOptions() {
         $drivers        = Driver::all();
         $dropdownValues = [null => ''];
 
         foreach ($drivers as $driver) {
             $dropdownValues[$driver->id] = $driver->name . ' - ' . $driver->email;
-        } 
+        }
 
         return $dropdownValues;
     }

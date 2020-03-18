@@ -47,17 +47,17 @@ class Drivers extends ComponentBase
         return $this->page->param('driver_id');
     }
 
-    // public function onSetToSolved() {
-    //     $passengerId = post('passengerId');
-    //     $driverId = post('driverId');
+    public function onSetToSolved() {
+        $passengerId = post('passengerId');
+        $driverId = post('driverId');
 
-    //     $passenger = Passenger::where('id', $passengerId)->first();
-    //     $driver = Driver::where('id', $driverId)->first();
+        $passenger = Passenger::where('id', $passengerId)->first();
+        $driver = Driver::where('id', $driverId)->first();
 
-    //     $passenger->isSolved = true;
-    //     $driver->seats -= 1;
+        $passenger->isSolved = true;
+        $driver->seats -= 1;
 
-    //     $passenger->save();
-    //     $driver->save();
-    // }
+        $passenger->save();
+        $driver->save();
+    }
 }

@@ -57,21 +57,16 @@
         $driver->delete();
     });
 
-    Route::get('/api/nvm', function () {
+    // Route::post('/api/set-solved/passenger/{passengerId}/driver/{driverId}', function ($passengerId, $driverId) {
 
-        return "true";
-    });
+    //     $passenger = Passenger::where('id', $passengerId)->first();
+    //     $driver = Driver::where('id', $driverId)->first();
 
-    Route::post('/api/set-solved/passenger/{passengerId}/driver/{driverId}', function ($passengerId, $driverId) {
+    //     $passenger->isSolved = true;
+    //     $driver->seats -= 1;
 
-        $passenger = Passenger::where('id', $passengerId)->first();
-        $driver = Driver::where('id', $driverId)->first();
-
-        $passenger->isSolved = true;
-        $driver->seats -= 1;
-
-        $passenger->save();
-        $driver->save();
-    });
+    //     $passenger->save();
+    //     $driver->save();
+    // });
 
 ?>

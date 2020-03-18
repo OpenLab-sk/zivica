@@ -77,15 +77,15 @@ is_hidden = 0
                     <h5>{{ passenger.note }}</h5>
                 </div>
             </div>
-            <div class="footer mark-as-solved"
+            <!-- <div class="footer mark-as-solved"
                 data-url="/api/set-solved/passenger/{{ passenger.id }}/driver/{{ driver.id }}">
                 <img src="{{ '/assets/images/icons/check-white.png'|theme }}" alt="icon">
-            </div>
-            <!-- <div class="footer mark-as-solved">
-                <a data-request="onSetToSolved()" data-request-data="passengerId: {{passenger.id}}, driverId: {{driver.id}}">
+            </div> -->
+            <div class="footer mark-as-solved">
+                <a data-request="onSetToSolved" data-request-data="passengerId: {{passenger.id}}, driverId: {{driver.id}}">
                     <img src="{{ '/assets/images/icons/check-white.png'|theme }}" alt="icon">
                 </a>
-            </div> -->
+            </div>
         </div>
         {% endfor %}
     </div>
