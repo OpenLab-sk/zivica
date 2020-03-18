@@ -32,6 +32,12 @@ class Driver extends Model
         $this->uuid = Uuid::uuid4()->toString();
     }
 
+    public function afterCreate()
+    {
+        $driver = $this->toArray();
+        Mail::sendTo($driver['email'], 'zivica::driver.offer', $driver);
+    }
+
     public $hasMany = [
         'passengers' => [
             'Zivica\Carpooling\Models\Passenger',
