@@ -55,7 +55,7 @@ return [
     |
     */
 
-    'from' => ['address' => 'noreply@domain.tdl', 'name' => 'Spolujazda - Centrum Zajezova'],
+    'from' => ['address' => 'spolujazda@centrumzajezova.sk', 'name' => 'Spolujazda - Centrum Zajezova'],
 
     /*
     |--------------------------------------------------------------------------
