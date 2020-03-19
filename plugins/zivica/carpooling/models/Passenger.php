@@ -20,9 +20,6 @@ class Passenger extends Model
         $passenger = $this->toArray();
         $driverEmail = Driver::where('id', $passenger['driver_id'])->pluck('email')->first();
         Mail::sendTo($driverEmail, 'zivica::passenger.created.driver', $passenger);
-        // Mail::rawTo($driverEmail, 'vodicovi pride');
-
-        // Mail::rawTo($passenger['email'], 'pasazierovi pride');
         Mail::sendTo($passenger['email'], 'zivica::passenger.created.passenger', $passenger);
     }
 
