@@ -33,7 +33,6 @@ class Driver extends Model
 
     public function afterCreate()
     {
-        // Mail::sendTo($driver['email'], 'zivica::driver.offer', $driver);
         Mail::send('zivica.carpooling::mail.driver.offer', [
             'driver' => $this
         ], function($message) {
