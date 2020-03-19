@@ -15,6 +15,15 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerMailTemplates()
+    {
+        return [
+            'zivica.carpooling::mail.driver.offer',
+            'zivica.carpooling::mail.add-passenger.driver',
+            'zivica.carpooling::mail.add-passenger.passenger'
+        ];
+    }
+
     public function registerComponents()
     {
         return [
@@ -22,7 +31,7 @@ class Plugin extends PluginBase
             'Zivica\Carpooling\Components\Drivers'      => 'drivers',
         ];
     }
-    
+
     public function registerNavigation()
     {
         return [

@@ -16,8 +16,6 @@ class Event extends Model
     ];
 
     public $hasMany = [
-        'drivers' => [
-            'Zivica\Carpooling\Models\Driver'
-        ]
+        'drivers' => 'Zivica\Carpooling\Models\Driver'
     ];
 }

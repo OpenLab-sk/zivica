@@ -202,6 +202,5 @@ class SeedWebsitesTable extends Seeder
             'phone'         =>  '90928098098',
             'city'          =>  'Velky Biel'
         ]);
-
     }
 }

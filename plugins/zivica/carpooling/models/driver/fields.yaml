@@ -6,6 +6,7 @@ fields:
     event_id:
         label: Event
         type: dropdown
+        emptyOption: ' '
     name:
         label: Meno
         type: text

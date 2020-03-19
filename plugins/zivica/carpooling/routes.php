@@ -18,10 +18,6 @@
         $driver->save();
     });
 
-    Route::post('/api/update-driver', function() {
-        // Marek dorobit
-    });
-
     Route::post('/api/add-passenger', function () {
         $passengerData = \Input::all();
 
