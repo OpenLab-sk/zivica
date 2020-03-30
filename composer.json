@@ -65,11 +65,7 @@
         ],
         "post-update-cmd": [
             "php artisan october:util set build",
-            "php artisan package:discover",
-            "bash plugins/wezeo/initstorage/console/initstorage.sh"
-        ],
-        "post-install-cmd": [
-            "bash plugins/wezeo/initstorage/console/initstorage.sh"
+            "php artisan package:discover"
         ]
         },
     "config": {
