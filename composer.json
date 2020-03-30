@@ -3,7 +3,12 @@
     "description": "OctoberCMS",
     "homepage": "https://octobercms.com",
     "type": "project",
-    "keywords": ["october", "cms", "octobercms", "laravel"],
+    "keywords": [
+        "october",
+        "cms",
+        "octobercms",
+        "laravel"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -38,7 +43,7 @@
         "october/system": "~1.0",
         "october/backend": "~1.0",
         "october/cms": "~1.0",
-        "laravel/framework": "~5.5.40",
+        "laravel/framework": "^5.8.0",
         "wikimedia/composer-merge-plugin": "dev-master"
     },
     "require-dev": {
@@ -67,7 +72,7 @@
             "php artisan october:util set build",
             "php artisan package:discover"
         ]
-        },
+    },
     "config": {
         "preferred-install": "dist",
         "platform": {
