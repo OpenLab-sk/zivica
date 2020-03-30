@@ -52,7 +52,8 @@
         "phpunit/phpunit-selenium": "~1.2",
         "meyfa/phpunit-assert-gd": "1.1.0",
         "squizlabs/php_codesniffer": "3.*",
-        "jakub-onderka/php-parallel-lint": "^1.0"
+        "jakub-onderka/php-parallel-lint": "^1.0",
+        "composer/composer": "^1.10"
     },
     "autoload-dev": {
         "classmap": [
