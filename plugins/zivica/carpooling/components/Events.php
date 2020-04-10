@@ -55,18 +55,11 @@ class Events extends ComponentBase
     }
 
     static function _enrich_Date_Time_Drivers($event) {
-        $dateTime = explode(' ', $event['starts_at']);
+        $strtotime                      = strtotime($event->starts_at);
 
-        if (count($dateTime) !== 2) {
-            $event['date'] = 'Error';
-            $event['time'] = 'Error';
-        }
-        else {
-            $event['date'] = str_replace('-', '.', $dateTime[0]);
-            $event['time'] = $dateTime[1];
-        }
-
-        $event['number_of_drivers'] = count($event->drivers);
+        $event['date']                  = date("d.m.Y", $strtotime);
+        $event['time']                  = date("H:i", $strtotime);
+        $event['number_of_drivers']     = count($event->drivers);
 
         return $event;
     }
