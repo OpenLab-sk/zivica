@@ -1,6 +1,4 @@
 $(() => {
-    $('.loading-screen').fadeOut();
-
     // Forms -----------------------------------
     $('input').keydown(function () {
         $(this).removeClass('invalid');

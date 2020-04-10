@@ -16,7 +16,7 @@ is_hidden = 0
     <div class="container static-form-wrapper">
         <div class="form--hide-on-success">
             <h3>Upraviť ponuku</h3>
-            <form method="patch" data-url="/api/update-driver/{{ driver.uuid }}">
+            <form method="patch" data-url="{{ url('') }}/api/update-driver/{{ driver.uuid }}">
                 <input type="number" name="event_id" value="{{ driver.event_id }}" style="display: none;">
 
                 <div class="input-wrapper">

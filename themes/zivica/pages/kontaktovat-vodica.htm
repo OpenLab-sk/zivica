@@ -16,7 +16,7 @@ is_hidden = 0
     <div class="static-form-wrapper content-wrapper">
         <div class="form--hide-on-success">
             <h3>Kontaktovať vodiča</h3>
-            <form method="post" data-url="/api/add-passenger">
+            <form method="post" data-url="{{ url('') }}/api/add-passenger">
                 <input type="number" name="driver_id" value="{{ driverId }}" style="display: none;">
 
                 <div class="input-wrapper">
