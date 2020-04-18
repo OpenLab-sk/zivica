@@ -22,13 +22,13 @@ class Events extends ComponentBase
 
     function getAllEvents()
     {
-        $events = Event::all();
+        $events = Event::all()->sortBy('starts_at');
 
         foreach ($events as $key => $event) {
             $events[$key] = self::_enrich_Date_Time_Drivers($event);
         }
 
-       return $events;
+        return $events;
     }
 
     function getEvent()
