@@ -1,3 +1,5 @@
 # Installation
 1. Git clone
-2. Composer install
+2. touch storage/database.sqlite
+3. Composer install
+4. php artisan october:up

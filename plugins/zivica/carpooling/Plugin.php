@@ -14,10 +14,6 @@ class Plugin extends PluginBase
             'icon'        => 'icon-leaf'
         ];
     }
- 
-    public function boot() {
-        dd($this);
-    }
 
     public function registerMailTemplates()
     {
