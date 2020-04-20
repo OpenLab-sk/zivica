@@ -59,6 +59,8 @@ class Drivers extends ComponentBase
 
         $passenger->save();
         $driver->save();
+
+        return \Redirect::refresh();
     }
 
     public function onSetToUnsolved() {
