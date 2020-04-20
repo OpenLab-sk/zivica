@@ -1,8 +1,6 @@
 $(() => {
     // Forms -----------------------------------
-    $('input').keydown(function () {
-        $(this).removeClass('invalid');
-    })
+
 
     $('#new-driver').click(function (e) {
         e.preventDefault();
@@ -34,11 +32,13 @@ $(() => {
     $('#submit-form').click(function () {
         $('form input').each(function () {
             if ($(this).attr('type') == 'checkbox') {
-
-
-                // FIX Checkbox
-
-
+                if ($(this).context.checked == false) {
+                    $(this).addClass('invalid');
+                    $(this).next().css('color', 'red');
+                } else {
+                    $(this).removeClass('invalid');
+                    $(this).next().css('color', '');
+                }
 
             } else if ($(this).attr('data-validation') == 'required' && $(this).val() == '') {
                 $(this).addClass('invalid');

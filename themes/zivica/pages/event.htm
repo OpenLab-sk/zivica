@@ -94,7 +94,7 @@ is_hidden = 0
                 </div>
                 <div class="input-wrapper">
                     <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
-                    <input type="email" name="email" placeholder="Email" data-validation="required">
+                    <input id="email" type="email" name="email" placeholder="Email" data-validation="required">
                 </div>
                 <div class="input-wrapper">
                     <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
@@ -115,7 +115,7 @@ is_hidden = 0
                 </div>
 
                 <div class="checkbox-wrapper">
-                    <input type="checkbox" name="gdpr" placeholder="" data-validation="required">
+                    <input id="gdpr" type="checkbox" name="gdpr" placeholder="" data-validation="required">
                     <label for="gdrp">Súhlasím so všeobecnými podmienkami</label>
                 </div>
 
@@ -125,7 +125,10 @@ is_hidden = 0
         </div>
         <div class="form--show-on-submit">
             <div class="wrapper">
-                <h2>Odoslané</h2>
+                <h2>Ponuka pridaná</h2>
+                <h4>Do emailu sme Vám odoslali link na Váš profil. Dáme Vám vedieť keď sa niekto ozve.
+                </h4>
+                <a href="" class="back">Zatvoriť</a>
             </div>
         </div>
     </div>

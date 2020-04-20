@@ -23,31 +23,33 @@ is_hidden = 0
     </div>
 </div>
 {% else %}
-<div class="event-wrapper">
-    <div class="container header-container profile">
-        <h2>Vitaj {{ driver.name }}</h2>
-        <div class="line-wrapper">
-            <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
-            <h4>{{ driver.email }}</h4>
+<div class="main-content-wrapper">
+    <div class="header-container profile">
+        <div class="container">
+            <h2>Vitaj {{ driver.name }}</h2>
+            <div class="line-wrapper">
+                <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
+                <h4>{{ driver.email }}</h4>
+            </div>
+            <div class="line-wrapper">
+                <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
+                <h4>{{ driver.leaves_from }}</h4>
+            </div>
+            <div class="line-wrapper">
+                <img src="{{ '/assets/images/icons/clock-white.png'|theme }}" alt="icon">
+                <h4>{{ driver.leaves_at }}</h4>
+            </div>
+            <div class="line-wrapper">
+                <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
+                <h4>{{ driver.cities }}</h4>
+            </div>
+            <div class="line-wrapper">
+                <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
+                <h4>{{ driver.seats }}</h4>
+            </div>
+            <a href="{{ 'profil'|page }}/upravit-ponuku" class="button button-primary">Upraviť
+                inzeráť</a>
         </div>
-        <div class="line-wrapper">
-            <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
-            <h4>{{ driver.leaves_from }}</h4>
-        </div>
-        <div class="line-wrapper">
-            <img src="{{ '/assets/images/icons/clock-white.png'|theme }}" alt="icon">
-            <h4>{{ driver.leaves_at }}</h4>
-        </div>
-        <div class="line-wrapper">
-            <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
-            <h4>{{ driver.cities }}</h4>
-        </div>
-        <div class="line-wrapper">
-            <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
-            <h4>{{ driver.seats }}</h4>
-        </div>
-        <a href="{{ 'profil'|page }}/upravit-ponuku" class="button button-primary">Upraviť
-            inzeráť</a>
     </div>
 </div>
 <div class="container">
@@ -82,7 +84,8 @@ is_hidden = 0
                 <img src="{{ '/assets/images/icons/check-white.png'|theme }}" alt="icon">
             </div> -->
             <div class="footer mark-as-solved">
-                <a data-request="onSetToSolved" data-request-data="passengerId: {{passenger.id}}, driverId: {{driver.id}}">
+                <a data-request="onSetToSolved"
+                    data-request-data="passengerId: {{passenger.id}}, driverId: {{driver.id}}">
                     <img src="{{ '/assets/images/icons/check-white.png'|theme }}" alt="icon">
                 </a>
             </div>

@@ -230,10 +230,28 @@ a:hover {
         height: 100vh;
         width: 100%;
         justify-content: center;
+        flex-direction: column;
 
-        h2 {
+        h2,
+        h4,
+        a {
             align-self: center;
+            text-align: center;
+            width: 85%;
+            max-width: 1000px;
         }
+
+        h2,
+        h4 {
+            margin-top: 20px;
+        }
+
+        a {
+            margin-top: 30px;
+            font-weight: 300;
+        }
+
+
     }
 }
 

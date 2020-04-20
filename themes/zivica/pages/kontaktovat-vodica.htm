@@ -21,7 +21,7 @@ is_hidden = 0
 
                 <div class="input-wrapper">
                     <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
-                    <input type="email" name="email" placeholder="Email" value="{{ driver.event_id }}"
+                    <input id="email" type="email" name="email" placeholder="Email" value="{{ driver.event_id }}"
                         data-validation="required">
                 </div>
                 <div class="input-wrapper">
@@ -37,7 +37,7 @@ is_hidden = 0
                     <input type="text" name="note" placeholder="Poznámka">
                 </div>
                 <div class="checkbox-wrapper">
-                    <input type="checkbox" name="gdpr" placeholder="" data-validation="required">
+                    <input id="gdpr" type="checkbox" name="gdpr" placeholder="" data-validation="required">
                     <label for="gdrp">Súhlasím so všeobecnými podmienkami</label>
                 </div>
 
@@ -47,6 +47,8 @@ is_hidden = 0
         <div class="form--show-on-submit">
             <div class="wrapper">
                 <h2>Odoslané</h2>
+                <h4>Teraz už stačí iba čakať, kým Vás vodič kontaktuje</h4>
+                <a href="" class="back">Zatvoriť</a>
             </div>
         </div>
     </div>
