@@ -60,4 +60,20 @@ class Drivers extends ComponentBase
         $passenger->save();
         $driver->save();
     }
+
+    public function onSetToUnsolved() {
+        $passengerId = post('passengerId');
+        $driverId = post('driverId');
+
+        $passenger = Passenger::where('id', $passengerId)->first();
+        $driver = Driver::where('id', $driverId)->first();
+
+        $passenger->isSolved = false;
+        $driver->seats += 1;
+
+        $passenger->save();
+        $driver->save();
+
+        return \Redirect::refresh();
+    }
 }

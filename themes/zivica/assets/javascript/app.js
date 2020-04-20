@@ -12,9 +12,9 @@ $(() => {
         hideForm('.main-content-wrapper');
     })
 
-    $('.card--with-footer .footer').click(function () {
-        $('.main-content-wrapper').fadeOut(100);
-    });
+    // $('.card--with-footer .footer').click(function () {
+    //     $('.main-content-wrapper').fadeOut(100);
+    // });
 
 
     $('.mark-as-solved').click(function () {

@@ -150,6 +150,10 @@ h6 {
   height: 26px;
 }
 
+.card--with-footer .footer.mark-as-unsolved {
+  background-color: #db0b0b;
+}
+
 /* ------------------ PREROBIT ----------------- */
 a:hover {
   text-decoration: none !important;

@@ -83,12 +83,32 @@ is_hidden = 0
                 data-url="/api/set-solved/passenger/{{ passenger.id }}/driver/{{ driver.id }}">
                 <img src="{{ '/assets/images/icons/check-white.png'|theme }}" alt="icon">
             </div> -->
+            <!-- <div class="footer mark-as-solved">
+                <a data-request="onSetToSolved"
+                    data-request-data="passengerId: {{passenger.id}}, driverId: {{driver.id}}">
+                    <img src="{{ '/assets/images/icons/check-white.png'|theme }}" alt="icon">
+                </a>
+            </div> -->
+
+
+
+
+            {% if passenger.isSolved == 0 %}
             <div class="footer mark-as-solved">
                 <a data-request="onSetToSolved"
                     data-request-data="passengerId: {{passenger.id}}, driverId: {{driver.id}}">
                     <img src="{{ '/assets/images/icons/check-white.png'|theme }}" alt="icon">
                 </a>
             </div>
+            {% else %}
+            <div class="footer mark-as-unsolved">
+                <a data-request="onSetToUnsolved"
+                    data-request-data="passengerId: {{passenger.id}}, driverId: {{driver.id}}">
+                    <img src="{{ '/assets/images/icons/cancel-white.png'|theme }}" alt="icon">
+                </a>
+            </div>
+            {% endif %}
+
         </div>
         {% endfor %}
     </div>
