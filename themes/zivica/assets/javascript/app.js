@@ -74,11 +74,11 @@ $(() => {
 function formOnSuccess() {
     $('.form--hide-on-success').fadeOut(150, function () {
         $('.form--show-on-submit').fadeIn(100)
-        setTimeout(function () {
-            $('.form--show-on-submit').fadeOut(300, function () {
-                $('.back').click();
-            })
-        }, 1000);
+        // setTimeout(function () {
+        //     $('.form--show-on-submit').fadeOut(300, function () {
+        //         $('.back').click();
+        //     })
+        // }, 1000);
     });
 }
 
@@ -86,11 +86,11 @@ function formOnError() {
     $('.form--hide-on-success').fadeOut(150, function () {
         $('.form--show-on-submit h2').text('Chyba')
         $('.form--show-on-submit').fadeIn(100)
-        setTimeout(function () {
-            $('.form--show-on-submit').fadeOut(300, function () {
-                $('.back').click();
-            })
-        }, 2000);
+        // setTimeout(function () {
+        //     $('.form--show-on-submit').fadeOut(300, function () {
+        //         $('.back').click();
+        //     })
+        // }, 2000);
     });
 }
 
