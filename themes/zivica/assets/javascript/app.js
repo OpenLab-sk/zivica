@@ -12,6 +12,9 @@ $(() => {
         hideForm('.main-content-wrapper');
     })
 
+    $('.close-slided-form').click(function () {
+        hideForm('.main-content-wrapper');
+    })
     // $('.card--with-footer .footer').click(function () {
     //     $('.main-content-wrapper').fadeOut(100);
     // });
@@ -85,6 +88,7 @@ function formOnSuccess() {
 function formOnError() {
     $('.form--hide-on-success').fadeOut(150, function () {
         $('.form--show-on-submit h2').text('Chyba')
+        $('.form--show-on-submit h4').text('')
         $('.form--show-on-submit').fadeIn(100)
         // setTimeout(function () {
         //     $('.form--show-on-submit').fadeOut(300, function () {
@@ -114,8 +118,6 @@ function hideForm(defaultElement) {
         left: '100vw'
     }, 100, function () {
         $(this).hide();
-        $('.back.arrow-back-black').hide();
-        $('.back.arrow-back-white').fadeIn(80);
         $('form').show();
         $('.form-saved').hide();
     });

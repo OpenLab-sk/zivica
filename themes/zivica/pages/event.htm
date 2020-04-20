@@ -11,13 +11,9 @@ is_hidden = 0
 {% set drivers = drivers.getDrivers %}
 <div class="container-fluid navbar-wrapper">
     <div class="container">
-        <a href="{{ 'eventy'|page }}" class="back arrow-back-white">
+        <a href="{{ 'eventy'|page }}" class="back arrow-back-black">
             <img src="{{ '/assets/images/icons/back-black.png' |theme}}" alt="Back">
         </a>
-        <a id="back--form-hide" href="{{ 'event'|page }}" class="back arrow-back-black" style="display: none;">
-            <img src="{{ '/assets/images/icons/back-black.png' |theme}}" alt="Back">
-        </a>
-
     </div>
 </div>
 <div class="main-content-wrapper">
@@ -43,11 +39,7 @@ is_hidden = 0
 
     <div class="cards-list container">
         {% if drivers == [] %}
-        <div class="card--with-footer" data-driver-id="{{ driver.id }}">
-            <div class="info">
-                <h3>Zatiaľ sa neprihlásil žiaden vodič</h3>
-            </div>
-        </div>
+        <h3 style="text-align: center;">Zatiaľ sa neprihlásil žiaden vodič</h3>
         {% else %}
         {% for driver in drivers %}
         <div class="card--with-footer" data-driver-id="{{ driver.id }}">
@@ -84,6 +76,13 @@ is_hidden = 0
 
 
 <div class="slided-form-wrapper">
+    <div class="container-fluid navbar-wrapper">
+        <div class="container">
+            <a class="close-slided-form">
+                <img src="{{ '/assets/images/icons/cancel-black.png' |theme}}" alt="Back">
+            </a>
+        </div>
+    </div>
     <div class="container">
         <div class="form--hide-on-success">
             <form method="post" data-url="{{ url('') }}/api/add-driver">
@@ -117,7 +116,8 @@ is_hidden = 0
 
                 <div class="checkbox-wrapper">
                     <input id="gdpr" type="checkbox" name="gdpr" placeholder="" data-validation="required">
-                    <label for="gdrp">Súhlasím so všeobecnými podmienkami</label>
+                    <a href="{{ 'vseobecne-podmienky-pouzivania'|page }}" target="_blank">Súhlasím so všeobecnými
+                        podmienkami</a>
                 </div>
 
                 <!-- <h3>Captcha</h3> -->
@@ -129,7 +129,7 @@ is_hidden = 0
                 <h2>Ponuka pridaná</h2>
                 <h4>Do emailu sme Vám odoslali link na Váš profil. Dáme Vám vedieť keď sa niekto ozve.
                 </h4>
-                <a href="" class="back">Zatvoriť</a>
+                <a href="" class="close-slided-form">Zatvoriť</a>
             </div>
         </div>
     </div>
