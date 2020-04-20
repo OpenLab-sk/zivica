@@ -25,7 +25,7 @@ is_hidden = 0
                         data-validation="required">
                 </div>
                 <div class="input-wrapper">
-                    <img src="{{ '/assets/images/icons/rocket-black.png'|theme }}" alt="icon">
+                    <img src="{{ '/assets/images/icons/phone-black.png'|theme }}" alt="icon">
                     <input type="text" name="phone" placeholder="Telefónne číslo" data-validation="required">
                 </div>
                 <div class="input-wrapper">
@@ -33,15 +33,16 @@ is_hidden = 0
                     <input type="text" name="city" placeholder="Odkiaľ ste" data-validation="required">
                 </div>
                 <div class="input-wrapper">
-                    <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
+                    <img src="{{ '/assets/images/icons/note-black.png'|theme }}" alt="icon">
                     <input type="text" name="note" placeholder="Poznámka">
                 </div>
                 <div class="checkbox-wrapper">
                     <input id="gdpr" type="checkbox" name="gdpr" placeholder="" data-validation="required">
-                    <label for="gdrp">Súhlasím so všeobecnými podmienkami</label>
+                    <a href="{{ 'vseobecne-podmienky-pouzivania'|page }}" target="_blank">Súhlasím so všeobecnými
+                        podmienkami</a>
                 </div>
 
-                <a id="submit-form" class="button button-lg button-secondary">Potvrdiť</a>
+                <a id="submit-form" class="button button-lg button-primary">Potvrdiť</a>
             </form>
         </div>
         <div class="form--show-on-submit">

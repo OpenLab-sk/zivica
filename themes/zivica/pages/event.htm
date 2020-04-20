@@ -12,7 +12,7 @@ is_hidden = 0
 <div class="container-fluid navbar-wrapper">
     <div class="container">
         <a href="{{ 'eventy'|page }}" class="back arrow-back-white">
-            <img src="{{ '/assets/images/icons/back-white.png' |theme}}" alt="Back">
+            <img src="{{ '/assets/images/icons/back-black.png' |theme}}" alt="Back">
         </a>
         <a id="back--form-hide" href="{{ 'event'|page }}" class="back arrow-back-black" style="display: none;">
             <img src="{{ '/assets/images/icons/back-black.png' |theme}}" alt="Back">
@@ -25,15 +25,15 @@ is_hidden = 0
         <div class="container">
             <h2>{{ event.name }}</h2>
             <div class="line-wrapper">
-                <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon" class="location-icon">
+                <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon" class="location-icon">
                 <h5>{{ event.location }}</h5>
             </div>
             <div class="line-wrapper">
-                <img src="{{ '/assets/images/icons/calendar-white.png'|theme }}" alt="icon" class="location-icon">
+                <img src="{{ '/assets/images/icons/calendar-black.png'|theme }}" alt="icon" class="location-icon">
                 <h5>{{ event.date }}</h5>
             </div>
             <div class="line-wrapper">
-                <img src="{{ '/assets/images/icons/clock-white.png'|theme }}" alt="icon" class="location-icon">
+                <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon" class="location-icon">
                 <h5>{{ event.time }}</h5>
             </div>
             <a id="new-driver" class="button button-primary">Prihlásiť sa ako vodič</a>
@@ -72,7 +72,8 @@ is_hidden = 0
             </div>
             <a href="{{ 'event'|page }}/kontaktovat-vodica/{{ driver.id }}">
                 <div class="footer">
-                    <img src="{{ '/assets/images/icons/send-white.png'|theme }}" alt="icon">
+                    <!-- <img src="{{ '/assets/images/icons/send-white.png'|theme }}" alt="icon"> -->
+                    <p>Kontaktovať vodiča</p>
                 </div>
             </a>
         </div>
@@ -120,7 +121,7 @@ is_hidden = 0
                 </div>
 
                 <!-- <h3>Captcha</h3> -->
-                <a id="submit-form" class="button button-lg button-secondary">Potvrdiť</a>
+                <a id="submit-form" class="button button-lg button-primary">Potvrdiť</a>
             </form>
         </div>
         <div class="form--show-on-submit">

@@ -54,21 +54,44 @@ h6 {
   color: #2B2B2B;
 }
 
+.button {
+  display: block;
+  font-size: 16px;
+  border-radius: 25px;
+  padding: 13px 15px;
+  font-weight: 300;
+  margin: 30px auto auto auto;
+  width: 90%;
+  transition-duration: 300ms;
+}
+
+.button-lg {
+  width: 100%;
+}
+
+.button-primary {
+  background-color: white;
+  color: #647800 !important;
+  border: 1px solid #647800;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button-primary:hover {
+  background-color: #647800 !important;
+  color: white !important;
+  cursor: pointer;
+}
+
 .header-container {
   min-height: 250px;
-  background-color: #7cb518;
+  background-color: white;
   padding-top: 75px;
   padding-bottom: 100px;
 }
 
-.header-container h1,
-.header-container h2,
-.header-container h3,
-.header-container h4,
-.header-container h5,
-.header-container h6,
-.header-container p {
-  color: #ffffff;
+.header-container * {
+  color: #0f0f0f;
 }
 
 .header-container .button {
@@ -126,7 +149,7 @@ h6 {
 }
 
 .card--with-footer {
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   background-color: white;
   margin-bottom: 40px;
   border-radius: 4px;
@@ -144,14 +167,30 @@ h6 {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition-duration: 300ms;
 }
 
 .card--with-footer .footer img {
   height: 26px;
 }
 
+.card--with-footer .footer p {
+  margin: 0;
+  color: white;
+  font-weight: 300;
+}
+
+.card--with-footer .footer:hover {
+  background-color: #a4a70a;
+  cursor: pointer;
+}
+
 .card--with-footer .footer.mark-as-unsolved {
-  background-color: #db0b0b;
+  background-color: #f52f15;
+}
+
+.card--with-footer .footer.mark-as-unsolved:hover {
+  background-color: #db2810;
 }
 
 /* ------------------ PREROBIT ----------------- */
@@ -186,7 +225,6 @@ a:hover {
   align-self: center;
   flex-direction: column;
   justify-content: center;
-  background-color: #c8cd00;
   border-radius: 4px;
   box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
 }
@@ -196,6 +234,30 @@ a:hover {
   text-align: center;
   margin: 0;
   color: #ffffff;
+}
+
+.card--with-square .number-container.color-0 {
+  background-color: #747474;
+}
+
+.card--with-square .number-container.color-1 {
+  background-color: #ffae00;
+}
+
+.card--with-square .number-container.color-2 {
+  background-color: #fdcf00;
+}
+
+.card--with-square .number-container.color-3 {
+  background-color: #ddda19;
+}
+
+.card--with-square .number-container.color-4 {
+  background-color: #a9dd19;
+}
+
+.card--with-square .number-container.color-5 {
+  background-color: #7cb518;
 }
 
 /* ----------------------------------- */
@@ -245,45 +307,6 @@ a:hover {
 /* ============================ STARE ==================================== */
 /* ============================ STARE ==================================== */
 /* ============================ STARE ==================================== */
-.button {
-  display: block;
-  font-size: 16px;
-  border-radius: 25px;
-  padding: 15px 15px;
-  font-weight: 300;
-  margin: 30px auto auto auto;
-  width: 90%;
-  transition-duration: 300ms;
-}
-
-.button-lg {
-  width: 100%;
-}
-
-.button-primary {
-  background-color: white;
-  color: #000000 !important;
-  text-align: center;
-  text-decoration: none;
-}
-
-.button-primary:hover {
-  background-color: rgba(255, 255, 255, 0.8);
-  cursor: pointer;
-}
-
-.button-secondary {
-  background: #c8cd00;
-  color: #ffffff !important;
-  text-align: center;
-  text-decoration: none;
-}
-
-.button-secondary:hover {
-  background: #a4a70a;
-  cursor: pointer;
-}
-
 .button-tertiary {
   width: 100%;
   background: transparent;
@@ -396,15 +419,17 @@ form .checkbox-wrapper input {
   width: 20px;
 }
 
-form .checkbox-wrapper label {
+form .checkbox-wrapper a {
   font-size: 14px;
   font-weight: 300;
   width: 85%;
   margin: 0;
+  color: black;
+  text-decoration: underline !important;
 }
 
-form .checkbox-wrapper label.invalid {
-  color: #c92222;
+form .checkbox-wrapper a.invalid {
+  color: #f52f15;
 }
 
 form .button {

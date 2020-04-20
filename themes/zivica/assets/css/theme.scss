@@ -1,15 +1,22 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&display=swap');
 
-$color-primary: rgba(200, 205, 0, 1);
-$color-primary-shade: rgb(164, 167, 10);
+$color-primary: rgba(255, 255, 255, 1);
+$color-primary-shade: rgba(15, 15, 15, 1);
 
 $color-secondary: rgba(100, 120, 0, 1);
 $color-secondary-shade: rgb(87, 104, 5);
+$color-secondary-contrast: rgba(255, 255, 255, 1);
 
-$color-tertiary: rgba(124, 181, 24, 1);
-$color-tertiary-shade: rgb(109, 160, 21);
+$color-tertiary: rgba(200, 205, 0, 1);
+$color-tertiary-shade: rgb(164, 167, 10);
+$color-tertiary-contrast: rgba(255, 255, 255, 1);
 
-$color-red: rgba(219, 11, 11, 1);
+// $color-tertiary: rgba(124, 181, 24, 1);
+// $color-tertiary-shade: rgb(109, 160, 21);
+
+$color-red: rgb(245, 47, 21);
+$color-red-shade: rgb(219, 40, 16);
+$color-red-contrast: rgba(0, 0, 0, 1);
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -66,20 +73,43 @@ h6 {
     color: #2B2B2B;
 }
 
+.button {
+    display: block;
+    font-size: 16px;
+    border-radius: 25px;
+    padding: 13px 15px;
+    font-weight: 300;
+    margin: 30px auto auto auto;
+    width: 90%;
+    transition-duration: 300ms;
+}
+
+.button-lg {
+    width: 100%;
+}
+
+.button-primary {
+    background-color: $color-primary;
+    color: $color-secondary !important;
+    border: 1px solid $color-secondary;
+    text-align: center;
+    text-decoration: none;
+}
+
+.button-primary:hover {
+    background-color: $color-secondary !important;
+    color: $color-secondary-contrast !important;
+    cursor: pointer;
+}
+
 .header-container {
     min-height: 250px;
-    background-color: $color-tertiary;
+    background-color: $color-primary;
     padding-top: 75px;
     padding-bottom: 100px;
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p {
-        color: #ffffff;
+    * {
+        color: $color-primary-shade;
     }
 
     .button {
@@ -138,7 +168,7 @@ h6 {
 }
 
 .card--with-footer {
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     background-color: rgb(255, 255, 255);
     margin-bottom: 40px;
     border-radius: 4px;
@@ -151,18 +181,34 @@ h6 {
 
     .footer {
         height: 50px;
-        background-color: $color-primary;
+        background-color: $color-tertiary;
         display: flex;
         justify-content: center;
         align-items: center;
+        transition-duration: 300ms;
 
         img {
             height: 26px;
         }
+
+        p {
+            margin: 0;
+            color: $color-tertiary-contrast;
+            font-weight: 300;
+        }
+    }
+
+    .footer:hover {
+        background-color: $color-tertiary-shade;
+        cursor: pointer;
     }
 
     .footer.mark-as-unsolved {
         background-color: $color-red;
+    }
+
+    .footer.mark-as-unsolved:hover {
+        background-color: $color-red-shade;
     }
 }
 
@@ -199,9 +245,7 @@ a:hover {
         align-self: center;
         flex-direction: column;
         justify-content: center;
-        // background: rgb(244, 208, 63);
-        // background: linear-gradient(159deg, rgba(244, 208, 63, 1) 0%, rgba(22, 160, 133, 1) 100%);
-        background-color: $color-primary;
+
         border-radius: 4px;
         box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
 
@@ -211,6 +255,30 @@ a:hover {
             margin: 0;
             color: #ffffff;
         }
+    }
+
+    .number-container.color-0 {
+        background-color: rgb(116, 116, 116);
+    }
+
+    .number-container.color-1 {
+        background-color: rgb(255, 174, 0);
+    }
+
+    .number-container.color-2 {
+        background-color: rgb(253, 207, 0);
+    }
+
+    .number-container.color-3 {
+        background-color: rgb(221, 218, 25);
+    }
+
+    .number-container.color-4 {
+        background-color: rgb(169, 221, 25);
+    }
+
+    .number-container.color-5 {
+        background-color: rgb(124, 181, 24);
     }
 }
 
@@ -269,44 +337,10 @@ a:hover {
 /* ============================ STARE ==================================== */
 /* ============================ STARE ==================================== */
 
-.button {
-    display: block;
-    font-size: 16px;
-    border-radius: 25px;
-    padding: 15px 15px;
-    font-weight: 300;
-    margin: 30px auto auto auto;
-    width: 90%;
-    transition-duration: 300ms;
-}
 
-.button-lg {
-    width: 100%;
-}
 
-.button-primary {
-    background-color: rgba(255, 255, 255, 1);
-    color: #000000 !important;
-    text-align: center;
-    text-decoration: none;
-}
 
-.button-primary:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-    cursor: pointer;
-}
 
-.button-secondary {
-    background: $color-primary;
-    color: #ffffff !important;
-    text-align: center;
-    text-decoration: none;
-}
-
-.button-secondary:hover {
-    background: $color-primary-shade;
-    cursor: pointer;
-}
 
 .button-tertiary {
     width: 100%;
@@ -422,15 +456,17 @@ form {
             width: 20px;
         }
 
-        label {
+        a {
             font-size: 14px;
             font-weight: 300;
             width: 85%;
             margin: 0;
+            color: $color-red-contrast;
+            text-decoration: underline !important;
         }
 
-        label.invalid {
-            color: rgb(201, 34, 34);
+        a.invalid {
+            color: $color-red;
         }
     }
 

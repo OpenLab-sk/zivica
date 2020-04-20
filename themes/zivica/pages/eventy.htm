@@ -9,7 +9,7 @@ is_hidden = 0
 <div class="container-fluid navbar-wrapper">
     <div class="container">
         <a href="https://centrumzajezova.sk">
-            <img class="back arrow-back-white" src="{{ '/assets/images/icons/back-white.png' |theme}}" alt="Back">
+            <img class="back arrow-back-black" src="{{ '/assets/images/icons/back-black.png' |theme}}" alt="Back">
         </a>
     </div>
 </div>
@@ -23,25 +23,29 @@ is_hidden = 0
     {% for event in allEvents %}
     <a href="{{ 'event'|page }}/{{ event.id }}">
         <div class=" card--with-square" data-event-id="{{ event.id }}">
-            <div class="number-container">
-                <h2>{{ event.number_of_drivers }}</h2>
-                {% if driver.seats == 0 %}
-                <h5>vodičov</h5>
-                {% elseif driver.seats == 1 %}
-                <h5>vodič</h5>
-                {% elseif driver.seats <= 4 %}
-                <h5>vodiči</h5>
+            {% if event.number_of_drivers < 5 %}
+            <div class="number-container color-{{ event.number_of_drivers % 5 }}">
                 {% else %}
-                <h5>vodičov</h5>
-                {% endif %}
+                <div class="number-container color-5">
+                    {% endif %}
+                    <h2>{{ event.number_of_drivers }}</h2>
+                    {% if event.number_of_drivers  == 0 %}
+                    <h5>vodičov</h5>
+                    {% elseif event.number_of_drivers  == 1 %}
+                    <h5>vodič</h5>
+                    {% elseif event.number_of_drivers  <= 4 %}
+                    <h5>vodiči</h5>
+                    {% else %}
+                    <h5>vodičov</h5>
+                    {% endif %}
+                </div>
+                <div class="details">
+                    <h4>{{ event.name }}</h4>
+                    <h6>{{ event.location }}</h6>
+                    <h5>{{ event.date }}</h5>
+                    <h5>{{ event.time }}</h5>
+                </div>
             </div>
-            <div class="details">
-                <h4>{{ event.name }}</h4>
-                <h6>{{ event.location }}</h6>
-                <h5>{{ event.date }}</h5>
-                <h5>{{ event.time }}</h5>
-            </div>
-        </div>
     </a>
     {% endfor %}
 </div>

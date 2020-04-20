@@ -10,7 +10,7 @@ is_hidden = 0
 <div class="container-fluid navbar-wrapper">
     <div class="container">
         <a href="{{ 'eventy'|page }}">
-            <img class="back arrow-back-black" src="{{ '/assets/images/icons/back-white.png' |theme}}" alt="Back">
+            <img class="back arrow-back-black" src="{{ '/assets/images/icons/back-black.png' |theme}}" alt="Back">
         </a>
     </div>
 </div>
@@ -28,23 +28,23 @@ is_hidden = 0
         <div class="container">
             <h2>Vitaj {{ driver.name }}</h2>
             <div class="line-wrapper">
-                <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
+                <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
                 <h4>{{ driver.email }}</h4>
             </div>
             <div class="line-wrapper">
-                <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
+                <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
                 <h4>{{ driver.leaves_from }}</h4>
             </div>
             <div class="line-wrapper">
-                <img src="{{ '/assets/images/icons/clock-white.png'|theme }}" alt="icon">
+                <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon">
                 <h4>{{ driver.leaves_at }}</h4>
             </div>
             <div class="line-wrapper">
-                <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
+                <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
                 <h4>{{ driver.cities }}</h4>
             </div>
             <div class="line-wrapper">
-                <img src="{{ '/assets/images/icons/location-white.png'|theme }}" alt="icon">
+                <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
                 <h4>{{ driver.seats }}</h4>
             </div>
             <a href="{{ 'profil'|page }}/upravit-ponuku" class="button button-primary">Upraviť
@@ -61,54 +61,45 @@ is_hidden = 0
         {% for passenger in driver.passengers %}
         <div class="card--with-footer solved" data-driver-id="{{ driver.id }}">
             <div class="info">
-                <!-- <h3>{{ driver.name }}</h3> -->
                 <div class="line-wrapper">
                     <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon" class="location-icon">
-                    <h5>{{ passenger.email }}</h5>
+                    <a href="mailto:{{ passenger.email }}">
+                        <h5 style="text-decoration: underline;">{{ passenger.email }}</h5>
+                    </a>
                 </div>
                 <div class="line-wrapper">
-                    <img src="{{ '/assets/images/icons/rocket-black.png'|theme }}" alt="icon">
-                    <h5>{{ passenger.phone }}</h5>
+                    <img src="{{ '/assets/images/icons/phone-black.png'|theme }}" alt="icon">
+                    <a href="tel:{{ passenger.phone }}">
+                        <h5 style="text-decoration: underline;">{{ passenger.phone }}</h5>
+                    </a>
                 </div>
                 <div class="line-wrapper">
                     <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
                     <h5>{{ passenger.city }}</h5>
                 </div>
+                {% if passenger.note %}
                 <div class="line-wrapper">
-                    <img src="{{ '/assets/images/icons/rocket-black.png'|theme }}" alt="icon">
+                    <img src="{{ '/assets/images/icons/note-black.png'|theme }}" alt="icon">
                     <h5>{{ passenger.note }}</h5>
                 </div>
+                {% endif %}
             </div>
-            <!-- <div class="footer mark-as-solved"
-                data-url="/api/set-solved/passenger/{{ passenger.id }}/driver/{{ driver.id }}">
-                <img src="{{ '/assets/images/icons/check-white.png'|theme }}" alt="icon">
-            </div> -->
-            <!-- <div class="footer mark-as-solved">
-                <a data-request="onSetToSolved"
-                    data-request-data="passengerId: {{passenger.id}}, driverId: {{driver.id}}">
-                    <img src="{{ '/assets/images/icons/check-white.png'|theme }}" alt="icon">
-                </a>
-            </div> -->
-
-
-
-
             {% if passenger.isSolved == 0 %}
-            <div class="footer mark-as-solved">
-                <a data-request="onSetToSolved"
-                    data-request-data="passengerId: {{passenger.id}}, driverId: {{driver.id}}">
-                    <img src="{{ '/assets/images/icons/check-white.png'|theme }}" alt="icon">
-                </a>
-            </div>
-            {% else %}
-            <div class="footer mark-as-unsolved">
-                <a data-request="onSetToUnsolved"
-                    data-request-data="passengerId: {{passenger.id}}, driverId: {{driver.id}}">
-                    <img src="{{ '/assets/images/icons/cancel-white.png'|theme }}" alt="icon">
-                </a>
-            </div>
-            {% endif %}
+            <a data-request="onSetToSolved" data-request-data="passengerId: {{passenger.id}}, driverId: {{driver.id}}">
+                <div class="footer mark-as-solved">
 
+                    <p>Označiť ako vybavené</p>
+                </div>
+            </a>
+            {% else %}
+            <a data-request="onSetToUnsolved"
+                data-request-data="passengerId: {{passenger.id}}, driverId: {{driver.id}}">
+                <div class="footer mark-as-unsolved">
+
+                    <p>Označiť ako nevybavené</p>
+                </div>
+            </a>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
