@@ -35,6 +35,7 @@ class Drivers extends ComponentBase
     function getDriver() {
         $uuid       = $this->page->param('driver_uuid');
         $driver     = Driver::all()->where('uuid', $uuid)->first();
+        $driver->passengers = $driver->passengers->sortByDesc('created_at');
 
         return $driver;
     }

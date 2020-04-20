@@ -21,7 +21,8 @@ class Passenger extends Model
         $driverEmail = $driver->email;
         $driverName = $driver->name;
         Mail::send('zivica.carpooling::mail.add-passenger.driver', [
-            'passenger' => $this
+            'passenger' => $this,
+            'driver' => $driver
         ], function($message) use ($driverEmail, $driverName) {
             $message->to($driverEmail, $driverName);
         });

@@ -1,10 +1,17 @@
-subject = "Novy pasazier"
+subject = "Nový pasažier"
 description = "Email ktory pride vodicovi, ked ma noveho pasaziera"
 ==
-Novy pasazier.
+Dobrý deň, {{ driver.name }},
 
-Udaje: <br>
+na Vašu ponuku zareagoval nový pasažier, ktorý by sa rád zviezol s Vami.
+
+Tu sú jeho údaje <br><br>
 email: {{ passenger.email }} <br>
 mobil: {{ passenger.phone }} <br>
 mesto: {{ passenger.city }} <br>
-poznamka: {{ passenger.note }}
+poznámka: {{ passenger.note }}
+
+Je na Vás, aby ste ho kontaktovali a dohodli ste sa.
+
+Ak sa tak stane, na [profile]({{ url('') }}/profil/{{ driver.uuid }}) ponuky môžete tohto pasažiera označiť za vybaveného.
+Tým pádom sa z Vašej ponuky odráta voľné miesto.
