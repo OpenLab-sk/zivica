@@ -25,7 +25,8 @@ $(() => {
     });
 
     $('#accept-terms').click(function () {
-        submitForm();
+        if (!$(this).hasClass('disabled'))
+            submitForm();
     })
 
     $('#decline-terms').click(function () {
@@ -35,6 +36,17 @@ $(() => {
             $('#terms-container').hide();
         });
     })
+
+    if (window.innerHeight < 1400) {
+        $('.terms-wrapper').on('scroll', function () {
+            if ($('.terms-wrapper .bottom').offset().top <= window.innerHeight - (window.innerHeight / 4))
+                $('#accept-terms').css('opacity', '1').removeClass('disabled');
+        });
+    } else {
+        $('#accept-terms').css('opacity', '1').removeClass('disabled');
+    }
+
+
 })
 
 function submitForm() {

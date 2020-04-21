@@ -127,6 +127,10 @@ a:hover {
   cursor: pointer;
 }
 
+.button-primary.disabled {
+  opacity: 0.5;
+}
+
 .home-achievements-wrapper {
   margin: 60px 40px;
 }
@@ -326,6 +330,7 @@ form .input-wrapper input.invalid {
 #terms-container .terms-wrapper {
   height: 60%;
   margin: 20px auto 0 auto;
+  max-width: 1140px;
   padding: 15px 25px 15px 25px;
   overflow: scroll;
 }
