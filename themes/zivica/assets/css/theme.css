@@ -17,6 +17,10 @@ h1 {
   color: #2f2f2f;
 }
 
+h1 b {
+  font-weight: 500;
+}
+
 h2 {
   font-size: 21px;
   font-weight: 300;
@@ -29,6 +33,10 @@ h3 {
   font-weight: 300;
   margin: 0;
   color: #6b6b6b;
+}
+
+h3 b {
+  font-weight: 500;
 }
 
 h4 {
@@ -54,6 +62,7 @@ a,
 a *,
 a:hover {
   color: #2f2f2f;
+  text-decoration: none;
 }
 
 .margin-bottom-20 {
@@ -68,10 +77,6 @@ a:hover {
   color: #c8cd00;
 }
 
-.bold {
-  font-weight: 400;
-}
-
 .navbar {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -84,14 +89,15 @@ a:hover {
 .button-primary {
   display: block;
   width: 285px;
-  height: 58px;
+  height: 56px;
   font-size: 17px;
-  line-height: 58px;
+  font-weight: 400;
+  line-height: 56px;
   text-align: center;
   background-color: #c8cd00;
   color: white !important;
   box-shadow: 0px 0px 5px rgba(200, 205, 0, 0.5);
-  margin: 16px auto 16px auto;
+  margin: 25px auto 25px auto;
   border: none;
   border-radius: 81px;
   text-transform: uppercase;
@@ -102,6 +108,14 @@ a:hover {
   background-color: #a4a70a;
   text-decoration: none;
   cursor: pointer;
+}
+
+.home-achievements-wrapper {
+  margin: 60px 40px;
+}
+
+.home-achievements-wrapper h3 {
+  margin-top: 20px;
 }
 
 .line-wrapper {
@@ -130,16 +144,65 @@ a:hover {
 }
 
 .card--with-square {
-  padding: 18px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
+  padding: 10px;
   margin-bottom: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   min-height: 125px;
+  display: flex;
+  justify-content: start;
   border-radius: 4px;
   z-index: 100;
 }
 
-.card--with-square :last-child {
-  margin-bottom: 0;
+.card--with-square .details {
+  margin-left: 25px;
+}
+
+.card--with-square .details h4 {
+  color: #131313;
+}
+
+.card--with-square .number-container {
+  min-height: 105px;
+  min-width: 105px;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
+}
+
+.card--with-square .number-container h2,
+.card--with-square .number-container h5 {
+  text-align: center;
+  margin: 0;
+  color: #ffffff;
+}
+
+.card--with-square .number-container.color-0 {
+  background-color: #747474;
+}
+
+.card--with-square .number-container.color-1 {
+  background-color: #ff7b00;
+}
+
+.card--with-square .number-container.color-2 {
+  background-color: #f7a222;
+}
+
+.card--with-square .number-container.color-3 {
+  background-color: #f7c322;
+}
+
+.card--with-square .number-container.color-4 {
+  background-color: #a9dd19;
+}
+
+.card--with-square .number-container.color-5 {
+  background-color: #7cb518;
 }
 
 .card--with-footer {
@@ -190,7 +253,7 @@ a:hover {
 
 /* FORM */
 form {
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 form .button-primary {
@@ -230,4 +293,42 @@ form .input-wrapper input:focus {
 
 form .input-wrapper input.invalid {
   border-bottom: 2px solid #c92222;
+}
+
+/* TERMS */
+#terms-container {
+  display: none;
+  position: absolute;
+  top: 100vh;
+  height: 100vh;
+  width: 100vw !important;
+  z-index: 1000;
+  background-color: white;
+}
+
+#terms-container .terms-wrapper {
+  height: 60%;
+  margin: 20px auto 0 auto;
+  padding: 15px 25px 15px 25px;
+  overflow: scroll;
+}
+
+#terms-container .terms-wrapper h3 {
+  color: #2f2f2f;
+}
+
+#terms-container .gradient-overlay {
+  position: relative;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+#terms-container .gradient-overlay:after {
+  position: absolute;
+  bottom: -10px;
+  height: 200px;
+  width: 100%;
+  content: "";
+  background: linear-gradient(to top, white 10%, rgba(255, 255, 255, 0) 80%);
+  pointer-events: none;
 }

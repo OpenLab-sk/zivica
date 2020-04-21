@@ -14,13 +14,31 @@ is_hidden = 0
     </div>
     <div class="cards-list">
         {% for event in allEvents %}
-        <a href="{{ 'sposob-dopravy'|page }}/{{ event.id }}">
+        <a href="{{ 'sposob-dopravy'|page }}/{{ event.id }}" class="fade-out-on-click">
             <div class=" card--with-square" data-event-id="{{ event.id }}">
-                <h4>{{ event.name }}</h4>
-                <h6>{{ event.location }}</h6>
-                <h5>{{ event.date }}</h5>
-                <h5>{{ event.time }}</h5>
-            </div>
+                {% if event.number_of_drivers < 5 %}
+                <div class="number-container color-{{ event.number_of_drivers % 5 }}">
+                    {% else %}
+                    <div class="number-container color-5">
+                        {% endif %}
+                        <h2>{{ event.number_of_drivers }}</h2>
+                        {% if event.number_of_drivers  == 0 %}
+                        <h5>vodičov</h5>
+                        {% elseif event.number_of_drivers  == 1 %}
+                        <h5>vodič</h5>
+                        {% elseif event.number_of_drivers  <= 4 %}
+                        <h5>vodiči</h5>
+                        {% else %}
+                        <h5>vodičov</h5>
+                        {% endif %}
+                    </div>
+                    <div class="details">
+                        <h4>{{ str_limit(event.name|raw, 40, '...') }}</h4>
+                        <h6>{{ str_limit(event.location|raw, 25, '...') }}</h6>
+                        <h5>{{ event.date }}</h5>
+                        <h5>{{ event.time }}</h5>
+                    </div>
+                </div>
         </a>
         {% endfor %}
     </div>

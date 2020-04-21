@@ -22,13 +22,17 @@ class Router extends ComponentBase
         $eventId    = $this->page->param('event_id');
         $driverId   = $this->page->param('driver_id');
 
-        $router = [
-            '/bliziace-sa-skolenia' => url('/'),
-            '/bliziace-sa-skolenia/sposob-dopravy/:event_id?' => "/bliziace-sa-skolenia",
-            '/skolenie/:event_id?' => '/bliziace-sa-skolenia/sposob-dopravy/' . $eventId,
-            '/skolenie/:event_id/vytvorit-ponuku' => '/bliziace-sa-skolenia/sposob-dopravy/' . $eventId,
-            '/skolenie/:event_id/kontaktovat-vodica/:driver_id?' => '/skolenie/' . $eventId
+        if ($url == '/')
+            return 'https://centrumzajezova.sk/';
 
+        $router = [
+            '/bliziace-sa-skolenia'                                 => '',
+            '/bliziace-sa-skolenia/sposob-dopravy/:event_id?'       => "/bliziace-sa-skolenia",
+            '/skolenie/:event_id?'                                  => '/bliziace-sa-skolenia/sposob-dopravy/' . $eventId,
+            '/skolenie/:event_id/vytvorit-ponuku'                   => '/bliziace-sa-skolenia/sposob-dopravy/' . $eventId,
+            '/skolenie/:event_id/kontaktovat-vodica/:driver_id?'    => '/skolenie/' . $eventId,
+            '/hotovo'    => '',
+            '/ponuka-pridana'    => ''
         ];
 
         if (isset($router[$url]))

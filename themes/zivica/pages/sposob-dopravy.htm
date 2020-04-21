@@ -9,14 +9,18 @@ is_hidden = 0
     <div class="text-center">
         <h1>Spôsob dopravy</h1>
         <div class="margin-bottom-20">
-            <h3 class="green bold">Idete vlastným autom?</h3>
+            <h3 class="green"><b>Idete vlastným autom?</b></h3>
             <h3>Pomôžte ostatným a odvezte aj ich</h3>
         </div>
         <div class="margin-bottom-80">
-            <h3 class="green bold">Potrebujete odviezť?</h3>
+            <h3 class="green"><b>Potrebujete odviezť?</b></h3>
             <h3>Stačí kontaktovať niektorého z vodičov</h3>
         </div>
-        <a href="{{ 'skolenie'|page }}/{{ event.id }}vytvorit-ponuku" class="button-primary">idem autom</a>
-        <a href="{{ 'skolenie'|page }}/{{ event.id }}" class="button-primary">hľadám odvoz</a>
+        <a href="{{ 'skolenie'|page }}/{{ event.id }}vytvorit-ponuku" class="button-primary fade-out-on-click">
+            idem autom
+        </a>
+        <a href="{{ 'skolenie'|page }}/{{ event.id }}" class="button-primary fade-out-on-click">
+            hľadám odvoz
+        </a>
     </div>
 </div>

@@ -19,7 +19,7 @@ is_hidden = 0
         <h3 style="text-align: center;">Zatiaľ sa neprihlásil žiaden vodič</h3>
         {% else %}
         {% for driver in drivers %}
-        <div class="card--with-footer" data-driver-id="{{ driver.id }}">
+        <div class="card--with-footer">
             <div class="info">
                 <h2>{{ driver.name }}</h2>
                 <div class="line-wrapper">
@@ -39,7 +39,7 @@ is_hidden = 0
                     <h5>{{ driver.seats }}</h5>
                 </div>
             </div>
-            <a href="{{ 'skolenie'|page }}/kontaktovat-vodica/{{ driver.id }}">
+            <a href="{{ 'skolenie'|page }}/kontaktovat-vodica/{{ driver.id }}" class="fade-out-on-click">
                 <div class="footer">
                     <p>Kontaktovať vodiča</p>
                 </div>

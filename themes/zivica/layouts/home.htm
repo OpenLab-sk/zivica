@@ -1,4 +1,4 @@
-description = "Default layout"
+description = "Layout for homepage"
 ==
 <!DOCTYPE html>
 <html>
@@ -21,11 +21,11 @@ description = "Default layout"
 <body>
     <!-- Header -->
     <header id="layout-header">
-        {% partial 'site/header' %}
+        {% partial 'site/header-home' %}
     </header>
 
     <!-- Content -->
-    <section id="layout-content" style="display: none;">
+    <section id="layout-content">
         {% page %}
     </section>
 

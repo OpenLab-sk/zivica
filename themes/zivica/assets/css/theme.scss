@@ -37,6 +37,10 @@ h1 {
     font-weight: 300;
     margin: 0 0 25px 0;
     color: $color-black-tint;
+
+    b {
+        font-weight: 500;
+    }
 }
 
 h2 {
@@ -51,6 +55,10 @@ h3 {
     font-weight: 300;
     margin: 0;
     color: $color-black-light-tint;
+
+    b {
+        font-weight: 500;
+    }
 }
 
 h4 {
@@ -76,6 +84,7 @@ a,
 a *,
 a:hover {
     color: $color-black-tint;
+    text-decoration: none;
 }
 
 .margin-bottom-20 {
@@ -90,10 +99,6 @@ a:hover {
     color: $color-primary;
 }
 
-.bold {
-    font-weight: 400;
-}
-
 .navbar {
     padding-top: 20px;
     padding-bottom: 20px;
@@ -106,17 +111,18 @@ a:hover {
 .button-primary {
     display: block;
     width: 285px;
-    height: 58px;
+    height: 56px;
 
     font-size: 17px;
-    line-height: 58px;
+    font-weight: 400;
+    line-height: 56px;
     text-align: center;
 
     background-color: $color-primary;
     color: $color-white !important;
     box-shadow: 0px 0px 5px $color-primary-partialy-transparent;
 
-    margin: 16px auto 16px auto;
+    margin: 25px auto 25px auto;
     border: none;
     border-radius: 81px;
 
@@ -128,6 +134,14 @@ a:hover {
     background-color: $color-primary-shade;
     text-decoration: none;
     cursor: pointer;
+}
+
+.home-achievements-wrapper {
+    margin: 60px 40px;
+
+    h3 {
+        margin-top: 20px;
+    }
 }
 
 .line-wrapper {
@@ -158,15 +172,67 @@ a:hover {
 }
 
 .card--with-square {
-    padding: 18px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
+    padding: 10px;
     margin-bottom: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     min-height: 125px;
+    display: flex;
+    justify-content: start;
     border-radius: 4px;
     z-index: 100;
 
-    :last-child {
-        margin-bottom: 0;
+
+    .details {
+        margin-left: 25px;
+
+        h4 {
+            color: #131313;
+        }
+
+    }
+
+    .number-container {
+        min-height: 105px;
+        min-width: 105px;
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+        justify-content: center;
+
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
+
+        h2,
+        h5 {
+            text-align: center;
+            margin: 0;
+            color: #ffffff;
+        }
+    }
+
+    .number-container.color-0 {
+        background-color: rgb(116, 116, 116);
+    }
+
+    .number-container.color-1 {
+        background-color: rgb(255, 123, 0);
+    }
+
+    .number-container.color-2 {
+        background-color: rgb(247, 162, 34);
+    }
+
+    .number-container.color-3 {
+        background-color: rgb(247, 195, 34);
+    }
+
+    .number-container.color-4 {
+        background-color: rgb(169, 221, 25);
+    }
+
+    .number-container.color-5 {
+        background-color: rgb(124, 181, 24);
     }
 }
 
@@ -219,7 +285,7 @@ a:hover {
 
 /* FORM */
 form {
-    margin-top: 60px;
+    margin-top: 50px;
 
     .button-primary {
         margin-top: 50px;
@@ -258,5 +324,45 @@ form {
         input.invalid {
             border-bottom: 2px solid rgb(201, 34, 34);
         }
+    }
+}
+
+/* TERMS */
+
+#terms-container {
+    display: none;
+    position: absolute;
+    top: 100vh;
+    height: 100vh;
+    width: 100vw !important;
+
+    z-index: 1000;
+    background-color: $color-white;
+
+    .terms-wrapper {
+        height: 60%;
+        margin: 20px auto 0 auto;
+        padding: 15px 25px 15px 25px;
+        overflow: scroll;
+
+        h3 {
+            color: $color-black-tint;
+        }
+    }
+
+    .gradient-overlay {
+        position: relative;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .gradient-overlay:after {
+        position: absolute;
+        bottom: -10px;
+        height: 200px;
+        width: 100%;
+        content: "";
+        background: linear-gradient(to top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 80%);
+        pointer-events: none;
     }
 }
