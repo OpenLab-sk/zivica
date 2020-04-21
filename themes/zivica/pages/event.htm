@@ -38,6 +38,7 @@ is_hidden = 0
     </div>
 
     <div class="cards-list container">
+        <h2 style="margin-bottom: 25px">Dostupní vodiči</h2>
         {% if drivers == [] %}
         <h3 style="text-align: center;">Zatiaľ sa neprihlásil žiaden vodič</h3>
         {% else %}
@@ -94,7 +95,8 @@ is_hidden = 0
                 </div>
                 <div class="input-wrapper">
                     <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
-                    <input id="email" type="email" name="email" placeholder="Email" data-validation="required">
+                    <input id="email" type="email" name="email" placeholder="Email (nezobrazí sa v ponuke)"
+                        data-validation="required">
                 </div>
                 <div class="input-wrapper">
                     <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
@@ -120,7 +122,8 @@ is_hidden = 0
                         podmienkami</a>
                 </div>
 
-                <!-- <h3>Captcha</h3> -->
+                <h5 style="margin-top: 20px">Po odoslaní Vám pošleme na email link na profil, zároveň Vám pošleme email
+                    akonáhle Vás niekto kontaktuje</h5>
                 <a id="submit-form" class="button button-lg button-primary">Potvrdiť</a>
             </form>
         </div>
