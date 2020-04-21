@@ -1,0 +1,45 @@
+title = "Vytvoriť ponuku"
+url = "/skolenie/:event_id/vytvorit-ponuku"
+layout = "default"
+is_hidden = 0
+[drivers]
+==
+{% set driverId = drivers.getDriverId() %}
+
+<div class="container">
+    <div class="text-center">
+        <h1>Vytvoriť ponuku</h1>
+        <h3>Po vytvorení ponuky Vám príde email s linkom na Váš profil. Ak sa niekto ozve, dáme Vám vedieť</h3>
+    </div>
+    <form method="post" data-url="{{ url('') }}/api/add-driver">
+        <input type="number" name="event_id" value="{{ eventId }}" style="display: none;">
+
+        <div class="input-wrapper">
+            <img src="{{ '/assets/images/icons/person-black.png'|theme }}" alt="icon">
+            <input type="text" name="name" placeholder="Meno (zobrazí sa v ponuke)" data-validation="required">
+        </div>
+        <div class="input-wrapper">
+            <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
+            <input id="email" type="email" name="email" placeholder="Email (nezobrazí sa v ponuke)"
+                data-validation="required">
+        </div>
+        <div class="input-wrapper">
+            <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
+            <input type="text" name="leaves_from" placeholder="Odkiaľ vyrážate" data-validation="required">
+        </div>
+        <div class="input-wrapper">
+            <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon">
+            <input type="text" id="time" name="leaves_at" placeholder="Čas odchodu" data-validation="required">
+        </div>
+        <div class="input-wrapper">
+            <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
+            <input type="text" name="cities" placeholder="Cez aké mestá prechádzaťe" data-validation="required">
+        </div>
+        <div class="input-wrapper">
+            <img src="{{ '/assets/images/icons/two-people-black.png'|theme }}" alt="icon">
+            <input type="number" id="seats" name="seats" placeholder="Počeť voľných miest" data-validation="required">
+        </div>
+
+        <a id="submit-form" class="button-primary">Pokračovať</a>
+    </form>
+</div>

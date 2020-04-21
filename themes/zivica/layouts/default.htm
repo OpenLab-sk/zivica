@@ -14,7 +14,6 @@ description = "Default layout"
     <link rel="icon" type="image/png" href="{{ ''|theme }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link href="{{ 'assets/css/theme.css'|theme }}" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     {% styles %}
 
 </head>
@@ -39,15 +38,9 @@ description = "Default layout"
     <script src="{{ 'assets/vendor/jquery.js'|theme }}"></script>
     <script src="{{ 'assets/vendor/bootstrap.js'|theme }}"></script>
     <script src="{{ 'assets/javascript/app.js'|theme }}"></script>
-    <script src="{{ 'assets/javascript/formValidations.js'|theme }}"></script>
 
     {% framework extras %}
     {% scripts %}
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init();
-
-    </script>
 </body>
 
 </html>

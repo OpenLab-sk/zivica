@@ -1,0 +1,27 @@
+title = "Blížiace sa školenia"
+url = "/bliziace-sa-skolenia"
+layout = "default"
+is_hidden = 0
+
+[events]
+==
+{% set allEvents = events.getAllEvents() %}
+
+<div class="container">
+    <div class="text-center">
+        <h1>Blížiace sa školenia</h1>
+        <h3>Vyberte si prosím, na ktorom z nasledujúcich školení sa zúčastníte</h3>
+    </div>
+    <div class="cards-list">
+        {% for event in allEvents %}
+        <a href="{{ 'sposob-dopravy'|page }}/{{ event.id }}">
+            <div class=" card--with-square" data-event-id="{{ event.id }}">
+                <h4>{{ event.name }}</h4>
+                <h6>{{ event.location }}</h6>
+                <h5>{{ event.date }}</h5>
+                <h5>{{ event.time }}</h5>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+</div>
