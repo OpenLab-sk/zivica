@@ -1,40 +1,9 @@
-$color-primary: rgba(200, 205, 0, 1);
-$color-primary-shade: rgb(164, 167, 10);
-$color-primary-contrast: rgba(255, 255, 255, 1);
-$color-primary-partialy-transparent: rgba(200, 205, 0, 0.5);
-
-$color-secondary: rgba(100, 120, 0, 1);
-$color-secondary-shade: rgb(87, 104, 5);
-$color-secondary-contrast: rgba(255, 255, 255, 1);
-
-$color-white: rgba(255, 255, 255, 1);
-$color-white-shade: rgba(15, 15, 15, 1);
-
-$color-red: rgb(245, 47, 21);
-$color-red-shade: rgb(219, 40, 16);
-$color-red-contrast: rgba(0, 0, 0, 1);
-
-$color-black: rgba(0, 0, 0, 1);
-$color-black-tint: rgba(47, 47, 47, 1);
-$color-black-light-tint: rgba(107, 107, 107, 1);
-
-@font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/Roboto-Light.ttf') format('truetype');
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: 'Roboto';
-    src: url('../fonts/Roboto-Medium.ttf') format('truetype');
-    font-weight: 500;
-}
+@import './partials/variables.scss';
+@import './partials/fonts.scss';
+@import './partials/cards.scss';
+@import './partials/forms.scss';
+@import './partials/terms.scss';
+@import './partials/buttons.scss';
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -64,6 +33,10 @@ h2 {
     font-weight: 300;
     margin: 0;
     color: $color-black-tint;
+
+    b {
+        font-weight: 400;
+    }
 }
 
 h3 {
@@ -97,7 +70,6 @@ h6 {
 }
 
 a,
-a *,
 a:hover {
     color: $color-black-tint;
     text-decoration: none;
@@ -105,6 +77,10 @@ a:hover {
 
 .margin-bottom-20 {
     margin-bottom: 20px;
+}
+
+.margin-bottom-30 {
+    margin-bottom: 30px;
 }
 
 .margin-bottom-80 {
@@ -124,46 +100,6 @@ a:hover {
     }
 }
 
-.button-primary {
-    display: block;
-    width: 285px;
-    height: 56px;
-
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 56px;
-    text-align: center;
-
-    background-color: $color-primary;
-    color: $color-white !important;
-    box-shadow: 0px 0px 5px $color-primary-partialy-transparent;
-
-    margin: 25px auto 25px auto;
-    border: none;
-    border-radius: 81px;
-
-    text-transform: uppercase;
-    transition-duration: 300ms;
-}
-
-.button-primary:hover {
-    background-color: $color-primary-shade;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.button-primary.disabled {
-    opacity: 0.5;
-}
-
-.home-achievements-wrapper {
-    margin: 60px 40px;
-
-    h3 {
-        margin-top: 20px;
-    }
-}
-
 .line-wrapper {
     display: flex;
     justify-content: start;
@@ -175,215 +111,7 @@ a:hover {
         margin-right: 16px;
     }
 
-    img.location-icon {
-        height: 20px;
-    }
-
     h5 {
         margin: 0;
-    }
-}
-
-
-/* CARDS */
-
-.cards-list {
-    margin-top: 60px;
-}
-
-.card--with-square {
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
-    padding: 10px;
-    margin-bottom: 20px;
-    min-height: 125px;
-    display: flex;
-    justify-content: start;
-    border-radius: 4px;
-    z-index: 100;
-
-
-    .details {
-        margin-left: 25px;
-
-        h4 {
-            color: #131313;
-        }
-
-    }
-
-    .number-container {
-        min-height: 105px;
-        min-width: 105px;
-        display: flex;
-        align-self: center;
-        flex-direction: column;
-        justify-content: center;
-
-        border-radius: 4px;
-        box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
-
-        h2,
-        h5 {
-            text-align: center;
-            margin: 0;
-            color: #ffffff;
-        }
-    }
-
-    .number-container.color-0 {
-        background-color: rgb(116, 116, 116);
-    }
-
-    .number-container.color-1 {
-        background-color: rgb(255, 123, 0);
-    }
-
-    .number-container.color-2 {
-        background-color: rgb(247, 162, 34);
-    }
-
-    .number-container.color-3 {
-        background-color: rgb(247, 195, 34);
-    }
-
-    .number-container.color-4 {
-        background-color: rgb(169, 221, 25);
-    }
-
-    .number-container.color-5 {
-        background-color: rgb(124, 181, 24);
-    }
-}
-
-.card--with-footer {
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
-    margin-bottom: 40px;
-    border-radius: 4px;
-
-    .info {
-        padding: 25px 20px 20px 20px;
-
-        h2 {
-            margin-bottom: 8px;
-        }
-    }
-
-    .footer {
-        height: 50px;
-        background-color: $color-primary;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        transition-duration: 300ms;
-
-        img {
-            height: 26px;
-        }
-
-        p {
-            margin: 0;
-            color: $color-primary-contrast;
-            font-weight: 300;
-        }
-    }
-
-    .footer:hover {
-        background-color: $color-primary-shade;
-        cursor: pointer;
-    }
-
-    .footer.mark-as-unsolved {
-        background-color: $color-red;
-    }
-
-    .footer.mark-as-unsolved:hover {
-        background-color: $color-red-shade;
-    }
-}
-
-
-/* FORM */
-form {
-    margin-top: 50px;
-
-    .button-primary {
-        margin-top: 50px;
-    }
-
-    .input-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        img {
-            height: 21px;
-            width: 21px;
-        }
-
-        input {
-            display: block;
-            background-color: #ffffff;
-            border-style: none;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
-            border-radius: 0px;
-            font-size: 14px;
-            font-weight: 300;
-            padding: 8px 0;
-            width: 85%;
-            margin: 0px 0 1px 0;
-            line-height: 40px;
-        }
-
-        input:focus {
-            outline: none;
-            border-bottom: 2px solid rgb(28, 117, 233);
-            margin: 0px 0 0px 0;
-        }
-
-        input.invalid {
-            border-bottom: 2px solid rgb(201, 34, 34);
-        }
-    }
-}
-
-/* TERMS */
-
-#terms-container {
-    display: none;
-    position: absolute;
-    top: 100vh;
-    height: 100vh;
-    width: 100vw !important;
-
-    z-index: 1000;
-    background-color: $color-white;
-
-    .terms-wrapper {
-        height: 60%;
-        margin: 20px auto 0 auto;
-        max-width: 1140px;
-        padding: 15px 25px 15px 25px;
-        overflow: scroll;
-
-        h3 {
-            color: $color-black-tint;
-        }
-    }
-
-    .gradient-overlay {
-        position: relative;
-        width: 100%;
-        margin-bottom: 50px;
-    }
-
-    .gradient-overlay:after {
-        position: absolute;
-        bottom: -10px;
-        height: 200px;
-        width: 100%;
-        content: "";
-        background: linear-gradient(to top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0) 80%);
-        pointer-events: none;
     }
 }

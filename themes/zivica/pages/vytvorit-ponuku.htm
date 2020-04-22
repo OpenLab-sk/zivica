@@ -11,7 +11,7 @@ is_hidden = 0
         <h1>Vytvoriť ponuku</h1>
         <h3>Po vytvorení ponuky Vám príde email s linkom na Váš profil. Ak sa niekto ozve, dáme Vám vedieť</h3>
     </div>
-    <form method="post" data-url="{{ url('') }}/api/add-driver">
+    <form method="post" data-url="{{ url('') }}/api/add-driver" data-url-on-success="{{ 'ponuka-pridana'|page }}">
         <input type="number" name="event_id" value="{{ eventId }}" style="display: none;">
 
         <div class="input-wrapper">
@@ -40,6 +40,78 @@ is_hidden = 0
             <input type="number" id="seats" name="seats" placeholder="Počeť voľných miest" data-validation="required">
         </div>
 
-        <a id="submit-form" class="button-primary">Pokračovať</a>
+        <a id="show-terms" class="button-primary">Pokračovať</a>
     </form>
+</div>
+<div id="terms-container">
+    <div class="container navbar">
+        <img id="decline-terms" src="{{ '/assets/images/icons/cancel-green.png'|theme }}" alt="Back">
+    </div>
+
+    <div class="text-center">
+        <h1>Podmienky spracovania osobných údajov</h1>
+    </div>
+    <div class="terms-wrapper">
+        <h3 class="text-center">Súhlas so spracovaním osobných údajov</h3>
+        <p> Súhlasom so spracovaní osobných údajov povoluje dotknutá osoba spoločnosti o.z. Centrum environmentálnej a
+            etickej
+            výchovy Živica, so sídlom Búdková 3552/22 81104 Bratislava, IČO: 35998407, zapísanej vo verejnom registri
+            vedenom na
+            Ministerstve vnútra SR, číslo spisu v registrácii: VVS/1-900/90-16193 (Ďalej len "Správca"), aby v zmysle
+            zákona
+            č.
+            18/2018 Z. z. o ochrane osobných údajov a o zmene a doplnení niektorých zákonov (ďalej len "zákon o ochrane
+            osobných
+            údajov") spracovávala tieto osobné údaje dotknutej osoby:</p>
+        <ul>
+            <li>meno a priezvisko</li>
+            <li>e-mail</li>
+            <li>telefónne číslo</li>
+            <li>Informácie o plánovanej polohe (z akého mesta, kadiaľ a cieľová destinácia)</li>
+        </ul>
+        <p> Meno, priezvisko, telefónne číslo, e-mail a informácie o plánovanej polohe je nutné spracovať za účelom
+            poskytnutia
+            týchto informácií ostatným používateľom, ktorí majú záujem danú osobu kontaktovať s cieľom informovať sa o
+            možnostiach zdieľania dopravy. Tieto údaje budú Správcom spracované po dobu 1 roku.</p>
+
+        <h3>Spracovanie osobných údajov</h3>
+        <p> Súhlasom so spracovaní osobných údajov udeľuje dotknutá osoba svoj výslovný súhlas s vyššie uvedeným
+            spracovaním.
+            Súhlas možno vziať kedykoľvek späť, a to napríklad zaslaním emailu alebo zaslaním listu na kontaktné údaje
+            správcovskej spoločnosti: zajezova@zivica.sk alebo Centrum environmentálnej a etickej výchovy Živica,
+            Búdková
+            3552/22 81104 Bratislava</p>
+        <h4>Spracovanie osobných údajov je vykonávané Správcom. Osobné údaje môžu spracovávať aj títo spracovatelia:
+        </h4>
+        <ul>
+            <li>Poskytovateľ webhostingu WebSupport, s.r.o.</li>
+            <li>Prípadne ďalší poskytovatelia alebo dodávatelia webových systémov, služieb a aplikácií, ktoré v súčasnej
+                dobe
+                spoločnosť využíva [vymenovať]/nevyužíva.</li>
+        </ul>
+        <h4>Práva na opravu, zabudnutie a prístup k osobným údajom dotknutej osoby</h4>
+        <p> Prosím vezmite na vedomie, že podľa zákona o ochrane osobných údajov má dotknutá osoba právo:</p>
+        <ul>
+            <li>vziať súhlas kedykoľvek späť</li>
+            <li>vyžiadať od nás informáciu, aké vaše osobné údaje spracovávame</li>
+            <li>vyžiadať od nás vysvetlenie ohľadne spracovania osobných údajov</li>
+            <li>vyžiadať si u nás výpis týchto údajov a tieto nechať aktualizovať alebo opraviť</li>
+            <li> požadovať od nás vymazanie týchto osobných údajov</li>
+            <li> v prípade pochybností o dodržiavaní povinností súvisiacich so spracovaním osobných údajov obrátiť sa na
+                nás
+                alebo na
+                Úrad na ochranu osobných údajov</li>
+        </ul>
+        <h3>Udeľujem/e súhlas so spracovaním osobných údajov podľa nariadenia GDPR a z. č. 18/2018 Z. z. o ochrane
+            osobných
+            údajov za účelom informovania ostatných užívateľov o možnostiach zdieľania dopravy.</h3>
+        <br class="bottom">
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div class="gradient-overlay"></div>
+
+    <a id="accept-terms" class="button-primary disabled">Potvrdiť a odoslať</a>
 </div>

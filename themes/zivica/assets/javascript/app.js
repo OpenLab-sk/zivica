@@ -37,14 +37,9 @@ $(() => {
         });
     })
 
-    if (window.innerHeight < 1400) {
-        $('.terms-wrapper').on('scroll', function () {
-            if ($('.terms-wrapper .bottom').offset().top <= window.innerHeight - (window.innerHeight / 4))
-                $('#accept-terms').css('opacity', '1').removeClass('disabled');
-        });
-    } else {
-        $('#accept-terms').css('opacity', '1').removeClass('disabled');
-    }
+    $('.terms-wrapper').on('scroll', function () {
+        checkIfTermsWereScrolled_orAreTotallyVisible()
+    });
 
 
 })
@@ -70,5 +65,13 @@ function submitForm() {
 function openTerms() {
     $('#terms-container').show().animate({
         top: '0'
-    }, 250);
+    }, 250, function () {
+        checkIfTermsWereScrolled_orAreTotallyVisible()
+    });
+}
+
+function checkIfTermsWereScrolled_orAreTotallyVisible() {
+    if ($('.terms-wrapper .bottom').offset().top <= $('.terms-wrapper').offset().top + $('.terms-wrapper').height() + 50)
+        $('#accept-terms').css('opacity', '1').removeClass('disabled');
+
 }

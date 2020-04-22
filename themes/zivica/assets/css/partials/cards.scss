@@ -1,0 +1,119 @@
+@import './variables.scss';
+
+.cards-list {
+    margin-top: 60px;
+}
+
+.card--with-square {
+    display: flex;
+    justify-content: start;
+    min-height: 125px;
+
+    padding: 10px;
+    margin-bottom: 20px;
+
+    background-color: $color-white;
+    box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
+    border-radius: 4px;
+    z-index: 100;
+
+    .details {
+        margin-left: 25px;
+
+        h4 {
+            color: $color-black-tint;
+        }
+
+    }
+
+    .number-container {
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+        justify-content: center;
+
+        min-height: 105px;
+        min-width: 105px;
+
+        border-radius: 4px;
+        box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
+
+        h2,
+        h5 {
+            text-align: center;
+            margin: 0;
+            color: $color-white;
+        }
+    }
+
+    .number-container.color-0 {
+        background-color: rgb(116, 116, 116);
+    }
+
+    .number-container.color-1 {
+        background-color: rgb(255, 123, 0);
+    }
+
+    .number-container.color-2 {
+        background-color: rgb(247, 162, 34);
+    }
+
+    .number-container.color-3 {
+        background-color: rgb(247, 195, 34);
+    }
+
+    .number-container.color-4 {
+        background-color: rgb(169, 221, 25);
+    }
+
+    .number-container.color-5 {
+        background-color: rgb(124, 181, 24);
+    }
+}
+
+.card--with-footer {
+    margin-bottom: 40px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+
+    .info {
+        padding: 25px 20px 20px 20px;
+
+        h2 {
+            margin-bottom: 8px;
+        }
+    }
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+
+        background-color: $color-primary;
+        transition-duration: 300ms;
+
+        img {
+            height: 26px;
+        }
+
+        p {
+            margin: 0;
+            color: $color-primary-contrast;
+            font-weight: 300;
+        }
+    }
+
+    .footer:hover {
+        background-color: $color-primary-shade;
+        cursor: pointer;
+    }
+
+    .footer.mark-as-unsolved {
+        background-color: $color-red;
+    }
+
+    .footer.mark-as-unsolved:hover {
+        background-color: $color-red-shade;
+    }
+}

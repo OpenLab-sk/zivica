@@ -31,8 +31,9 @@ class Router extends ComponentBase
             '/skolenie/:event_id?'                                  => '/bliziace-sa-skolenia/sposob-dopravy/' . $eventId,
             '/skolenie/:event_id/vytvorit-ponuku'                   => '/bliziace-sa-skolenia/sposob-dopravy/' . $eventId,
             '/skolenie/:event_id/kontaktovat-vodica/:driver_id?'    => '/skolenie/' . $eventId,
-            '/hotovo'    => '',
-            '/ponuka-pridana'    => ''
+            '/hotovo'                                               => '',
+            '/ponuka-pridana'                                       => '',
+            '/profil/:driver_uuid'                                  => ''
         ];
 
         if (isset($router[$url]))
