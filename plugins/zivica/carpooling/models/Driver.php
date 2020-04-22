@@ -17,7 +17,7 @@ class Driver extends Model
     ];
 
     function getEventIdOptions() {
-        $events        = Event::all();
+        $events = Event::all();
 
         foreach ($events as $event) {
             $dropdownValues[$event->id] = $event->name . ' - ' . $event->starts_at;
@@ -34,7 +34,9 @@ class Driver extends Model
     public function afterCreate()
     {
         Mail::send('zivica.carpooling::mail.driver.offer', [
+            
             'driver' => $this
+            
         ], function($message) {
            $message->to($this->email, $this->name);
         });
@@ -43,17 +45,14 @@ class Driver extends Model
     public $hasMany = [
         'passengers' => [
             'Zivica\Carpooling\Models\Passenger',
-            'key'    => 'driver_id',
-            //kuknut sa na toto ci to treba
-            'otherKey' => 'id'
+            'key'       => 'driver_id',
+            'otherKey'  => 'id'
         ]
     ];
 
     public $belongsTo = [
-        // 'event' => 'Zivica\Carpooling\Models\Event'
         'event' => [
             'Zivica\Carpooling\Models\Event',
-            //aj toto
             'key' => 'event_id'
         ]
     ];
