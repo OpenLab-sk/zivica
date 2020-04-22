@@ -17,24 +17,30 @@ class Passenger extends Model
     ];
 
     public function afterCreate() {
-        $driver = Driver::where('id', $this->driver_id)->first();
-        $driverEmail = $driver->email;
-        $driverName = $driver->name;
+        $driver         = Driver::where('id', $this->driver_id)->first();
+        $driverEmail    = $driver->email;
+        $driverName     = $driver->name;
+
         Mail::send('zivica.carpooling::mail.add-passenger.driver', [
-            'passenger' => $this
+
+            'passenger' => $this,
+            'driver'    => $driver
+
         ], function($message) use ($driverEmail, $driverName) {
             $message->to($driverEmail, $driverName);
         });
 
         Mail::send('zivica.carpooling::mail.add-passenger.passenger', [
+            
             'passenger' => $this
+            
         ], function($message) {
             $message->to($this->email);
         });
     }
 
     function getDriverIdOptions() {
-        $drivers        = Driver::all();
+        $drivers = Driver::all();
 
         foreach ($drivers as $driver) {
             $dropdownValues[$driver->id] = $driver->name . ' - ' . $driver->email;

@@ -59,9 +59,12 @@ $(() => {
 
     $('input#time').keypress(function (e) {
         value = $(this).val();
+    });
 
-        if (value.length == 2 && e.keyCode !== 8 && !value.includes(':'))
+    $('input#time').keyup(function (e) {
+        if (value.length == 2 && e.keyCode !== 8 && !value.includes(':')) {
             $(this).val(value + ':');
+        }
     });
 
     $('input#time').keydown(function (e) {
@@ -69,7 +72,7 @@ $(() => {
         arrowsKeys = [37, 38, 39, 40];
         value = $(this).val();
 
-        if (arrowsKeys.includes(e.keyCode))
+        if (arrowsKeys.includes(e.keyCode) || e.keyCode == 9)
             return;
 
         if (e.keyCode == 8)
@@ -80,6 +83,18 @@ $(() => {
 
         if (!allowedKeys.includes(e.keyCode))
             e.preventDefault();
+
+        if (e.keyCode == 186 && !value.length == 1) {
+            e.preventDefault();
+        } else if (e.keyCode == 186 && value.length == 1) {
+            $(this).val(0 + value);
+        }
+
+        if (e.keyCode == 186) {
+            e.preventDefault();
+            return;
+        }
+
 
         if (e.keyCode == 32) {
             e.preventDefault();
@@ -98,6 +113,7 @@ $(() => {
                 e.preventDefault();
             }
         }
+
     });
 
     $('input#time').focusout(function () {

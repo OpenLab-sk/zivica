@@ -21,6 +21,10 @@ class Events extends ComponentBase
         return [];
     }
 
+    function getEventId() {
+        return $this->page->param('event_id');
+    }
+
     function getAllEvents()
     {
         // $twoDaysAgo = Carbon::now()->subDays(2);
@@ -53,10 +57,6 @@ class Events extends ComponentBase
         $event->attributes['drivers']   = $event->drivers;
 
         return $event;
-    }
-
-    function getEventId() {
-        return $this->page->param('event_id');
     }
 
     static function _enrich_Date_Time_Drivers($event) {
