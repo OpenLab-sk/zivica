@@ -20,6 +20,22 @@
   margin-top: 60px;
 }
 
+.cards-list .display-on-desktop {
+  display: none;
+}
+
+@media only screen and (min-width: 800px) {
+  .cards-list {
+    margin-top: 60px;
+  }
+  .cards-list .display-on-desktop {
+    display: block;
+  }
+  .cards-list .display-on-mobiles {
+    display: none;
+  }
+}
+
 .card--with-square {
   display: flex;
   justify-content: start;

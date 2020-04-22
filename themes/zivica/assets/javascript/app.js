@@ -45,6 +45,8 @@ $(() => {
 })
 
 function submitForm() {
+    $('#accept-terms').text('odosielam...');
+
     var url = $('form').attr('data-url'),
         method = $('form').attr('method'),
         formData = $('form').serialize();
@@ -57,6 +59,7 @@ function submitForm() {
             window.location = $('form').attr('data-url-on-success');
         },
         error: function () {
+            $('#accept-terms').text('potvrdiť a odoslať');
             alert('Nastala chyba. Skúste to prosím neskôr');
         }
     });

@@ -33,8 +33,14 @@ is_hidden = 0
                         {% endif %}
                     </div>
                     <div class="details">
-                        <h4>{{ str_limit(event.name|raw, 40, '...') }}</h4>
-                        <h6>{{ str_limit(event.location|raw, 25, '...') }}</h6>
+                        <div class="display-on-mobiles">
+                            <h4>{{ str_limit(event.name|raw, 40, '...') }}</h4>
+                            <h6>{{ str_limit(event.location|raw, 35, '...') }}</h6>
+                        </div>
+                        <div class="display-on-desktop">
+                            <h4>{{ str_limit(event.name|raw, 80, '...') }}</h4>
+                            <h6>{{ str_limit(event.location|raw, 50, '...') }}</h6>
+                        </div>
                         <h5>{{ event.date }}</h5>
                         <h5>{{ event.time }}</h5>
                     </div>

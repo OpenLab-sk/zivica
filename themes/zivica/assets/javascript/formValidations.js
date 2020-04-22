@@ -72,7 +72,7 @@ $(() => {
         arrowsKeys = [37, 38, 39, 40];
         value = $(this).val();
 
-        if (arrowsKeys.includes(e.keyCode))
+        if (arrowsKeys.includes(e.keyCode) || e.keyCode == 9)
             return;
 
         if (e.keyCode == 8)

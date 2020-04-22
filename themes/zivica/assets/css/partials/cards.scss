@@ -2,6 +2,24 @@
 
 .cards-list {
     margin-top: 60px;
+
+    .display-on-desktop {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .cards-list {
+        margin-top: 60px;
+
+        .display-on-desktop {
+            display: block;
+        }
+
+        .display-on-mobiles {
+            display: none;
+        }
+    }
 }
 
 .card--with-square {

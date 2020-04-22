@@ -3,8 +3,10 @@ url = "/skolenie/:event_id/vytvorit-ponuku"
 layout = "default"
 is_hidden = 0
 [drivers]
+[events]
 ==
 {% set driverId = drivers.getDriverId() %}
+{% set eventId = events.getEventId() %}
 
 <div class="container">
     <div class="text-center">

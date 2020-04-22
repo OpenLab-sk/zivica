@@ -20,6 +20,10 @@ class Events extends ComponentBase
         return [];
     }
 
+    function getEventId() {
+        return $this->page->param('event_id');
+    }
+
     function getAllEvents()
     {
         $events = Event::all()->sortBy('starts_at');
@@ -48,10 +52,6 @@ class Events extends ComponentBase
         $event->attributes['drivers']   = $event->drivers;
 
         return $event;
-    }
-
-    function getEventId() {
-        return $this->page->param('event_id');
     }
 
     static function _enrich_Date_Time_Drivers($event) {
