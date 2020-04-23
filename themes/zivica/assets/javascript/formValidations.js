@@ -122,13 +122,19 @@ $(() => {
         if (value.includes(':')) {
             splittedValue = value.split(':');
 
-            if (splittedValue[1].length < 2) {
+            if (splittedValue[1].length == 0) {
+                $(this).val(value + '00');
+            } else if (splittedValue[1].length == 1) {
                 $(this).val(value + '0');
             }
         }
 
-        if (value.length < 4) {
-            $(this).addClass('invalid');
+        if (value.length == 1) {
+            $(this).val(0 + value + ':00');
+        }
+
+        if (value.length == 2 && !value.includes(':')) {
+            $(this).val(value + ':00');
         }
     })
 })
