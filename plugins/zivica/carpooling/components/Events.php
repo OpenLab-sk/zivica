@@ -3,6 +3,7 @@
 use Cms\Classes\ComponentBase;
 use Zivica\Carpooling\Models\Event;
 use Zivica\Carpooling\Models\Driver;
+use Carbon\Carbon;
 use Redirect;
 
 class Events extends ComponentBase
@@ -26,6 +27,10 @@ class Events extends ComponentBase
 
     function getAllEvents()
     {
+        // $twoDaysAgo = Carbon::now()->subDays(2);
+        // $twoDaysAgo->tz = 'Europe/Bratislava';
+
+        // $events = Event::all()->where('starts_at', '>', $twoDaysAgo)->sortBy('starts_at');
         $events = Event::all()->sortBy('starts_at');
 
         foreach ($events as $key => $event) {
