@@ -19,66 +19,77 @@
   }
 }
 
-.card--with-square {
-  display: flex;
-  justify-content: start;
-  min-height: 125px;
-  padding: 10px;
-  margin-bottom: 20px;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
-  border-radius: 4px;
-  z-index: 100;
+.card--event {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 50px;
+  padding: 20px 25px 40px 20px;
+  box-shadow: 0px 0px 6px 5px rgba(140, 140, 140, 0.1);
+  background-color: #fcfcfc;
+  border-radius: 21px;
 }
 
-.card--with-square .details {
-  margin-left: 25px;
+.card--event .pill {
+  display: inline-block;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 8px 25px;
+  margin-top: 10px;
 }
 
-.card--with-square .details h4 {
-  color: #2f2f2f;
-}
-
-.card--with-square .number-container {
-  display: flex;
-  align-self: center;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 105px;
-  min-width: 105px;
-  border-radius: 4px;
-  box-shadow: 0 0 10px rgba(183, 183, 183, 0.36);
-}
-
-.card--with-square .number-container h2,
-.card--with-square .number-container h5 {
-  text-align: center;
+.card--event .pill h5 {
   margin: 0;
+}
+
+.card--event .drivers-pill {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3CCF82;
+  width: 130px;
+  padding: 12px 20px;
+  border-top-left-radius: 21px;
+}
+
+.card--event .drivers-pill img {
+  height: 18px;
+}
+
+.card--event .drivers-pill h4 {
   color: white;
+  font-weight: 400;
 }
 
-.card--with-square .number-container.color-0 {
-  background-color: #747474;
+.card--event .drivers-pill.color-0 {
+  background-color: #5c5c5c;
 }
 
-.card--with-square .number-container.color-1 {
-  background-color: #ff7b00;
+.card--event .drivers-pill.color-1 {
+  background: #f27d13;
+  background: linear-gradient(295deg, #f27d13 60%, #eea968 100%);
 }
 
-.card--with-square .number-container.color-2 {
-  background-color: #f7a222;
+.card--event .drivers-pill.color-2 {
+  background: #f2b913;
+  background: linear-gradient(295deg, #f2b913 60%, #fcdc7c 100%);
 }
 
-.card--with-square .number-container.color-3 {
-  background-color: #f7c322;
+.card--event .drivers-pill.color-3 {
+  background: #2ed0dd;
+  background: linear-gradient(295deg, #2ed0dd 60%, #9af7ff 100%);
 }
 
-.card--with-square .number-container.color-4 {
-  background-color: #a9dd19;
+.card--event .drivers-pill.color-4 {
+  background: #41dfa2;
+  background: linear-gradient(295deg, #41dfa2 60%, #99e0c5 100%);
 }
 
-.card--with-square .number-container.color-5 {
-  background-color: #7cb518;
+.card--event .drivers-pill.color-5 {
+  background: #1bcf4d;
+  background: linear-gradient(295deg, #1bcf4d 60%, #6de68d 100%);
 }
 
 .card--with-footer {
