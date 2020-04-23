@@ -31,6 +31,7 @@
 
     padding: 20px 25px 40px 20px;
     box-shadow: 0px 0px 6px 5px rgba(140, 140, 140, 0.10);
+    transition-duration: 200ms;
 
     background-color: rgb(252, 252, 252);
     border-radius: 21px;
@@ -57,7 +58,6 @@
         justify-content: space-between;
         align-items: center;
 
-        background-color: #3CCF82;
         width: 130px;
         padding: 12px 20px;
         border-top-left-radius: 21px;
@@ -71,36 +71,64 @@
             font-weight: 400;
         }
     }
+}
 
-    .drivers-pill.color-0 {
-        background-color: rgb(92, 92, 92);
-    }
+.card--event.color-0 .drivers-pill {
+    background-color: rgb(92, 92, 92);
+}
 
-    .drivers-pill.color-1 {
-        background: rgb(242, 125, 19);
-        background: linear-gradient(295deg, rgba(242, 125, 19, 1) 60%, rgb(238, 169, 104) 100%);
-    }
+.card--event.color-1 .drivers-pill {
+    background: rgb(242, 125, 19);
+    background: linear-gradient(295deg, rgba(242, 125, 19, 1) 60%, rgb(238, 169, 104) 100%);
+}
 
-    .drivers-pill.color-2 {
-        background: rgb(242, 185, 19);
-        background: linear-gradient(295deg, rgba(242, 185, 19, 1) 60%, rgb(252, 220, 124) 100%);
-    }
+.card--event.color-2 .drivers-pill {
+    background: rgb(242, 185, 19);
+    background: linear-gradient(295deg, rgba(242, 185, 19, 1) 60%, rgb(252, 220, 124) 100%);
+}
 
-    .drivers-pill.color-3 {
-        background: rgb(46, 208, 221);
-        background: linear-gradient(295deg, rgba(46, 208, 221, 1) 60%, rgba(154, 247, 255, 1) 100%);
-    }
+.card--event.color-3 .drivers-pill {
+    background: rgb(46, 208, 221);
+    background: linear-gradient(295deg, rgba(46, 208, 221, 1) 60%, rgba(154, 247, 255, 1) 100%);
+}
 
-    .drivers-pill.color-4 {
-        background: rgb(65, 223, 162);
-        background: linear-gradient(295deg, rgba(65, 223, 162, 1) 60%, rgb(153, 224, 197) 100%);
+.card--event.color-4 .drivers-pill {
+    background: rgb(65, 223, 162);
+    background: linear-gradient(295deg, rgba(65, 223, 162, 1) 60%, rgb(153, 224, 197) 100%);
 
-    }
+}
 
-    .drivers-pill.color-5 {
-        background: rgb(27, 207, 77);
-        background: linear-gradient(295deg, rgba(27, 207, 77, 1) 60%, rgb(109, 230, 141) 100%);
-    }
+.card--event.color-5 .drivers-pill {
+    background: rgb(27, 207, 77);
+    background: linear-gradient(295deg, rgba(27, 207, 77, 1) 60%, rgb(109, 230, 141) 100%);
+}
+
+// .card--event:hover {
+//     box-shadow: 0px 0px 6px 5px rgba(130, 130, 130, 0.20);
+// }
+
+.card--event.color-0:hover {
+    box-shadow: 0px 0px 6px 5px rgba(130, 130, 130, 0.22);
+}
+
+.card--event.color-1:hover {
+    box-shadow: 0px 0px 6px 5px rgba(255, 170, 91, 0.25);
+}
+
+.card--event.color-2:hover {
+    box-shadow: 0px 0px 6px 5px rgba(255, 202, 44, 0.25);
+}
+
+.card--event.color-3:hover {
+    box-shadow: 0px 0px 6px 5px rgba(54, 242, 255, 0.25);
+}
+
+.card--event.color-4:hover {
+    box-shadow: 0px 0px 6px 5px rgba(124, 238, 194, 0.25);
+}
+
+.card--event.color-5:hover {
+    box-shadow: 0px 0px 6px 5px rgba(19, 238, 81, 0.25);
 }
 
 .card--with-footer {

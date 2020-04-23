@@ -25,6 +25,7 @@
   margin-bottom: 50px;
   padding: 20px 25px 40px 20px;
   box-shadow: 0px 0px 6px 5px rgba(140, 140, 140, 0.1);
+  transition-duration: 200ms;
   background-color: #fcfcfc;
   border-radius: 21px;
 }
@@ -48,7 +49,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #3CCF82;
   width: 130px;
   padding: 12px 20px;
   border-top-left-radius: 21px;
@@ -63,33 +63,57 @@
   font-weight: 400;
 }
 
-.card--event .drivers-pill.color-0 {
+.card--event.color-0 .drivers-pill {
   background-color: #5c5c5c;
 }
 
-.card--event .drivers-pill.color-1 {
+.card--event.color-1 .drivers-pill {
   background: #f27d13;
   background: linear-gradient(295deg, #f27d13 60%, #eea968 100%);
 }
 
-.card--event .drivers-pill.color-2 {
+.card--event.color-2 .drivers-pill {
   background: #f2b913;
   background: linear-gradient(295deg, #f2b913 60%, #fcdc7c 100%);
 }
 
-.card--event .drivers-pill.color-3 {
+.card--event.color-3 .drivers-pill {
   background: #2ed0dd;
   background: linear-gradient(295deg, #2ed0dd 60%, #9af7ff 100%);
 }
 
-.card--event .drivers-pill.color-4 {
+.card--event.color-4 .drivers-pill {
   background: #41dfa2;
   background: linear-gradient(295deg, #41dfa2 60%, #99e0c5 100%);
 }
 
-.card--event .drivers-pill.color-5 {
+.card--event.color-5 .drivers-pill {
   background: #1bcf4d;
   background: linear-gradient(295deg, #1bcf4d 60%, #6de68d 100%);
+}
+
+.card--event.color-0:hover {
+  box-shadow: 0px 0px 6px 5px rgba(130, 130, 130, 0.22);
+}
+
+.card--event.color-1:hover {
+  box-shadow: 0px 0px 6px 5px rgba(255, 170, 91, 0.25);
+}
+
+.card--event.color-2:hover {
+  box-shadow: 0px 0px 6px 5px rgba(255, 202, 44, 0.25);
+}
+
+.card--event.color-3:hover {
+  box-shadow: 0px 0px 6px 5px rgba(54, 242, 255, 0.25);
+}
+
+.card--event.color-4:hover {
+  box-shadow: 0px 0px 6px 5px rgba(124, 238, 194, 0.25);
+}
+
+.card--event.color-5:hover {
+  box-shadow: 0px 0px 6px 5px rgba(19, 238, 81, 0.25);
 }
 
 .card--with-footer {

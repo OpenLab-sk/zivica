@@ -1,7 +1,8 @@
 $(() => {
     $('#layout-content').fadeIn(250);
+    setCardMinHeight();
 
-    $('.fade-out-on-click').click(function () {
+    $('.fade-out-on-click').click(function (e) {
         $('#layout-content').fadeOut(200);
     })
 
@@ -41,7 +42,9 @@ $(() => {
         checkIfTermsWereScrolled_orAreTotallyVisible()
     });
 
-
+    $(window).resize(function () {
+        setCardMinHeight();
+    })
 })
 
 function submitForm() {
@@ -78,4 +81,17 @@ function checkIfTermsWereScrolled_orAreTotallyVisible() {
     if ($('.terms-wrapper .bottom').offset().top <= $('.terms-wrapper').offset().top + $('.terms-wrapper').height() + 50)
         $('#accept-terms').css('opacity', '1').removeClass('disabled');
 
+}
+
+function setCardMinHeight() {
+    var minHeight = 0;
+    $('.card--event').each(function () {
+        console.log($(this).outerHeight())
+        if ($(this).outerHeight() > minHeight)
+            minHeight = $(this).outerHeight();
+    });
+
+    $('.card--event').each(function () {
+        $(this).css('min-height', minHeight);
+    });
 }
