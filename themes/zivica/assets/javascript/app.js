@@ -56,7 +56,8 @@ function submitForm() {
         type: method,
         data: formData,
         success: function (data) {
-            window.location = $('form').attr('data-url-on-success');
+            var urlOnSuccess = $('form').attr('data-url-on-success');
+            window.location = `${urlOnSuccess}/${data.uuid}`;
         },
         error: function () {
             $('#accept-terms').text('potvrdiť a odoslať');

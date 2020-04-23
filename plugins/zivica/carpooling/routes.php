@@ -16,7 +16,7 @@
         $driver->seats          = $data['seats'];
 
         $driver->save();
-        return $driver->uuid;
+        return ['uuid' => $driver->uuid];
     });
 
     Route::post('/api/add-passenger', function () {

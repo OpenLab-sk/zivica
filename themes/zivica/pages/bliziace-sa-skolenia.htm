@@ -29,48 +29,14 @@ is_hidden = 0
 
                 {% if event.number_of_drivers < 5 %}
                 <div class="drivers-pill color-{{ event.number_of_drivers % 5 }}">
-                {% else %}
-                <div class="drivers-pill color-5">
-                    {% endif %}
-                    <img src="{{ '/assets/images/icons/car-white.png'|theme }}" alt="">
-                    <h4>{{ event.number_of_drivers }}</h4>
+                    {% else %}
+                    <div class="drivers-pill color-5">
+                        {% endif %}
+                        <img src="{{ '/assets/images/icons/car-white.png'|theme }}" alt="">
+                        <h4>{{ event.number_of_drivers }}</h4>
+                    </div>
                 </div>
-            </div>
         </a>
         {% endfor %}
     </div>
 </div>
-
-
-<a href="{{ 'sposob-dopravy'|page }}/{{ event.id }}" class="fade-out-on-click">
-    <div class=" card--with-square" data-event-id="{{ event.id }}">
-        {% if event.number_of_drivers < 5 %}
-        <div class="number-container color-{{ event.number_of_drivers % 5 }}">
-            {% else %}
-            <div class="number-container color-5">
-                {% endif %}
-                <h2>{{ event.number_of_drivers }}</h2>
-                {% if event.number_of_drivers  == 0 %}
-                <h5>vodičov</h5>
-                {% elseif event.number_of_drivers  == 1 %}
-                <h5>vodič</h5>
-                {% elseif event.number_of_drivers  <= 4 %}
-                <h5>vodiči</h5>
-                {% else %}
-                <h5>vodičov</h5>
-                {% endif %}
-            </div>
-            <div class="details">
-                <div class="display-on-mobiles">
-                    <h4>{{ str_limit(event.name|raw, 40, '...') }}</h4>
-                    <h6>{{ str_limit(event.location|raw, 35, '...') }}</h6>
-                </div>
-                <div class="display-on-desktop">
-                    <h4>{{ str_limit(event.name|raw, 80, '...') }}</h4>
-                    <h6>{{ str_limit(event.location|raw, 50, '...') }}</h6>
-                </div>
-                <h5>{{ event.date }}</h5>
-                <h5>{{ event.time }}</h5>
-            </div>
-        </div>
-</a>
