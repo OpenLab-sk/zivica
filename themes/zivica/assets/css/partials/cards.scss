@@ -1,24 +1,26 @@
 @import './variables.scss';
 
 .cards-list {
-    margin-top: 60px;
+    margin-top: 70px;
+}
 
-    .display-on-desktop {
-        display: none;
+@media only screen and (min-width: 992px) {
+    .cards-list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+    }
+
+    .card--event {
+        width: 400px;
     }
 }
 
-@media only screen and (min-width: 800px) {
-    .cards-list {
-        margin-top: 60px;
+@media only screen and (min-width: 1200px) {
 
-        .display-on-desktop {
-            display: block;
-        }
-
-        .display-on-mobiles {
-            display: none;
-        }
+    .card--event {
+        width: 500px;
     }
 }
 
