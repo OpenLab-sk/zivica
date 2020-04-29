@@ -1,0 +1,47 @@
+@import './variables.scss';
+
+form {
+    margin-top: 50px;
+
+    .button-primary {
+        margin-top: 50px;
+    }
+
+    .input-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            height: 21px;
+            width: 21px;
+        }
+
+        input {
+            display: block;
+            width: calc(100% - 50px);
+            background-color: $color-white;
+
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 40px;
+
+            margin: 0px 0 1px 0;
+            padding: 8px 0;
+
+            border-style: none;
+            border-bottom: 1px solid $color-grey-light;
+            border-radius: 0px;
+        }
+
+        input:focus {
+            outline: none;
+            border-bottom: 2px solid $color-blue;
+            margin: 0px 0 0px 0;
+        }
+
+        input.invalid {
+            border-bottom: 2px solid $color-red;
+        }
+    }
+}

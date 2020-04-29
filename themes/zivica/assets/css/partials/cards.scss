@@ -1,0 +1,155 @@
+@import './variables.scss';
+
+.cards-list {
+    margin-top: 70px;
+}
+
+.zivica-card {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+
+    padding: 20px 25px 40px 20px;
+    box-shadow: 0px 0px 6px 5px rgba(140, 140, 140, 0.1);
+    transition-duration: 200ms;
+
+    background-color: rgb(252, 252, 252);
+    border-radius: 14px;
+
+    .pill {
+        display: inline-block;
+        background-color: #f5f5f5;
+
+        border-radius: 20px;
+        padding: 8px 25px;
+        margin-top: 10px;
+
+        h5 {
+            margin: 0;
+        }
+    }
+
+    .pill-wrapper {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 130px;
+        padding: 12px 20px;
+        border-top-left-radius: 14px;
+
+        img {
+            height: 18px;
+        }
+
+        h4 {
+            color: $color-white;
+            font-weight: 400;
+        }
+    }
+
+    .pill-wrapper.footer-pill {
+        width: 100%;
+        display: block;
+        border-radius: 0;
+        padding: 15px 20px;
+
+        p {
+            margin: 0;
+            color: $color-white;
+            text-align: center;
+        }
+    }
+}
+
+.zivica-card.with-footer-pill {
+    padding-bottom: 75px;
+}
+
+.zivica-card.color-0 .pill-wrapper {
+    background-color: rgb(92, 92, 92);
+}
+
+.zivica-card.color-1 .pill-wrapper {
+    background: rgb(242, 125, 19);
+    background: linear-gradient(295deg, rgba(242, 125, 19, 1) 60%, rgb(238, 169, 104) 100%);
+}
+
+.zivica-card.color-2 .pill-wrapper {
+    background: rgb(242, 185, 19);
+    background: linear-gradient(295deg, rgba(242, 185, 19, 1) 60%, rgb(252, 220, 124) 100%);
+}
+
+.zivica-card.color-3 .pill-wrapper {
+    background: rgb(46, 208, 221);
+    background: linear-gradient(295deg, rgba(46, 208, 221, 1) 60%, rgba(154, 247, 255, 1) 100%);
+}
+
+.zivica-card.color-4 .pill-wrapper {
+    background: rgb(65, 223, 162);
+    background: linear-gradient(295deg, rgba(65, 223, 162, 1) 60%, rgb(153, 224, 197) 100%);
+
+}
+
+.zivica-card.color-5 .pill-wrapper {
+    background: rgb(27, 207, 77);
+    background: linear-gradient(295deg, rgba(27, 207, 77, 1) 60%, rgb(109, 230, 141) 100%);
+}
+
+.zivica-card.color-green .pill-wrapper {
+    background: $color-primary;
+    background: linear-gradient(295deg, $color-primary 60%, $color-primary-tint 100%);
+}
+
+.zivica-card.color-0:hover {
+    box-shadow: 0px 0px 6px 5px rgba(130, 130, 130, 0.22);
+}
+
+.zivica-card.color-1:hover {
+    box-shadow: 0px 0px 6px 5px rgba(255, 170, 91, 0.25);
+}
+
+.zivica-card.color-2:hover {
+    box-shadow: 0px 0px 6px 5px rgba(255, 202, 44, 0.25);
+}
+
+.zivica-card.color-3:hover {
+    box-shadow: 0px 0px 6px 5px rgba(54, 242, 255, 0.25);
+}
+
+.zivica-card.color-4:hover {
+    box-shadow: 0px 0px 6px 5px rgba(124, 238, 194, 0.25);
+}
+
+.zivica-card.color-5:hover {
+    box-shadow: 0px 0px 6px 5px rgba(19, 238, 81, 0.25);
+}
+
+.zivica-card.color-green:hover {
+    box-shadow: 0px 0px 6px 5px rgba(200, 205, 0, 0.25);
+}
+
+
+@media only screen and (min-width: 992px) {
+    .cards-list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+    }
+
+    .zivica-card {
+        width: 400px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .zivica-card {
+        width: 500px;
+    }
+}

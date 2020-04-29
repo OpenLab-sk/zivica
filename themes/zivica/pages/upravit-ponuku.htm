@@ -5,56 +5,39 @@ is_hidden = 0
 [drivers]
 ==
 {% set driver = drivers.getDriver() %}
-<div class="container-fluid navbar-wrapper">
-    <div class="container">
-        <a href="{{ 'profil'|page }}">
-            <img class="back arrow-back-black" src="{{ '/assets/images/icons/back-black.png' |theme}}" alt="Back">
-        </a>
-    </div>
-</div>
-<div class="content-wrapper">
-    <div class="container static-form-wrapper">
-        <div class="form--hide-on-success">
-            <h3>Upraviť ponuku</h3>
-            <form method="patch" data-url="{{ url('') }}/api/update-driver/{{ driver.uuid }}">
-                <input type="number" name="event_id" value="{{ driver.event_id }}" style="display: none;">
 
-                <div class="input-wrapper">
-                    <img src="{{ '/assets/images/icons/person-black.png'|theme }}" alt="icon">
-                    <input type="text" name="name" placeholder="Meno (zobrazí sa v ponuke)" value="{{ driver.name }}">
-                </div>
-                <div class="input-wrapper">
-                    <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
-                    <input type="email" name="email" placeholder="Email" value="{{ driver.event_id }}">
-                </div>
-                <div class="input-wrapper">
-                    <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
-                    <input type="text" name="leaves_from" placeholder="Odkiaľ vyrážate"
-                        value="{{ driver.leaves_from }}">
-                </div>
-                <div class="input-wrapper">
-                    <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon">
-                    <input type="text" name="leaves_at" placeholder="Kedy vyrážate" value="{{ driver.leaves_at }}">
-                </div>
-                <div class="input-wrapper">
-                    <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
-                    <input type="text" name="cities" placeholder="Cez aké mestá prechádzaťe"
-                        value="{{ driver.cities }}">
-                </div>
-                <div class="input-wrapper">
-                    <img src="{{ '/assets/images/icons/two-people-black.png'|theme }}" alt="icon">
-                    <input type="text" name="seats" placeholder="Počeť voľných miest" value="{{ driver.seats }}">
-                </div>
+<div class="container">
+    <h1 class="text-center">Upraviť ponuku</h1>
 
-                <!-- <h3>Captcha</h3> -->
-                <a id="submit-form" class="button button-lg button-primary">Potvrdiť</a>
-            </form>
+    <form method="patch" data-url="{{ url('') }}/api/update-driver/{{ driver.uuid }}"
+        data-url-on-success="{{ 'profil'|page }}">
+        <input type="number" name="event_id" value="{{ driver.event_id }}" style="display: none;">
+
+        <div class="input-wrapper">
+            <img src="{{ '/assets/images/icons/person-black.png'|theme }}" alt="icon">
+            <input type="text" name="name" placeholder="Meno (zobrazí sa v ponuke)" value="{{ driver.name }}">
         </div>
-        <div class="form--show-on-submit">
-            <div class="wrapper">
-                <h2>Upravené</h2>
-                <a href="{{ 'profil'|page }}" class="back">Zatvoriť</a>
-            </div>
+        <div class="input-wrapper">
+            <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
+            <input type="email" name="email" placeholder="Email" value="{{ driver.email }}">
         </div>
-    </div>
+        <div class="input-wrapper">
+            <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
+            <input type="text" name="leaves_from" placeholder="Odkiaľ vyrážate" value="{{ driver.leaves_from }}">
+        </div>
+        <div class="input-wrapper">
+            <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon">
+            <input type="text" name="leaves_at" placeholder="Kedy vyrážate" value="{{ driver.leaves_at }}">
+        </div>
+        <div class="input-wrapper">
+            <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
+            <input type="text" name="cities" placeholder="Cez aké mestá prechádzaťe" value="{{ driver.cities }}">
+        </div>
+        <div class="input-wrapper">
+            <img src="{{ '/assets/images/icons/two-people-black.png'|theme }}" alt="icon">
+            <input type="text" name="seats" placeholder="Počeť voľných miest" value="{{ driver.seats }}">
+        </div>
+
+        <a id="accept-terms" class="button-primary">Potvrdiť</a>
+    </form>
 </div>

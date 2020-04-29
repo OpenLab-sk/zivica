@@ -3,6 +3,7 @@
 use Cms\Classes\ComponentBase;
 use Zivica\Carpooling\Models\Event;
 use Zivica\Carpooling\Models\Driver;
+use Carbon\Carbon;
 use Redirect;
 
 class Events extends ComponentBase
@@ -20,9 +21,17 @@ class Events extends ComponentBase
         return [];
     }
 
+    function getEventId() {
+        return $this->page->param('event_id');
+    }
+
     function getAllEvents()
     {
-        $events = Event::all()->sortBy('starts_at');
+        // $twoDaysAgo = Carbon::now()->subDays(2);
+        // $twoDaysAgo->tz = 'Europe/Bratislava';
+
+        // $events = Event::all()->where('starts_at', '>', $twoDaysAgo)->sortBy('starts_at');
+        $events = Event::all()->sortBy('starts_at')->reverse();
 
         foreach ($events as $key => $event) {
             $events[$key] = self::_enrich_Date_Time_Drivers($event);
@@ -48,10 +57,6 @@ class Events extends ComponentBase
         $event->attributes['drivers']   = $event->drivers;
 
         return $event;
-    }
-
-    function getEventId() {
-        return $this->page->param('event_id');
     }
 
     static function _enrich_Date_Time_Drivers($event) {

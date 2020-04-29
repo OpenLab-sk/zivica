@@ -20,6 +20,14 @@ class Drivers extends ComponentBase
         return [];
     }
 
+    function getDriversUuid() {
+        return $this->page->param('driver_uuid');
+    }
+
+    function getDriverId() {
+        return $this->page->param('driver_id');
+    }
+
     function getDrivers() {
         $eventId    = $this->page->param('event_id');
         $event      = Event::all()->where('id', $eventId)->first();
@@ -35,25 +43,22 @@ class Drivers extends ComponentBase
     function getDriver() {
         $uuid       = $this->page->param('driver_uuid');
         $driver     = Driver::all()->where('uuid', $uuid)->first();
-        $driver->passengers = $driver->passengers->sortByDesc('created_at');
+
+        if ($driver == null)
+            return null;
+        
+        $driver->passengers             = $driver->passengers->sortByDesc('created_at');
+        $driver['numberOfPassengers']   = count($driver->passengers);
 
         return $driver;
     }
 
-    function getDriversUuid() {
-        return $this->page->param('driver_uuid');
-    }
-
-    function getDriverId() {
-        return $this->page->param('driver_id');
-    }
-
     public function onSetToSolved() {
-        $passengerId = post('passengerId');
-        $driverId = post('driverId');
+        $passengerId    = post('passengerId');
+        $driverId       = post('driverId');
 
-        $passenger = Passenger::where('id', $passengerId)->first();
-        $driver = Driver::where('id', $driverId)->first();
+        $passenger      = Passenger::where('id', $passengerId)->first();
+        $driver         = Driver::where('id', $driverId)->first();
 
         $passenger->isSolved = true;
         $driver->seats -= 1;
@@ -65,11 +70,11 @@ class Drivers extends ComponentBase
     }
 
     public function onSetToUnsolved() {
-        $passengerId = post('passengerId');
-        $driverId = post('driverId');
+        $passengerId    = post('passengerId');
+        $driverId       = post('driverId');
 
-        $passenger = Passenger::where('id', $passengerId)->first();
-        $driver = Driver::where('id', $driverId)->first();
+        $passenger      = Passenger::where('id', $passengerId)->first();
+        $driver         = Driver::where('id', $driverId)->first();
 
         $passenger->isSolved = false;
         $driver->seats += 1;
