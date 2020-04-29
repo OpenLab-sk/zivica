@@ -60,7 +60,12 @@ function submitForm() {
         data: formData,
         success: function (data) {
             var urlOnSuccess = $('form').attr('data-url-on-success');
-            window.location = `${urlOnSuccess}/${data.uuid}`;
+
+            if (data.uuid) {
+                window.location = `${urlOnSuccess}/${data.uuid}`;
+            } else {
+                window.location = urlOnSuccess;
+            }
         },
         error: function () {
             $('#accept-terms').text('potvrdiť a odoslať');
@@ -85,13 +90,13 @@ function checkIfTermsWereScrolled_orAreTotallyVisible() {
 
 function setCardMinHeight() {
     var minHeight = 0;
-    $('.card--event').each(function () {
+    $('.zivica-card').each(function () {
         console.log($(this).outerHeight())
         if ($(this).outerHeight() > minHeight)
             minHeight = $(this).outerHeight();
     });
 
-    $('.card--event').each(function () {
+    $('.zivica-card').each(function () {
         $(this).css('min-height', minHeight);
     });
 }

@@ -19,28 +19,26 @@ is_hidden = 0
         <h3 style="text-align: center;">Zatiaľ sa neprihlásil žiaden vodič</h3>
         {% else %}
         {% for driver in drivers %}
-        <div class="card--with-footer">
-            <div class="info">
-                <h2>{{ driver.name }}</h2>
-                <div class="line-wrapper">
-                    <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon" class="location-icon">
-                    <h5>{{ driver.leaves_from }}</h5>
-                </div>
-                <div class="line-wrapper">
-                    <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon">
-                    <h5>{{ driver.leaves_at }}</h5>
-                </div>
-                <div class="line-wrapper">
-                    <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
-                    <h5>{{ driver.cities }}</h5>
-                </div>
-                <div class="line-wrapper">
-                    <img src="{{ '/assets/images/icons/add-people-black.png'|theme }}" alt="icon">
-                    <h5>{{ driver.seats }}</h5>
-                </div>
+        <div class="zivica-card with-footer-pill color-green">
+            <h2>{{ driver.name }}</h2>
+            <div class="line-wrapper">
+                <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon" class="location-icon">
+                <h5>{{ driver.leaves_from }}</h5>
+            </div>
+            <div class="line-wrapper">
+                <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon">
+                <h5>{{ driver.leaves_at }}</h5>
+            </div>
+            <div class="line-wrapper">
+                <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
+                <h5>{{ driver.cities }}</h5>
+            </div>
+            <div class="line-wrapper">
+                <img src="{{ '/assets/images/icons/add-people-black.png'|theme }}" alt="icon">
+                <h5>{{ driver.seats }}</h5>
             </div>
             <a href="{{ 'skolenie'|page }}/kontaktovat-vodica/{{ driver.id }}" class="fade-out-on-click">
-                <div class="footer">
+                <div class="pill-wrapper footer-pill">
                     <p>Kontaktovať vodiča</p>
                 </div>
             </a>

@@ -16,7 +16,7 @@ is_hidden = 0
 {% else %}
 <div class="container">
     <h1 class="text-center">Profil</h1>
-    <h2><b>{{ driver.name }}</b></h2>
+    <h2>{{ driver.name }}</h2>
     <div class="line-wrapper">
         <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
         <h4>{{ driver.email }}</h4>
@@ -43,52 +43,58 @@ is_hidden = 0
 
 <div class="container">
     {% if driver.numberOfPassengers == 0 %}
-    <h2 class="text-center"><b>Zatiaľ nemáte žiadnych záujemcov</b></h2>
+    <h2 class="text-center">Zatiaľ nemáte žiadnych záujemcov</h2>
     {% else %}
-    <h1 class="margin-bottom-30 text-center">Zoznam záujemcov</h1>
-    {% for passenger in driver.passengers %}
-    <div class="card--with-footer solved" data-driver-id="{{ driver.id }}">
-        <div class="info">
-            <div class="line-wrapper">
-                <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon" class="location-icon">
-                <a href="mailto:{{ passenger.email }}">
-                    <h5 style="text-decoration: underline;">{{ passenger.email }}</h5>
+    <h1 class="text-center">Zoznam záujemcov</h1>
+    <div class="cards-list">
+        {% for passenger in driver.passengers %}
+        {% if passenger.isSolved == 0 %}
+        <div class="zivica-card color-green with-footer-pill" data-driver-id="{{ driver.id }}">
+            {% else %}
+            <div class="zivica-card color-1 with-footer-pill" data-driver-id="{{ driver.id }}">
+                {% endif %}
+                <div class="info">
+                    <div class="line-wrapper">
+                        <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon" class="location-icon">
+                        <a href="mailto:{{ passenger.email }}">
+                            <h5 style="text-decoration: underline;">{{ passenger.email }}</h5>
+                        </a>
+                    </div>
+                    <div class="line-wrapper">
+                        <img src="{{ '/assets/images/icons/phone-black.png'|theme }}" alt="icon">
+                        <a href="tel:{{ passenger.phone }}">
+                            <h5 style="text-decoration: underline;">{{ passenger.phone }}</h5>
+                        </a>
+                    </div>
+                    <div class="line-wrapper">
+                        <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
+                        <h5>{{ passenger.city }}</h5>
+                    </div>
+                    {% if passenger.note %}
+                    <div class="line-wrapper">
+                        <img src="{{ '/assets/images/icons/note-black.png'|theme }}" alt="icon">
+                        <h5>{{ passenger.note }}</h5>
+                    </div>
+                    {% endif %}
+                </div>
+                {% if passenger.isSolved == 0 %}
+                <a data-request="onSetToSolved"
+                    data-request-data="passengerId: {{ passenger.id }}, driverId: {{ driver.id }}">
+                    <div class="pill-wrapper footer-pill">
+                        <p>Označiť ako vybavené</p>
+                    </div>
                 </a>
-            </div>
-            <div class="line-wrapper">
-                <img src="{{ '/assets/images/icons/phone-black.png'|theme }}" alt="icon">
-                <a href="tel:{{ passenger.phone }}">
-                    <h5 style="text-decoration: underline;">{{ passenger.phone }}</h5>
+                {% else %}
+                <a data-request="onSetToUnsolved"
+                    data-request-data="passengerId: {{passenger.id}}, driverId: {{driver.id}}">
+                    <div class="pill-wrapper footer-pill">
+                        <p>Označiť ako nevybavené</p>
+                    </div>
                 </a>
+                {% endif %}
             </div>
-            <div class="line-wrapper">
-                <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
-                <h5>{{ passenger.city }}</h5>
-            </div>
-            {% if passenger.note %}
-            <div class="line-wrapper">
-                <img src="{{ '/assets/images/icons/note-black.png'|theme }}" alt="icon">
-                <h5>{{ passenger.note }}</h5>
-            </div>
+            {% endfor %}
             {% endif %}
         </div>
-        {% if passenger.isSolved == 0 %}
-        <a data-request="onSetToSolved" data-request-data="passengerId: {{ passenger.id }}, driverId: {{ driver.id }}">
-            <div class="footer mark-as-solved">
-
-                <p>Označiť ako vybavené</p>
-            </div>
-        </a>
-        {% else %}
-        <a data-request="onSetToUnsolved" data-request-data="passengerId: {{passenger.id}}, driverId: {{driver.id}}">
-            <div class="footer mark-as-unsolved">
-
-                <p>Označiť ako nevybavené</p>
-            </div>
-        </a>
-        {% endif %}
     </div>
-    {% endfor %}
     {% endif %}
-</div>
-{% endif %}
