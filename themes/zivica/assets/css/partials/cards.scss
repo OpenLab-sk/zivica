@@ -4,37 +4,17 @@
     margin-top: 70px;
 }
 
-@media only screen and (min-width: 992px) {
-    .cards-list {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-
-    }
-
-    .card--event {
-        width: 400px;
-    }
-}
-
-@media only screen and (min-width: 1200px) {
-
-    .card--event {
-        width: 500px;
-    }
-}
-
-.card--event {
+.zivica-card {
     position: relative;
     overflow: hidden;
     margin-bottom: 50px;
 
     padding: 20px 25px 40px 20px;
-    box-shadow: 0px 0px 6px 5px rgba(140, 140, 140, 0.10);
+    box-shadow: 0px 0px 6px 5px rgba(140, 140, 140, 0.1);
     transition-duration: 200ms;
 
     background-color: rgb(252, 252, 252);
-    border-radius: 21px;
+    border-radius: 14px;
 
     .pill {
         display: inline-block;
@@ -49,7 +29,7 @@
         }
     }
 
-    .drivers-pill {
+    .pill-wrapper {
         position: absolute;
         right: 0;
         bottom: 0;
@@ -60,7 +40,7 @@
 
         width: 130px;
         padding: 12px 20px;
-        border-top-left-radius: 21px;
+        border-top-left-radius: 14px;
 
         img {
             height: 18px;
@@ -71,109 +51,105 @@
             font-weight: 400;
         }
     }
+
+    .pill-wrapper.footer-pill {
+        width: 100%;
+        display: block;
+        border-radius: 0;
+        padding: 15px 20px;
+
+        p {
+            margin: 0;
+            color: $color-white;
+            text-align: center;
+        }
+    }
 }
 
-.card--event.color-0 .drivers-pill {
+.zivica-card.with-footer-pill {
+    padding-bottom: 75px;
+}
+
+.zivica-card.color-0 .pill-wrapper {
     background-color: rgb(92, 92, 92);
 }
 
-.card--event.color-1 .drivers-pill {
+.zivica-card.color-1 .pill-wrapper {
     background: rgb(242, 125, 19);
     background: linear-gradient(295deg, rgba(242, 125, 19, 1) 60%, rgb(238, 169, 104) 100%);
 }
 
-.card--event.color-2 .drivers-pill {
+.zivica-card.color-2 .pill-wrapper {
     background: rgb(242, 185, 19);
     background: linear-gradient(295deg, rgba(242, 185, 19, 1) 60%, rgb(252, 220, 124) 100%);
 }
 
-.card--event.color-3 .drivers-pill {
+.zivica-card.color-3 .pill-wrapper {
     background: rgb(46, 208, 221);
     background: linear-gradient(295deg, rgba(46, 208, 221, 1) 60%, rgba(154, 247, 255, 1) 100%);
 }
 
-.card--event.color-4 .drivers-pill {
+.zivica-card.color-4 .pill-wrapper {
     background: rgb(65, 223, 162);
     background: linear-gradient(295deg, rgba(65, 223, 162, 1) 60%, rgb(153, 224, 197) 100%);
 
 }
 
-.card--event.color-5 .drivers-pill {
+.zivica-card.color-5 .pill-wrapper {
     background: rgb(27, 207, 77);
     background: linear-gradient(295deg, rgba(27, 207, 77, 1) 60%, rgb(109, 230, 141) 100%);
 }
 
-// .card--event:hover {
-//     box-shadow: 0px 0px 6px 5px rgba(130, 130, 130, 0.20);
-// }
+.zivica-card.color-green .pill-wrapper {
+    background: $color-primary;
+    background: linear-gradient(295deg, $color-primary 60%, $color-primary-tint 100%);
+}
 
-.card--event.color-0:hover {
+.zivica-card.color-0:hover {
     box-shadow: 0px 0px 6px 5px rgba(130, 130, 130, 0.22);
 }
 
-.card--event.color-1:hover {
+.zivica-card.color-1:hover {
     box-shadow: 0px 0px 6px 5px rgba(255, 170, 91, 0.25);
 }
 
-.card--event.color-2:hover {
+.zivica-card.color-2:hover {
     box-shadow: 0px 0px 6px 5px rgba(255, 202, 44, 0.25);
 }
 
-.card--event.color-3:hover {
+.zivica-card.color-3:hover {
     box-shadow: 0px 0px 6px 5px rgba(54, 242, 255, 0.25);
 }
 
-.card--event.color-4:hover {
+.zivica-card.color-4:hover {
     box-shadow: 0px 0px 6px 5px rgba(124, 238, 194, 0.25);
 }
 
-.card--event.color-5:hover {
+.zivica-card.color-5:hover {
     box-shadow: 0px 0px 6px 5px rgba(19, 238, 81, 0.25);
 }
 
-.card--with-footer {
-    margin-bottom: 40px;
-    border-radius: 4px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+.zivica-card.color-green:hover {
+    box-shadow: 0px 0px 6px 5px rgba(200, 205, 0, 0.25);
+}
 
-    .info {
-        padding: 25px 20px 20px 20px;
 
-        h2 {
-            margin-bottom: 8px;
-        }
-    }
-
-    .footer {
+@media only screen and (min-width: 992px) {
+    .cards-list {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50px;
+        justify-content: space-between;
+        flex-wrap: wrap;
 
-        background-color: $color-primary;
-        transition-duration: 300ms;
-
-        img {
-            height: 26px;
-        }
-
-        p {
-            margin: 0;
-            color: $color-primary-contrast;
-            font-weight: 300;
-        }
     }
 
-    .footer:hover {
-        background-color: $color-primary-shade;
-        cursor: pointer;
+    .zivica-card {
+        width: 400px;
     }
+}
 
-    .footer.mark-as-unsolved {
-        background-color: $color-red;
-    }
+@media only screen and (min-width: 1200px) {
 
-    .footer.mark-as-unsolved:hover {
-        background-color: $color-red-shade;
+    .zivica-card {
+        width: 500px;
     }
 }

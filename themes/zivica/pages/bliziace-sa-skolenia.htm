@@ -16,12 +16,12 @@ is_hidden = 0
         {% for event in allEvents %}
         <a href="{{ 'sposob-dopravy'|page }}/{{ event.id }}" class="fade-out-on-click">
             {% if event.number_of_drivers < 5 %}
-            <div class="card--event color-{{ event.number_of_drivers }}">
+            <div class="zivica-card color-{{ event.number_of_drivers }}">
                 {% else %}
-                <div class="card--event color-5">
+                <div class="zivica-card color-5">
                     {% endif %}
-                    <h4>{{ str_limit(event.name|raw, 70, '...') }}</h4>
-                    <h6>{{ str_limit(event.location|raw, 60, '...') }}</h6>
+                    <h4>{{ str_limit(event.name|raw, 65, '...') }}</h4>
+                    <h6>{{ event.location }}</h6>
 
                     <div class="pill">
                         <h5>{{ event.date }}</h5>
@@ -31,7 +31,7 @@ is_hidden = 0
                         <h5>{{ event.time }}</h5>
                     </div>
 
-                    <div class="drivers-pill">
+                    <div class="pill-wrapper">
                         <img src="{{ '/assets/images/icons/car-white.png'|theme }}" alt="">
                         <h4>{{ event.number_of_drivers }}</h4>
                     </div>

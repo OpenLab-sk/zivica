@@ -32,7 +32,7 @@ class Router extends ComponentBase
             '/skolenie/:event_id/vytvorit-ponuku'                   => '/bliziace-sa-skolenia/sposob-dopravy/' . $eventId,
             '/skolenie/:event_id/kontaktovat-vodica/:driver_id?'    => '/skolenie/' . $eventId,
             '/hotovo'                                               => '',
-            '/ponuka-pridana'                                       => '',
+            '/ponuka-pridana/:driver_uuid?'                          => '',
             '/profil/:driver_uuid'                                  => ''
         ];
 
