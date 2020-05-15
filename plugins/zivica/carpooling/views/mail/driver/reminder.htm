@@ -1,22 +1,16 @@
 subject = "Nezabudnite na cestujúcich"
 description = "Upozornenie vodiča, aby odklikával cestujúcich a aby sa s nimi dohodol"
 ==
-<head>
-    <link rel="stylesheet" type="text/css" href="theme.css">
-</head>
+Dobrý deň, {{ driver.name }},
 
-<div class="content">
-    Dobrý deň, {{ driver.name }},
+Radi by sme Vám pripomenuli dôležitosť aktualizovania informácií na [profile]({{ url('') }}/profil/{{ driver.uuid }}) Vašej ponuky.
 
-    Radi by sme Vám pripomenuli dôležitosť aktualizovania informácií na [profile]({{ url('') }}/profil/{{ driver.uuid }}) Vašej ponuky.
+Počet voľých miest v aute je vo Vašej ponuke viditeľný a pomáha cestujúcim s výberom ponuky. Udržujte preto túto informáciu, prosím, aktuálnu.
 
-    Počet voľých miest v aute je vo Vašej ponuke viditeľný a pomáha cestujúcim s výberom ponuky. Udržujte preto túto informáciu, prosím, aktuálnu.
-
-    Zároveň by sme Vás chceli poprosiť, aby ste na profile ponuky odklikávali cestujúcich, s ktorými ste dohodnutý na spolujazde.
-    Pomáhate nám tým pri vytváraní štatistiky.
+Zároveň by sme Vás chceli poprosiť, aby ste na profile ponuky odklikávali cestujúcich, s ktorými ste dohodnutý na spolujazde.
+Pomáhate nám tým pri vytváraní štatistiky.
 
 
-    <a href="{{ url('') }}/profil/{{ driver.uuid }}" class="button button-{{ type ?: 'primary' }}" target="_blank">
-        PROFIL PONUKY
-    </a>
-</div>
+<a href="{{ url('') }}/profil/{{ driver.uuid }}" class="button button-{{ type ?: 'primary' }}" target="_blank">
+    PROFIL PONUKY
+</a>
