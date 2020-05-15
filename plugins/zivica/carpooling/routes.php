@@ -23,6 +23,7 @@
         $passengerData  = \Input::all();
         $passenger      = new Passenger;
 
+        $passenger->name        = $passengerData['name'];
         $passenger->driver_id   = $passengerData['driver_id'];
         $passenger->email       = $passengerData['email'];
         $passenger->phone       = $passengerData['phone'];

@@ -15,6 +15,10 @@ is_hidden = 0
         <input type="number" name="driver_id" value="{{ driverId }}" style="display: none;">
 
         <div class="input-wrapper">
+            <img src="{{ '/assets/images/icons/person-black.png'|theme }}" alt="icon">
+            <input type="text" name="name" placeholder="Meno" data-validation="required">
+        </div>
+        <div class="input-wrapper">
             <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
             <input id="email" type="email" name="email" placeholder="Email" value="{{ driver.event_id }}"
                 data-validation="required">

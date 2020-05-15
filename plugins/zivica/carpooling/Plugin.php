@@ -20,7 +20,8 @@ class Plugin extends PluginBase
         return [
             'zivica.carpooling::mail.driver.offer',
             'zivica.carpooling::mail.add-passenger.driver',
-            'zivica.carpooling::mail.add-passenger.passenger'
+            'zivica.carpooling::mail.add-passenger.passenger',
+            'zivica.carpooling::mail.driver.reminder'
         ];
     }
 
