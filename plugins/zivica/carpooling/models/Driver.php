@@ -5,6 +5,7 @@ use Ramsey\Uuid\Uuid;
 use Zivica\Carpooling\Classes\SendMail;
 use Carbon\Carbon;
 use Queue;
+use URL;
 
 class Driver extends Model
 {
@@ -41,7 +42,7 @@ class Driver extends Model
         $twoDaysLater = Carbon::now()->addMinutes(1);
         $twoDaysLater->tz = 'Europe/Bratislava';
 
-        Queue::later($twoDaysLater, 'Zivica\Carpooling\Classes\SendMail@sendReminderToDriver', ['driver' => $this]);
+        Queue::later($twoDaysLater, 'Zivica\Carpooling\Classes\SendMail@sendReminderToDriver', ['driver' => $this, 'url' => URL::to('/')]);
     }
 
     public $hasMany = [
