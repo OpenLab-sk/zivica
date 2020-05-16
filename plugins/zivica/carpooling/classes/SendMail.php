@@ -42,13 +42,14 @@ class SendMail
         });
     }
 
-    static function sendReminderToDriver($job, $driver) {
+    static function sendReminderToDriver($job, $data) {
 
-        $driver = (object)$driver['driver'];
+        $driver = (object)$data['driver'];
 
         Mail::send('zivica.carpooling::mail.driver.reminder', [
 
             'driver' => $driver,
+            'url'    => $data['url']
 
         ], function($message) use($driver) {
             $message->to($driver->email);
