@@ -6,7 +6,7 @@ is_hidden = 0
 ==
 {% set driverId = drivers.getDriverId() %}
 
-<div class="container">
+<div class="container form-container">
     <div class="text-center">
         <h1>Kontaktovať vodiča</h1>
         <h3>Po potvrdení odošleme Vaše kontaktné údaje vodičovi</h3>
@@ -16,20 +16,19 @@ is_hidden = 0
 
         <div class="input-wrapper">
             <img src="{{ '/assets/images/icons/person-black.png'|theme }}" alt="icon">
-            <input type="text" name="name" placeholder="Meno" data-validation="required">
+            <input type="text" name="name" placeholder="Meno*" data-validation="required">
         </div>
         <div class="input-wrapper">
             <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
-            <input id="email" type="email" name="email" placeholder="Email" value="{{ driver.event_id }}"
-                data-validation="required">
+            <input id="email" type="email" name="email" placeholder="Email*" data-validation="required">
         </div>
         <div class="input-wrapper">
             <img src="{{ '/assets/images/icons/phone-black.png'|theme }}" alt="icon">
-            <input type="text" name="phone" placeholder="Telefónne číslo" data-validation="required">
+            <input type="text" name="phone" placeholder="Telefónne číslo*" data-validation="required">
         </div>
         <div class="input-wrapper">
             <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
-            <input type="text" name="city" placeholder="Odkiaľ ste" data-validation="required">
+            <input type="text" name="city" placeholder="Odkiaľ ste*" data-validation="required">
         </div>
         <div class="input-wrapper">
             <img src="{{ '/assets/images/icons/note-black.png'|theme }}" alt="icon">
