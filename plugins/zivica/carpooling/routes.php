@@ -10,7 +10,7 @@
             'name'          =>  'required|string',
             'email'         =>  'required|e-mail',
             'leaves_from'   =>  'required|string',
-            'leaves_at'     =>  'required|date_format:G:i',
+            'leaves_at'     =>  'required|date_format:H:i',
             'cities'        =>  'required|string',
             'seats'         =>  'required|numeric|between:1,10'
         ]);
@@ -71,7 +71,7 @@
             'event_id'      =>  'required|numeric',
             'name'          =>  'required|string',
             'leaves_from'   =>  'required|string',
-            'leaves_at'     =>  'required|date_format:G:i',
+            'leaves_at'     =>  'required|date_format:H:i',
             'cities'        =>  'required|string',
             'seats'         =>  'required|numeric|between:1,10'
         ]);
