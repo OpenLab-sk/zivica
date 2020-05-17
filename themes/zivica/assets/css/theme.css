@@ -377,3 +377,16 @@ a:hover {
 .line-wrapper h5 {
   margin: 0;
 }
+
+.home-screen-logo-wrapper {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.home-screen-logo-wrapper img {
+  height: 150px;
+}

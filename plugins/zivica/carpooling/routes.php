@@ -70,7 +70,6 @@
         $validation = Validator::make($data, [
             'event_id'      =>  'required|numeric',
             'name'          =>  'required|string',
-            'email'         =>  'required|e-mail',
             'leaves_from'   =>  'required|string',
             'leaves_at'     =>  'required|date_format:G:i',
             'cities'        =>  'required|string',
@@ -82,7 +81,6 @@
 
             $driver->event_id       = $data['event_id'];
             $driver->name           = $data['name'];
-            $driver->email          = $data['email'];
             $driver->leaves_from    = $data['leaves_from'];
             $driver->leaves_at      = $data['leaves_at'];
             $driver->cities         = $data['cities'];

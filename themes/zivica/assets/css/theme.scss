@@ -115,3 +115,17 @@ a:hover {
         margin: 0;
     }
 }
+
+.home-screen-logo-wrapper {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100vw;
+
+    display: flex;
+    justify-content: center;
+
+    img {
+        height: 150px;
+    }
+}

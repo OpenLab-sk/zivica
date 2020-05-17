@@ -26,11 +26,24 @@ $(() => {
     });
 
     $('#accept-terms').click(function () {
-        if (!$(this).hasClass('disabled'))
-            submitForm();
+
+        $('form input').each(function () {
+            if ($(this).attr('data-validation') == 'required' && $(this).val() == '') {
+                $(this).addClass('invalid');
+            }
+        })
+
+        if ($('.invalid').length) {
+            return;
+
+        } else {
+            if (!$(this).hasClass('disabled'))
+                submitForm();
+        }
     })
 
     $('#decline-terms').click(function () {
+        $('.form-container').fadeIn();
         $('#terms-container').animate({
             top: '100vh'
         }, 200, function () {
@@ -75,6 +88,7 @@ function submitForm() {
 }
 
 function openTerms() {
+    $('.form-container').fadeOut();
     $('#terms-container').show().animate({
         top: '0'
     }, 250, function () {
