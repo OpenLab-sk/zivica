@@ -10,7 +10,7 @@
             'name'          =>  'required|string',
             'email'         =>  'required|e-mail',
             'leaves_from'   =>  'required|string',
-            'leaves_at'     =>  'required|date_format:G:i',
+            'leaves_at'     =>  'required|date_format:H:i',
             'cities'        =>  'required|string',
             'seats'         =>  'required|numeric|between:1,10'
         ]);
@@ -70,9 +70,8 @@
         $validation = Validator::make($data, [
             'event_id'      =>  'required|numeric',
             'name'          =>  'required|string',
-            'email'         =>  'required|e-mail',
             'leaves_from'   =>  'required|string',
-            'leaves_at'     =>  'required|date_format:G:i',
+            'leaves_at'     =>  'required|date_format:H:i',
             'cities'        =>  'required|string',
             'seats'         =>  'required|numeric|between:1,10'
         ]);
@@ -82,7 +81,6 @@
 
             $driver->event_id       = $data['event_id'];
             $driver->name           = $data['name'];
-            $driver->email          = $data['email'];
             $driver->leaves_from    = $data['leaves_from'];
             $driver->leaves_at      = $data['leaves_at'];
             $driver->cities         = $data['cities'];

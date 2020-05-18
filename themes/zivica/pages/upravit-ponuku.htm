@@ -15,27 +15,23 @@ is_hidden = 0
 
         <div class="input-wrapper">
             <img src="{{ '/assets/images/icons/person-black.png'|theme }}" alt="icon">
-            <input type="text" name="name" placeholder="Meno (zobrazí sa v ponuke)" value="{{ driver.name }}">
-        </div>
-        <div class="input-wrapper">
-            <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon">
-            <input type="email" name="email" placeholder="Email" value="{{ driver.email }}">
+            <input type="text" name="name" placeholder="Meno (zobrazí sa v ponuke)*" value="{{ driver.name }}">
         </div>
         <div class="input-wrapper">
             <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon">
-            <input type="text" name="leaves_from" placeholder="Odkiaľ vyrážate" value="{{ driver.leaves_from }}">
+            <input type="text" name="leaves_from" placeholder="Odkiaľ vyrážate*" value="{{ driver.leaves_from }}">
         </div>
         <div class="input-wrapper">
             <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon">
-            <input type="text" name="leaves_at" placeholder="Kedy vyrážate" value="{{ driver.leaves_at }}">
+            <input id="time" type="text" name="leaves_at" placeholder="Kedy vyrážate*" value="{{ driver.leaves_at }}">
         </div>
         <div class="input-wrapper">
             <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
-            <input type="text" name="cities" placeholder="Cez aké mestá prechádzaťe" value="{{ driver.cities }}">
+            <input type="text" name="cities" placeholder="Cez aké mestá prechádzaťe*" value="{{ driver.cities }}">
         </div>
         <div class="input-wrapper">
             <img src="{{ '/assets/images/icons/seats.png'|theme }}" alt="icon">
-            <input type="text" name="seats" placeholder="Počeť voľných miest" value="{{ driver.seats }}">
+            <input id="seats" type="text" name="seats" placeholder="Počeť voľných miest*" value="{{ driver.seats }}">
         </div>
 
         <a id="accept-terms" class="button-primary">Potvrdiť</a>
