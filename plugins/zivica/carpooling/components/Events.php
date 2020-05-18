@@ -31,7 +31,7 @@ class Events extends ComponentBase
         // $twoDaysAgo->tz = 'Europe/Bratislava';
 
         // $events = Event::all()->where('starts_at', '>', $twoDaysAgo)->sortBy('starts_at');
-        $events = Event::all()->sortBy('starts_at')->reverse();
+        $events = Event::all()->sortBy('starts_at');
 
         foreach ($events as $key => $event) {
             $events[$key] = self::_enrich_Date_Time_Drivers($event);
