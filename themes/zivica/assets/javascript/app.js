@@ -10,6 +10,26 @@ $(() => {
         $(this).removeClass('invalid');
     })
 
+    $('.line-wrapper').mouseover(function (e) {
+        if ($(this).attr('data-tooltip')) {
+            const tooltip = $(this).attr('data-tooltip');
+
+            $(this).prepend(`
+                <div class="icon-tooltip" >
+                    <p>${tooltip}</p>
+                </div>
+            `);
+        }
+    })
+
+    $('.line-wrapper').mouseleave(function () {
+        $('.icon-tooltip').remove();
+    })
+
+    $('.icon-tooltip').mouseenter(function () {
+        $(this).remove();
+    })
+
     $('#show-terms').click(function () {
         $('form input').each(function () {
             if ($(this).attr('data-validation') == 'required' && $(this).val() == '') {
@@ -105,9 +125,10 @@ function checkIfTermsWereScrolled_orAreTotallyVisible() {
 function setCardMinHeight() {
     var minHeight = 0;
     $('.zivica-card').each(function () {
-        console.log($(this).outerHeight())
+
         if ($(this).outerHeight() > minHeight)
             minHeight = $(this).outerHeight();
+            
     });
 
     $('.zivica-card').each(function () {

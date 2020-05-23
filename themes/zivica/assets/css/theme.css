@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-Light.ttf") format("truetype");
+  font-family: 'Perto';
+  src: url("../fonts/Preto-Serif-Regular.otf") format("opentype");
   font-weight: 300;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-Regular.ttf") format("truetype");
+  font-family: 'Perto';
+  src: url("../fonts/Preto-Serif-Medium.otf") format("opentype");
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Roboto';
-  src: url("../fonts/Roboto-Medium.ttf") format("truetype");
+  font-family: 'Perto';
+  src: url("../fonts/Preto-Serif-Bold.otf") format("opentype");
   font-weight: 500;
 }
 
@@ -269,7 +269,7 @@ form .input-wrapper input.invalid {
 }
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Preto', sans-serif;
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -389,4 +389,20 @@ a:hover {
 
 .home-screen-logo-wrapper img {
   height: 150px;
+}
+
+.icon-tooltip {
+  position: absolute;
+  padding: 8px 15px;
+  background-color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  margin-top: -40px;
+  border-radius: 5px;
+}
+
+.icon-tooltip p {
+  line-height: 15px;
+  font-size: 15px;
+  margin: 0;
 }

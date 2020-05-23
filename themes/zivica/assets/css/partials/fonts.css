@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Perto';
+  src: url("../fonts/Preto-Serif-Regular.otf") format("opentype");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Perto';
+  src: url("../fonts/Preto-Serif-Medium.otf") format("opentype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Perto';
+  src: url("../fonts/Preto-Serif-Bold.otf") format("opentype");
+  font-weight: 500;
+}

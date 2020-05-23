@@ -21,19 +21,19 @@ is_hidden = 0
         {% for driver in drivers %}
         <div class="zivica-card with-footer-pill color-green">
             <h2>{{ driver.name }}</h2>
-            <div class="line-wrapper">
+            <div class="line-wrapper" data-tooltip="Miesto odchodu">
                 <img src="{{ '/assets/images/icons/location-black.png'|theme }}" alt="icon" class="location-icon">
                 <h5>{{ driver.leaves_from }}</h5>
             </div>
-            <div class="line-wrapper">
+            <div class="line-wrapper" data-tooltip="Čas odchodu">
                 <img src="{{ '/assets/images/icons/clock-black.png'|theme }}" alt="icon">
                 <h5>{{ driver.leaves_at }}</h5>
             </div>
-            <div class="line-wrapper">
+            <div class="line-wrapper" data-tooltip="Trasa">
                 <img src="{{ '/assets/images/icons/double-arrows-black.png'|theme }}" alt="icon">
                 <h5>{{ driver.cities }}</h5>
             </div>
-            <div class="line-wrapper">
+            <div class="line-wrapper" data-tooltip="Počet voľných miest">
                 <img src="{{ '/assets/images/icons/seats.png'|theme }}" alt="icon">
                 <h5>{{ driver.seats }}</h5>
             </div>
