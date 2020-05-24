@@ -93,8 +93,13 @@
         }
     });
 
-    Route::delete('/api/delete-driver/{uuid}', function ($uuid) {
+    Route::get('/api/delete-driver/{uuid}', function ($uuid) {
         $driver = Driver::where('uuid', $uuid)->first();
-        $driver->delete();
+        if(!$driver) {
+            return Redirect::to('ponuka-neexistuje');
+        } else {
+            $driver->delete();
+            return Redirect::to('ponuka-vymazana');
+        }
     });
 ?>
