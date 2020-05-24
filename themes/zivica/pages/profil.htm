@@ -55,6 +55,10 @@ is_hidden = 0
                 {% endif %}
                 <div class="info">
                     <div class="line-wrapper">
+                        <img src="{{ '/assets/images/icons/person-black.png'|theme }}" alt="icon" class="location-icon">
+                        <h5>{{ passenger.name }}</h5>
+                    </div>
+                    <div class="line-wrapper">
                         <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon" class="location-icon">
                         <a href="mailto:{{ passenger.email }}">
                             <h5 style="text-decoration: underline;">{{ passenger.email }}</h5>

@@ -34,6 +34,8 @@ class Router extends ComponentBase
             '/hotovo'                                               => '',
             '/ponuka-pridana/:driver_uuid?'                         => '',
             '/profil/:driver_uuid'                                  => '',
+            '/ponuka-neexistuje'                                    => '',
+            '/ponuka-vymazana'                                      => '',
             '/profil/:driver_uuid/upravit-ponuku'                   => '/profil/' . $driverUuid,
         ];
 
