@@ -15,6 +15,13 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerMailLayouts()
+    {
+        return [
+            'spolujazda'  => 'zivica.carpooling::mail.layout-spolujazda'
+        ];
+    }
+
     public function registerMailTemplates()
     {
         return [
