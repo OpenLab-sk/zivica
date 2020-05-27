@@ -18,7 +18,8 @@ class Plugin extends PluginBase
     public function registerMailTemplates()
     {
         return [
-            'zivica.carpooling::mail.driver.offer',
+            'zivica.carpooling::mail.driver.offer-created',
+            'zivica.carpooling::mail.driver.offer-deleted',
             'zivica.carpooling::mail.add-passenger.driver',
             'zivica.carpooling::mail.add-passenger.passenger',
             'zivica.carpooling::mail.driver.reminder'

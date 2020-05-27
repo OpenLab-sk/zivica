@@ -7,7 +7,7 @@ class SendMail
 {
     static function driverOfferCreated($driver) {
 
-        Mail::send('zivica.carpooling::mail.driver.offer', [
+        Mail::send('zivica.carpooling::mail.driver.offer-created', [
 
             'driver' => $driver
 
@@ -56,5 +56,22 @@ class SendMail
         });
 
         $job->delete();
+    }
+
+    static function driverOfferDeleted($driver) {
+
+        $passengers = $driver->passengers;
+
+        foreach($passengers as $passenger) {
+            Mail::send('zivica.carpooling::mail.driver.offer-deleted', [
+
+                'passenger' => $passenger,
+                'driver'    => $driver
+
+            ], function($message) use ($passenger) {
+                $message->to($passenger->email, $passenger->name);
+            });
+
+        };
     }
 }

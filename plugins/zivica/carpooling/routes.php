@@ -2,6 +2,7 @@
     use Zivica\Carpooling\Models\Event;
     use Zivica\Carpooling\Models\Driver;
     use Zivica\Carpooling\Models\Passenger;
+    use Zivica\Carpooling\Classes\SendMail;
 
     Route::post('/api/add-driver', function () {
         $driverData   = \Input::all();
@@ -98,7 +99,9 @@
         if(!$driver) {
             return Redirect::to('ponuka-neexistuje');
         } else {
+            SendMail::driverOfferDeleted($driver);
             $driver->delete();
+            //poslat emaily cestujucim, ze ponuka je vymazana
             return Redirect::to('ponuka-vymazana');
         }
     });
