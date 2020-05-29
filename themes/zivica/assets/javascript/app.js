@@ -112,6 +112,7 @@ function openTerms() {
     $('#terms-container').show().animate({
         top: '0'
     }, 250, function () {
+        window.scrollTo(0, 0);
         checkIfTermsWereScrolled_orAreTotallyVisible()
     });
 }
@@ -128,7 +129,7 @@ function setCardMinHeight() {
 
         if ($(this).outerHeight() > minHeight)
             minHeight = $(this).outerHeight();
-            
+
     });
 
     $('.zivica-card').each(function () {

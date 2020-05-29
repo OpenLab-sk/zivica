@@ -214,7 +214,7 @@ form .input-wrapper input.invalid {
 }
 
 #terms-container .terms-wrapper {
-  height: 50vh;
+  height: 40vh;
   max-width: 1140px;
   overflow: scroll;
   margin: 20px auto 0 auto;
