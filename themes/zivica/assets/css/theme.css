@@ -214,7 +214,7 @@ form .input-wrapper input.invalid {
 }
 
 #terms-container .terms-wrapper {
-  height: 60%;
+  height: 50vh;
   max-width: 1140px;
   overflow: scroll;
   margin: 20px auto 0 auto;
@@ -236,7 +236,7 @@ form .input-wrapper input.invalid {
   background: linear-gradient(to top, white 10%, rgba(255, 255, 255, 0) 80%);
   position: absolute;
   bottom: -10px;
-  height: 200px;
+  height: 100px;
   content: "";
   pointer-events: none;
 }
