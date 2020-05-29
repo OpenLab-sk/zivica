@@ -11,20 +11,20 @@ class SeedWebsitesTable extends Seeder
     {
         Event::create([
             'name'          =>  'Skola hrou',
-            'starts_at'     => '2020-03-03 00:00:00',
-            'ends_at'       => '2020-03-03 00:00:00'
+            'starts_at'     => '2020-07-07 00:00:00',
+            'ends_at'       => '2020-07-07 00:00:00'
         ]);
         Event::create([
             'name'          =>  'Skola nehrou',
-            'starts_at'     => '2020-03-03 00:00:00',
-            'ends_at'       => '2020-03-03 00:00:00'
+            'starts_at'     => '2020-07-07 00:00:00',
+            'ends_at'       => '2020-07-07 00:00:00'
         ]);
         Driver::create([
             'event_id'      =>  '1',
             'name'          =>  'Marek',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Galanta',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
@@ -33,7 +33,7 @@ class SeedWebsitesTable extends Seeder
             'name'          =>  'Matej',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Velky Biel',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
@@ -42,7 +42,7 @@ class SeedWebsitesTable extends Seeder
             'name'          =>  'Jozo',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Galanta',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
@@ -51,27 +51,27 @@ class SeedWebsitesTable extends Seeder
             'name'          =>  'Fero',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Velky Biel',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
 
         Event::create([
             'name'          =>  'Skola hrou',
-            'starts_at'     => '2020-03-03 00:00:00',
-            'ends_at'       => '2020-03-03 00:00:00'
+            'starts_at'     => '2020-07-07 00:00:00',
+            'ends_at'       => '2020-07-07 00:00:00'
         ]);
         Event::create([
             'name'          =>  'Skola nehrou',
-            'starts_at'     => '2020-03-03 00:00:00',
-            'ends_at'       => '2020-03-03 00:00:00'
+            'starts_at'     => '2020-07-07 00:00:00',
+            'ends_at'       => '2020-07-07 00:00:00'
         ]);
         Driver::create([
             'event_id'      =>  '3',
             'name'          =>  'Marek',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Galanta',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
@@ -80,7 +80,7 @@ class SeedWebsitesTable extends Seeder
             'name'          =>  'Matej',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Velky Biel',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
@@ -89,7 +89,7 @@ class SeedWebsitesTable extends Seeder
             'name'          =>  'Jozo',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Galanta',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
@@ -98,27 +98,27 @@ class SeedWebsitesTable extends Seeder
             'name'          =>  'Fero',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Velky Biel',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
 
         Event::create([
             'name'          =>  'Skola hrou',
-            'starts_at'     => '2020-03-03 00:00:00',
-            'ends_at'       => '2020-03-03 00:00:00'
+            'starts_at'     => '2020-07-07 00:00:00',
+            'ends_at'       => '2020-07-07 00:00:00'
         ]);
         Event::create([
             'name'          =>  'Skola nehrou',
-            'starts_at'     => '2020-03-03 00:00:00',
-            'ends_at'       => '2020-03-03 00:00:00'
+            'starts_at'     => '2020-07-07 00:00:00',
+            'ends_at'       => '2020-07-07 00:00:00'
         ]);
         Driver::create([
             'event_id'      =>  '4',
             'name'          =>  'Marek',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Galanta',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
@@ -127,7 +127,7 @@ class SeedWebsitesTable extends Seeder
             'name'          =>  'Matej',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Velky Biel',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
@@ -136,7 +136,7 @@ class SeedWebsitesTable extends Seeder
             'name'          =>  'Jozo',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Galanta',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
@@ -145,27 +145,27 @@ class SeedWebsitesTable extends Seeder
             'name'          =>  'Fero',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Velky Biel',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
 
         Event::create([
             'name'          =>  'Skola hrou',
-            'starts_at'     => '2020-03-03 00:00:00',
-            'ends_at'       => '2020-03-03 00:00:00'
+            'starts_at'     => '2020-07-07 00:00:00',
+            'ends_at'       => '2020-07-07 00:00:00'
         ]);
         Event::create([
             'name'          =>  'Skola nehrou',
-            'starts_at'     => '2020-03-03 00:00:00',
-            'ends_at'       => '2020-03-03 00:00:00'
+            'starts_at'     => '2020-07-07 00:00:00',
+            'ends_at'       => '2020-07-07 00:00:00'
         ]);
         Driver::create([
             'event_id'      =>  '5',
             'name'          =>  'Marek',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Galanta',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
@@ -174,7 +174,7 @@ class SeedWebsitesTable extends Seeder
             'name'          =>  'Matej',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Velky Biel',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
@@ -183,7 +183,7 @@ class SeedWebsitesTable extends Seeder
             'name'          =>  'Jozo',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Galanta',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);
@@ -192,7 +192,7 @@ class SeedWebsitesTable extends Seeder
             'name'          =>  'Fero',
             'email'         =>  'email@email.com',
             'leaves_from'   =>  'Velky Biel',
-            'leaves_at'     =>  '2020-03-03 00:00:00',
+            'leaves_at'     =>  '2020-07-07 00:00:00',
             'cities'        =>  'Bratislava, Senec, Trnava',
             'seats'         =>  '3'
         ]);

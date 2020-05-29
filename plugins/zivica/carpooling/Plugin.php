@@ -39,6 +39,7 @@ class Plugin extends PluginBase
             'Zivica\Carpooling\Components\Events'       => 'events',
             'Zivica\Carpooling\Components\Drivers'      => 'drivers',
             'Zivica\Carpooling\Components\Router'       => 'router',
+            'Zivica\Carpooling\Components\Statistics'       => 'statistics'
         ];
     }
 
