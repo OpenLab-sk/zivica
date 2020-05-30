@@ -23,3 +23,13 @@
 .statistics-wrapper-circle .items-wrapper h1 {
     margin: 5px 0;
 }
+
+
+@media only screen and (max-width: 600px) {
+    .statistics-wrapper-circle {
+        height: 180px;
+        width: 180px;
+
+        margin: 40px auto 0px auto;
+    }
+}
