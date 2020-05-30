@@ -19,6 +19,7 @@ class Statistics extends ComponentBase
 
     public function onRun() {
         $this->addCss('./components/statistics/assets/css/statistics.css');
+        $this->addJs('./components/statistics/assets/js/statistics.js');
     }
 
     public function getSavedEmissions() {
