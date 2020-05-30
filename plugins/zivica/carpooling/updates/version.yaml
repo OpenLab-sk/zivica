@@ -3,4 +3,3 @@
     - create_events_table.php
     - create_drivers_table.php
     - create_passengers_table.php
-    - seeder.php
