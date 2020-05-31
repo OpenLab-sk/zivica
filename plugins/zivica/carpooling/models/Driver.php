@@ -47,7 +47,7 @@ class Driver extends Model
 
     public function afterDelete()
     {
-        SendMail::driverOfferDeleted($driver);
+        SendMail::driverOfferDeleted($this);
     }
 
     public $hasMany = [
