@@ -6,6 +6,8 @@ columns:
     id:
         label: ID
         searchable: true
+    name:
+        label: Meno
     email:
         label: E-mail
     phone:

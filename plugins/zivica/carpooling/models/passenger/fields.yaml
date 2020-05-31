@@ -7,6 +7,9 @@ fields:
         label: Vodic
         type: dropdown
         emptyOption: ' '
+    name:
+        label: Meno
+        type: text
     email:
         label: E-mail
         type: email
