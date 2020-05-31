@@ -99,7 +99,6 @@
         if(!$driver) {
             return Redirect::to('ponuka-neexistuje');
         } else {
-            SendMail::driverOfferDeleted($driver);
             $driver->delete();
             //poslat emaily cestujucim, ze ponuka je vymazana
             return Redirect::to('ponuka-vymazana');

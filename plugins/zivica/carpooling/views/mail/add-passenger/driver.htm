@@ -15,5 +15,9 @@ poznámka: {{ passenger.note }}
 
 Je na Vás, aby ste ho kontaktovali a dohodli ste sa na spolujazde.
 
-Ak sa tak stane, na [profile]({{ url('') }}/profil/{{ driver.uuid }}) ponuky môžete tohto pasažiera označiť za vybaveného.
+Ak sa tak stane, na [profile]({{ profil }}) ponuky môžete tohto pasažiera označiť za vybaveného.
 Tým pádom sa z Vašej ponuky odráta jedno voľné miesto.
+
+{% partial 'button' url=profil body %}
+    PROFIL PONUKY
+{% endpartial %}
