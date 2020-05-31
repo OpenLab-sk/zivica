@@ -117,16 +117,10 @@ a:hover {
 }
 
 .home-screen-logo-wrapper {
-    position: absolute;
-    bottom: 50px;
-    left: 0;
-    width: 100vw;
-
-    display: flex;
-    justify-content: center;
-
     img {
-        height: 150px;
+        display: block;
+        margin: 60px auto 0 auto;
+        height: 40px;
     }
 }
 
@@ -147,5 +141,16 @@ a:hover {
 }
 
 #show-trainings {
-    margin-top: 60px;
+    margin-top: 80px;
+}
+
+@media only screen and (max-width: 600px) {
+    #show-trainings {
+        margin-top: 60px;
+    }
+}
+
+
+#home-screen-heading {
+    margin-top: 0px;
 }
