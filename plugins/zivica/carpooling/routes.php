@@ -31,7 +31,8 @@
 
             return ['uuid' => $driver->uuid];
         } else if($validation->fails()) {
-            return ['validation' => $validation->messages()];
+            // return ['validation' => $validation->messages()];
+            return Response::make($validation->messages(), 400);
         }
     });
 
