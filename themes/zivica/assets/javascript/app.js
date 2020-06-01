@@ -100,9 +100,9 @@ function submitForm() {
                 window.location = urlOnSuccess;
             }
         },
-        error: function () {
+        error: function (data) {
             $('#accept-terms').text('potvrdiť a odoslať');
-            alert('Nastala chyba. Skúste to prosím neskôr');
+            alert('Nastala chyba. Skúste to prosím neskôr\n' + data.responseText);
         }
     });
 }
