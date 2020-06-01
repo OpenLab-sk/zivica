@@ -64,18 +64,18 @@ class Plugin extends PluginBase
                 'order'       => 500,
                 'sideMenu'  => [
                     'events' => [
-                        'label' => 'Events',
+                        'label' => 'Školenia',
                         'icon'  => 'icon-calendar',
                         'url'   => Backend::url('zivica/carpooling/events')
                     ],
                     'drivers' => [
-                        'label' => 'Drivers',
-                        'icon'  => 'icon-wheelchair-alt',
+                        'label' => 'Vodiči',
+                        'icon'  => 'icon-car',
                         'url'   => Backend::url('zivica/carpooling/drivers')
                     ],
                     'passengers' => [
-                        'label' => 'Passengers',
-                        'icon'  => 'icon-wheelchair',
+                        'label' => 'Cestujúci',
+                        'icon'  => 'icon-users',
                         'url'   => Backend::url('zivica/carpooling/passengers')
                     ]
                 ]
