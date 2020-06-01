@@ -1,0 +1,28 @@
+title = "Odstránenie ponuky"
+url = "/vymazat-ponuku/:driver_uuid"
+layout = "default"
+is_hidden = 0
+==
+use Zivica\Carpooling\Models\Driver;
+
+function onStart()
+{
+    $this['uuid'] = $this->param('driver_uuid');
+    $driver = Driver::where('uuid', $this['uuid'])->first();
+
+    if(!$driver) {
+        return Redirect::to('ponuka-neexistuje');
+    }
+}
+==
+<div class="container">
+    <div class="text-center">
+        <h1 class="margin-bottom-80">Odstránenie ponuky odvozu</h1>
+        <div class="margin-bottom-20">
+            <h3>Ste si istý, že chcete Vašu ponuku vymazať?</h3>
+        </div>
+        <a href="{{ url('') }}/api/delete-driver/{{ uuid }}" class="button-primary fade-out-on-click">
+            odstrániť
+        </a>
+    </div>
+</div>

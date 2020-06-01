@@ -12,12 +12,10 @@ class SeedWebsitesTable extends Seeder
         Event::create([
             'name'          =>  'Skola hrou',
             'starts_at'     => '2020-07-07 00:00:00',
-            'ends_at'       => '2020-07-07 00:00:00'
         ]);
         Event::create([
             'name'          =>  'Skola nehrou',
             'starts_at'     => '2020-07-07 00:00:00',
-            'ends_at'       => '2020-07-07 00:00:00'
         ]);
         Driver::create([
             'event_id'      =>  '1',

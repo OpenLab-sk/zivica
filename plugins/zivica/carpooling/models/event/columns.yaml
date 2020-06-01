@@ -9,5 +9,3 @@ columns:
         label: Názov eventu
     starts_at:
         label: Dátum a čas začiatku
-    ends_at:
-        label: Dátum a čas konca

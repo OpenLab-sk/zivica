@@ -9,7 +9,8 @@ class SendMail
 
         Mail::send('zivica.carpooling::mail.driver.offer-created', [
 
-            'driver' => $driver
+            'driver'    => $driver,
+            'profil'    => url('/') . "/profil/$driver->uuid"
 
         ], function($message) use($driver) {
         $message->to($driver->email, $driver->name);
@@ -24,7 +25,8 @@ class SendMail
         Mail::send('zivica.carpooling::mail.add-passenger.driver', [
 
             'passenger' => $passenger,
-            'driver'    => $driver
+            'driver'    => $driver,
+            'profil'    => url('/') . "/profil/$driver->uuid"
 
         ], function($message) use ($driverEmail, $driverName) {
             $message->to($driverEmail, $driverName);
@@ -49,7 +51,7 @@ class SendMail
         Mail::send('zivica.carpooling::mail.driver.reminder', [
 
             'driver' => $driver,
-            'url'    => $data['url']
+            'profil' => url('/') . "/profil/$driver->uuid"
 
         ], function($message) use($driver) {
             $message->to($driver->email);

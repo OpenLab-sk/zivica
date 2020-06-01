@@ -15,6 +15,16 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerPermissions()
+    {
+        return [
+            'zivica.carpooling.access' => [
+                'label' => 'Uplny pristup k spolujazde',
+                'roles' => ['publisher', 'developer']
+            ]
+        ];
+    }
+
     public function registerMailLayouts()
     {
         return [

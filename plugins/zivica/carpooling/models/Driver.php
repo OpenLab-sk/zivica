@@ -39,10 +39,15 @@ class Driver extends Model
         SendMail::driverOfferCreated($this);
 
         //change minutes to days (5)
-        $twoDaysLater = Carbon::now()->addMinutes(1);
-        $twoDaysLater->tz = 'Europe/Bratislava';
+        $later = Carbon::now()->addMinutes(1);
+        $later->tz = 'Europe/Bratislava';
 
-        Queue::later($twoDaysLater, 'Zivica\Carpooling\Classes\SendMail@sendReminderToDriver', ['driver' => $this, 'url' => URL::to('/')]);
+        Queue::later($later, 'Zivica\Carpooling\Classes\SendMail@sendReminderToDriver', ['driver' => $this]);
+    }
+
+    public function afterDelete()
+    {
+        SendMail::driverOfferDeleted($this);
     }
 
     public $hasMany = [

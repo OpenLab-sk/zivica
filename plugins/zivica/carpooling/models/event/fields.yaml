@@ -10,10 +10,6 @@ fields:
         label: Dátum a čas začiatku
         type: datepicker
         mode: datetime
-    ends_at:
-        label: Dátum a čas konca
-        type: datepicker
-        mode: datetime
     location:
         label: Adresa
         type: text
