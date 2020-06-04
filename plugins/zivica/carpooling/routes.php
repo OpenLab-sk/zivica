@@ -30,8 +30,14 @@
             $driver->save();
 
             return ['uuid' => $driver->uuid];
-        } else if($validation->fails()) {
-            return Response::make(['validation' => $validation->messages()], 400);
+        } else if ($validation->fails()) {
+            $messages = JSON_decode($validation->messages());
+            if (isset($messages->leaves_at))
+            {
+                return Response::make(["Čas musí byť uvedený v 24 hodinovom formáte (napr. 02:30 alebo 16:05)"], 400);
+            } else {
+                return Response::make([$messages], 400);
+            }
         }
     });
 
