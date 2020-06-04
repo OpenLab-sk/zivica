@@ -380,8 +380,8 @@ a:hover {
 
 .home-screen-logo-wrapper img {
   display: block;
-  margin: 60px auto 0 auto;
-  height: 40px;
+  margin: 30px auto;
+  height: 35px;
 }
 
 .icon-tooltip {
@@ -412,4 +412,44 @@ a:hover {
 
 #home-screen-heading {
   margin-top: 0px;
+}
+
+.home-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-bottom: 25px;
+}
+
+.home-header .vertical-line {
+  width: 1px;
+  height: 40px;
+  background-color: rgba(24, 24, 24, 0.445);
+  margin: 0 20px;
+}
+
+.home-header h1 {
+  margin-bottom: 0;
+}
+
+.home-header.mobile img {
+  height: 45px;
+}
+
+.home-header.desktop img {
+  height: 35px;
+}
+
+.mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .home-header.mobile {
+    display: flex;
+  }
+  .home-header.desktop {
+    display: none;
+  }
 }

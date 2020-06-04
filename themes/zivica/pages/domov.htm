@@ -6,22 +6,27 @@ is_hidden = 0
 [statistics]
 ==
 <div class="container">
+    <div class="home-header mobile">
+        <img src="{{ 'assets/images/logo-vertical.png'|theme }}" alt="">
+        <div class="vertical-line"></div>
+        <h1>Spolujazda</h1>
+    </div>
+    <div class="home-header desktop">
+        <img src="{{ 'assets/images/logo-horizontal.png'|theme }}" alt="">
+        <div class="vertical-line"></div>
+        <h1>Spolujazda</h1>
+    </div>
     <div class="text-center">
-        <h5>Vzdelávacie centrum Záježová</h5>
-        <h1 id="home-screen-heading">Spolujazda</h1>
-        <h3>
-            Ak chcete ponúknuť miesto v aute alebo hľadáte odvoz, ste na správnej adrese.
-            <!-- <br><br>
-            Aj vďaka vášmu zodpovednému
-            rozhodnutiu môžete prispieť k čistejšiemu ovzdušiu a menšiemu množstvu emisií CO2 v atmosfére. -->
+        <!-- <div class="home-screen-logo-wrapper">
+            <img src="{{ '/assets/images/centrum-zajezova.png'|theme }}" alt="">
+        </div> -->
+        <h3>Ak chcete ponúknuť miesto v aute alebo hľadáte odvoz na seminár vo Vzdelávacom
+            centre Zaježová, ste na správnej adrese.
         </h3>
+
         {% component 'statistics' %}
     </div>
 
     <a href="{{ 'bliziace-sa-skolenia'|page }}" id="show-trainings" class="button-primary fade-out-on-click">zobraziť
-        školenia</a>
-
-    <div class="home-screen-logo-wrapper">
-        <img src="{{ '/assets/images/centrum-zajezova.png'|theme }}" alt="">
-    </div>
+        semináre</a>
 </div>
