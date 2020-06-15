@@ -44,6 +44,10 @@
     Route::post('/api/add-passenger', function () {
         $passengerData  = \Input::all();
 
+        if(Driver::where('id', $passengerData['driver_id'])->value('seats') < 1) {
+            return \Response::make(['error' => 'Pocet volnych miest vodica je menej ako 1'], 400);
+        };
+
         $validation = Validator::make($passengerData, [
             'name'          =>  'required|string',
             'driver_id'     =>  'required|numeric',
