@@ -64,7 +64,7 @@ class Plugin extends PluginBase
                 'order'       => 500,
                 'sideMenu'  => [
                     'events' => [
-                        'label' => 'Školenia',
+                        'label' => 'Semináre',
                         'icon'  => 'icon-calendar',
                         'url'   => Backend::url('zivica/carpooling/events')
                     ],

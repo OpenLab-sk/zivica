@@ -30,13 +30,23 @@
             $driver->save();
 
             return ['uuid' => $driver->uuid];
-        } else if($validation->fails()) {
-            return Response::make(['validation' => $validation->messages()], 400);
+        } else if ($validation->fails()) {
+            $messages = JSON_decode($validation->messages());
+            if (isset($messages->leaves_at))
+            {
+                return Response::make(["Čas musí byť uvedený v 24 hodinovom formáte (napr. 02:30 alebo 16:05)"], 400);
+            } else {
+                return Response::make([$messages], 400);
+            }
         }
     });
 
     Route::post('/api/add-passenger', function () {
         $passengerData  = \Input::all();
+
+        if(Driver::where('id', $passengerData['driver_id'])->value('seats') < 1) {
+            return \Response::make(['error' => 'Pocet volnych miest vodica je menej ako 1'], 400);
+        };
 
         $validation = Validator::make($passengerData, [
             'name'          =>  'required|string',

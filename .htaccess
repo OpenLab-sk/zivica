@@ -1,3 +1,4 @@
+php_flag opcache.enable Off
 <IfModule mod_rewrite.c>
 
     <IfModule mod_negotiation.c>
@@ -11,7 +12,7 @@
     ## if you have installed to a subdirectory, enter the name here also.
     ##
     # RewriteBase /
-    
+
     ##
     ## Uncomment following lines to force HTTPS.
     ##

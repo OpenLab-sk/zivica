@@ -46,7 +46,7 @@ class Drivers extends ComponentBase
 
         if ($driver == null)
             return null;
-        
+
         $driver->passengers             = $driver->passengers->sortByDesc('created_at');
         $driver['numberOfPassengers']   = count($driver->passengers);
 
@@ -60,13 +60,16 @@ class Drivers extends ComponentBase
         $passenger      = Passenger::where('id', $passengerId)->first();
         $driver         = Driver::where('id', $driverId)->first();
 
-        $passenger->isSolved = true;
-        $driver->seats -= 1;
+        if ($driver->seats > 0) {
+            $passenger->isSolved = true;
+            $driver->seats -= 1;
 
-        $passenger->save();
-        $driver->save();
-
-        return \Redirect::refresh();
+            $passenger->save();
+            $driver->save();
+            return \Redirect::refresh();
+        }
+        //returnut nejaky error ze vodic uz nema volne miesta
+        return \Response::make(['error' => 'Pocet volnych miest vo Vasom aute je menej ako 1'], 400);
     }
 
     public function onSetToUnsolved() {
@@ -76,11 +79,13 @@ class Drivers extends ComponentBase
         $passenger      = Passenger::where('id', $passengerId)->first();
         $driver         = Driver::where('id', $driverId)->first();
 
+
         $passenger->isSolved = false;
         $driver->seats += 1;
 
         $passenger->save();
         $driver->save();
+
 
         return \Redirect::refresh();
     }
