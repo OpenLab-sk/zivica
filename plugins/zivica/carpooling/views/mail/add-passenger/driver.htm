@@ -9,7 +9,7 @@ na Vašu ponuku zareagoval nový cestujúci, ktorý by sa rád zviezol s Vami.
 Údaje cestujúceho:
 
 email: {{ passenger.email }} <br>
-mobil: {{ passenger.phone }} <br>
+mobil: <a href="tel:{{ passenger.phone }}">{{ passenger.phone }}</a> <br>
 odkiaľ cestuje: {{ passenger.city }} <br>
 poznámka: {{ passenger.note }}
 
