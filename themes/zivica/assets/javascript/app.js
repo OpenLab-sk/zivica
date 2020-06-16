@@ -46,7 +46,6 @@ $(() => {
     });
 
     $('#accept-terms').click(function () {
-
         $('form input').each(function () {
             if ($(this).attr('data-validation') == 'required' && $(this).val() == '') {
                 $(this).addClass('invalid');
@@ -57,8 +56,17 @@ $(() => {
             return;
 
         } else {
-            if (!$(this).hasClass('disabled'))
+            if (!$(this).hasClass('disabled')) {
                 submitForm();
+            } else {
+                var offsetTop = $('.terms-wrapper h3').offset().top
+
+                $('.terms-wrapper').animate({
+                        scrollTop: Math.abs(offsetTop - 500)
+                    },
+                    800
+                );
+            }
         }
     })
 

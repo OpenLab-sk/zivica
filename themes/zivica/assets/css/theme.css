@@ -77,6 +77,10 @@
   text-align: center;
 }
 
+.zivica-card .footer-pill.footer-pill:hover {
+  cursor: pointer;
+}
+
 .zivica-card.with-footer-pill {
   padding-bottom: 75px;
 }
@@ -113,6 +117,11 @@
 .zivica-card.color-green .pill-wrapper {
   background: #c8cd00;
   background: linear-gradient(295deg, #c8cd00 60%, #ecf012 100%);
+}
+
+.zivica-card.color-green .pill-wrapper {
+  background: #c8cd00;
+  background: linear-gradient(295deg, #c8cd00 90%, #ecf012 100%);
 }
 
 .zivica-card.color-0:hover {
