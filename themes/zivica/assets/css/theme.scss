@@ -195,3 +195,21 @@ a:hover {
         display: none;
     }
 }
+
+.openlab-wrapper {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+
+    h5 {
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    img {
+        height: 34px;
+        display: block;
+        margin: auto;
+    }
+}

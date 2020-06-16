@@ -462,3 +462,21 @@ a:hover {
     display: none;
   }
 }
+
+.openlab-wrapper {
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  width: 100%;
+}
+
+.openlab-wrapper h5 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.openlab-wrapper img {
+  height: 34px;
+  display: block;
+  margin: auto;
+}
