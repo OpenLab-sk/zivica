@@ -34,7 +34,7 @@
             $messages = JSON_decode($validation->messages());
             if (isset($messages->leaves_at))
             {
-                return Response::make(["Čas musí byť uvedený v 24 hodinovom formáte (napr. 02:30 alebo 16:05)"], 400);
+                return Response::make(["Cas musi byt uvedeny v 24 hodinovom formate (napr. 02:30 alebo 16:05)"], 400);
             } else {
                 return Response::make([$messages], 400);
             }
@@ -45,7 +45,7 @@
         $passengerData  = \Input::all();
 
         if(Driver::where('id', $passengerData['driver_id'])->value('seats') < 1) {
-            return \Response::make(['error' => 'Pocet volnych miest vodica je menej ako 1'], 400);
+            return \Response::make(['Pocet volnych miest vodica je menej ako 1'], 400);
         };
 
         $validation = Validator::make($passengerData, [
@@ -72,7 +72,8 @@
             $passenger->save();
 
         } else if($validation->fails()) {
-            return Response::make(['validation' => $validation->messages()], 400);
+            $messages = JSON_decode($validation->messages());
+            return Response::make([$messages], 400);
         }
     });
 
@@ -100,7 +101,13 @@
             $driver->save();
 
         } else if($validation->fails()) {
-            return Response::make(['validation' => $validation->messages()], 400);
+            $messages = JSON_decode($validation->messages());
+            if (isset($messages->seats))
+            {
+                return Response::make(["Pocet miest musi byt v rozpati 1-10"], 400);
+            } else {
+                return Response::make([$messages], 400);
+            }
         }
     });
 
@@ -110,7 +117,6 @@
             return Redirect::to('ponuka-neexistuje');
         } else {
             $driver->delete();
-            //poslat emaily cestujucim, ze ponuka je vymazana
             return Redirect::to('ponuka-vymazana');
         }
     });
