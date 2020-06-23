@@ -3,6 +3,7 @@
 use Model;
 use Ramsey\Uuid\Uuid;
 use Zivica\Carpooling\Classes\SendMail;
+use Zivica\Carpooling\Models\Event;
 use Carbon\Carbon;
 use Queue;
 use URL;
@@ -38,11 +39,11 @@ class Driver extends Model
     {
         SendMail::driverOfferCreated($this);
 
-        //change minutes to days (5)
-        // $later = Carbon::now()->addMinutes(1);
-        // $later->tz = 'Europe/Bratislava';
+        $starts_at = Event::where('id', $this->event_id)->value('starts_at');
+        $carbonStartsAt = Carbon::createFromFormat('Y-m-d H:i:s', $starts_at);
+        $later = $carbonStartsAt->subDays(2);
 
-        // Queue::later($later, 'Zivica\Carpooling\Classes\SendMail@sendReminderToDriver', ['driver' => $this]);
+        Queue::later($later, 'Zivica\Carpooling\Classes\SendMail@sendReminderToDriver', ['driver' => $this]);
     }
 
     public function afterDelete()
