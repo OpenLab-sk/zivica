@@ -42,7 +42,6 @@ class Driver extends Model
         $starts_at = Event::where('id', $this->event_id)->value('starts_at');
         $carbonStartsAt = Carbon::createFromFormat('Y-m-d H:i:s', $starts_at);
         $later = $carbonStartsAt->subDay();
-        dd($later);
 
         Queue::later($later, 'Zivica\Carpooling\Classes\SendMail@sendReminderToDriver', ['driver' => $this]);
     }
