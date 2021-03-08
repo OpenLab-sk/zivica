@@ -1,0 +1,16 @@
+subject = "Ponuka bola odstránená"
+description = "Vodič odstránil ponuku, cestujucim pride email"
+layout = spolujazda
+==
+Dobrý deň, {{ passenger.name }},
+
+vodič {{ driver.name }} odstránil ponuku odvozu, na ktorú ste sa prihlásili.
+
+Detail odstránenej ponuky:
+
+miesto odchodu: {{ driver.leaves_from }} <br>
+čas odchodu: {{ driver.leaves_at }} <br>
+trasa: {{ driver.cities }} <br>
+počet miest: {{ driver.seats }}
+
+Ak to bol jediný vodič, ku ktorému ste sa prihlásili, prihláste sa znova k inému.

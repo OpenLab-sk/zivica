@@ -13,8 +13,7 @@ class CreateEventsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->dateTime('starts_at');
-            $table->dateTime('ends_at');
-            $table->string('location')->default('Halova 16, Bratislava');
+            $table->string('location')->default('Polomy 20, 962 63 Pliešovce');
             $table->timestamps();
         });
     }

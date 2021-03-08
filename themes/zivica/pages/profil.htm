@@ -34,7 +34,7 @@ is_hidden = 0
         <h4>{{ driver.cities }}</h4>
     </div>
     <div class="line-wrapper">
-        <img src="{{ '/assets/images/icons/two-people-black.png'|theme }}" alt="icon">
+        <img src="{{ '/assets/images/icons/seats.png'|theme }}" alt="icon">
         <h4>{{ driver.seats }}</h4>
     </div>
     <a href="{{ 'profil'|page }}/upravit-ponuku" class="button button-primary margin-bottom-80">Upraviť
@@ -54,6 +54,10 @@ is_hidden = 0
             <div class="zivica-card color-1 with-footer-pill" data-driver-id="{{ driver.id }}">
                 {% endif %}
                 <div class="info">
+                    <div class="line-wrapper">
+                        <img src="{{ '/assets/images/icons/person-black.png'|theme }}" alt="icon" class="location-icon">
+                        <h5>{{ passenger.name }}</h5>
+                    </div>
                     <div class="line-wrapper">
                         <img src="{{ '/assets/images/icons/email-black.png'|theme }}" alt="icon" class="location-icon">
                         <a href="mailto:{{ passenger.email }}">

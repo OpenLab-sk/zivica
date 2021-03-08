@@ -1,8 +1,9 @@
 <?php namespace Zivica\Carpooling\Models;
 
 use Model;
-use Mail;
+use Carbon\Carbon;
 use Zivica\Carpooling\Models\Driver;
+use Zivica\Carpooling\Classes\SendMail;
 
 class Passenger extends Model
 {
@@ -17,26 +18,10 @@ class Passenger extends Model
     ];
 
     public function afterCreate() {
-        $driver         = Driver::where('id', $this->driver_id)->first();
-        $driverEmail    = $driver->email;
-        $driverName     = $driver->name;
+        $driver = Driver::where('id', $this->driver_id)->first();
 
-        Mail::send('zivica.carpooling::mail.add-passenger.driver', [
-
-            'passenger' => $this,
-            'driver'    => $driver
-
-        ], function($message) use ($driverEmail, $driverName) {
-            $message->to($driverEmail, $driverName);
-        });
-
-        Mail::send('zivica.carpooling::mail.add-passenger.passenger', [
-            
-            'passenger' => $this
-            
-        ], function($message) {
-            $message->to($this->email);
-        });
+        SendMail::passengerSignedDriver($this, $driver);
+        SendMail::passengerSignedPassenger($this);
     }
 
     function getDriverIdOptions() {

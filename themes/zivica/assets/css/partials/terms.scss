@@ -1,4 +1,3 @@
-
 @import './variables.scss';
 
 #terms-container {
@@ -8,12 +7,12 @@
 
     position: absolute;
     top: 100vh;
-    
+
     z-index: 1000;
     background-color: $color-white;
 
     .terms-wrapper {
-        height: 60%;
+        height: 40vh;
         max-width: 1140px;
         overflow: scroll;
 
@@ -37,9 +36,16 @@
 
         position: absolute;
         bottom: -10px;
-        height: 200px;
-        
+        height: 100px;
+
         content: "";
         pointer-events: none;
     }
 }
+
+// #accept-terms {
+//     position: fixed;
+//     bottom: 50px;
+//     left: 50%;
+//     margin-left: -142px;
+// }

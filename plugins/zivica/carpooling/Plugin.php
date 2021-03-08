@@ -15,12 +15,31 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerPermissions()
+    {
+        return [
+            'zivica.carpooling.access' => [
+                'label' => 'Uplny pristup k spolujazde',
+                'roles' => ['publisher', 'developer']
+            ]
+        ];
+    }
+
+    public function registerMailLayouts()
+    {
+        return [
+            'spolujazda'  => 'zivica.carpooling::mail.layout-spolujazda'
+        ];
+    }
+
     public function registerMailTemplates()
     {
         return [
-            'zivica.carpooling::mail.driver.offer',
+            'zivica.carpooling::mail.driver.offer-created',
+            'zivica.carpooling::mail.driver.offer-deleted',
             'zivica.carpooling::mail.add-passenger.driver',
-            'zivica.carpooling::mail.add-passenger.passenger'
+            'zivica.carpooling::mail.add-passenger.passenger',
+            'zivica.carpooling::mail.driver.reminder'
         ];
     }
 
@@ -30,6 +49,7 @@ class Plugin extends PluginBase
             'Zivica\Carpooling\Components\Events'       => 'events',
             'Zivica\Carpooling\Components\Drivers'      => 'drivers',
             'Zivica\Carpooling\Components\Router'       => 'router',
+            'Zivica\Carpooling\Components\Statistics'       => 'statistics'
         ];
     }
 
@@ -37,25 +57,25 @@ class Plugin extends PluginBase
     {
         return [
             'carpooling' => [
-                'label'       => 'Carpooling',
+                'label'       => 'Spolujazda',
                 'url'         => Backend::url('zivica/carpooling/events'),
                 'icon'        => 'icon-car',
                 'permissions' => ['zivica.carpooling.*'],
                 'order'       => 500,
                 'sideMenu'  => [
                     'events' => [
-                        'label' => 'Events',
+                        'label' => 'Semináre',
                         'icon'  => 'icon-calendar',
                         'url'   => Backend::url('zivica/carpooling/events')
                     ],
                     'drivers' => [
-                        'label' => 'Drivers',
-                        'icon'  => 'icon-wheelchair-alt',
+                        'label' => 'Vodiči',
+                        'icon'  => 'icon-car',
                         'url'   => Backend::url('zivica/carpooling/drivers')
                     ],
                     'passengers' => [
-                        'label' => 'Passengers',
-                        'icon'  => 'icon-wheelchair',
+                        'label' => 'Cestujúci',
+                        'icon'  => 'icon-users',
                         'url'   => Backend::url('zivica/carpooling/passengers')
                     ]
                 ]

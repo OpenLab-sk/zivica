@@ -1,0 +1,35 @@
+.statistics-wrapper-circle {
+    height: 220px;
+    width: 220px;
+
+    border: 1px solid #86CD00;
+    border-radius: 360px;
+
+    display: flex;
+    align-items: center;
+
+    margin: 70px auto 0px auto;
+}
+
+.statistics-wrapper-circle .items-wrapper {
+    flex-basis: 100%;
+}
+
+.statistics-wrapper-circle .items-wrapper * {
+    margin: 0;
+    /* color: #ffffff; */
+}
+
+.statistics-wrapper-circle .items-wrapper h1 {
+    margin: 5px 0;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .statistics-wrapper-circle {
+        height: 180px;
+        width: 180px;
+
+        margin: 60px auto 0px auto;
+    }
+}

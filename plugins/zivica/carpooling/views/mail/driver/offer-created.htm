@@ -1,0 +1,17 @@
+subject = "Vaša jazda bola pridaná"
+description = "Vodič pridal ponuku k eventu"
+layout = spolujazda
+==
+Dobrý deň, {{ driver.name }},
+
+Vaša ponuka bola úspešne zverejnená. Odteraz majú ostatní užívatelia možnosť zviesť sa s Vami.
+Ak sa na Vašu ponuku prihlási nový cestujúci, dáme Vám vedieť prostredníctvom mailu všetky potrebné informácie, vrátane údajov cestujúceho.
+Komunikácia a dohodnutie spolujazdy následne prebieha medzi vami.
+
+Zároveň sme Vám vytvorili [profil]({{ profil }}) na danú ponuku, kde môžete meniť informácie o ponuke, vidieť všetkých cestujúcich ktorí Vás kontaktovali, alebo jednoducho odkliknúť tých pasažierov, s ktorými ste sa už na spolujazde dohodli.
+
+{% partial 'button' url=profil body %}
+    PROFIL PONUKY
+{% endpartial %}
+
+Ak si želáte vymazať Vašu ponuku, môžete tak urobiť kliknutím [sem]({{ url('') }}/vymazat-ponuku/{{ driver.uuid }}).

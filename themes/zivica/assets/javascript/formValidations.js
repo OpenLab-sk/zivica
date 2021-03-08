@@ -65,10 +65,23 @@ $(() => {
         if (value.length == 2 && e.keyCode !== 8 && !value.includes(':')) {
             $(this).val(value + ':');
         }
+
+        if (value.includes(':')) {
+            value = value.split(':');
+
+            if (value[0].length > 2)
+                $(this).addClass('invalid');
+
+            if (value[0].length < 2 && value[1].length)
+                $(this).addClass('invalid');
+
+            if (value[1].length > 2)
+                $(this).addClass('invalid');
+        }
     });
 
     $('input#time').keydown(function (e) {
-        allowedKeys = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 16, 186, 32, 8];
+        allowedKeys = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 16, 186, 32, 8];
         arrowsKeys = [37, 38, 39, 40];
         value = $(this).val();
 
@@ -109,9 +122,8 @@ $(() => {
         if (value.includes(':')) {
             value = value.split(':');
 
-            if (value[1].length > 1) {
+            if (value[1].length > 1 && value[0].length !== 1)
                 e.preventDefault();
-            }
         }
 
     });

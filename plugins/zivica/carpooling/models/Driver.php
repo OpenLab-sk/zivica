@@ -1,8 +1,12 @@
 <?php namespace Zivica\Carpooling\Models;
 
 use Model;
-use Mail;
 use Ramsey\Uuid\Uuid;
+use Zivica\Carpooling\Classes\SendMail;
+use Zivica\Carpooling\Models\Event;
+use Carbon\Carbon;
+use Queue;
+use URL;
 
 class Driver extends Model
 {
@@ -33,13 +37,18 @@ class Driver extends Model
 
     public function afterCreate()
     {
-        Mail::send('zivica.carpooling::mail.driver.offer', [
-            
-            'driver' => $this
-            
-        ], function($message) {
-           $message->to($this->email, $this->name);
-        });
+        SendMail::driverOfferCreated($this);
+
+        $starts_at = Event::where('id', $this->event_id)->value('starts_at');
+        $carbonStartsAt = Carbon::createFromFormat('Y-m-d H:i:s', $starts_at);
+        $later = $carbonStartsAt->subDay();
+
+        Queue::later($later, 'Zivica\Carpooling\Classes\SendMail@sendReminderToDriver', ['driver' => $this]);
+    }
+
+    public function afterDelete()
+    {
+        SendMail::driverOfferDeleted($this);
     }
 
     public $hasMany = [
