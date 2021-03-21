@@ -1,6 +1,7 @@
 <?php namespace Zivica\Carpooling;
 
 use Backend;
+use Illuminate\Support\Facades\View;
 use System\Classes\PluginBase;
 
 class Plugin extends PluginBase
@@ -27,6 +28,8 @@ class Plugin extends PluginBase
 
     public function registerMailLayouts()
     {
+        View::addNamespace('zivica.carpooling', plugins_path('/zivica/carpooling/views'));
+
         return [
             'spolujazda'  => 'zivica.carpooling::mail.layout-spolujazda'
         ];
